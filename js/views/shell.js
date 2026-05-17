@@ -7,7 +7,7 @@ import { T, t } from '../i18n.js';
 import { $, $$ } from '../ui.js';
 
 export function renderShell() {
-  $('#brandText').innerHTML = `${t(T.brand)}<small>${t(T.brandSub)}</small>`;
+  $('#brandText').innerHTML = `<small>${t(T.brandSub)}</small>`;
   $('#navLinks').innerHTML = `
     <li><a data-route="/" data-go="/">${t(T.nav.destinations)}</a></li>
     <li><a data-route="/guide/when-to-go" data-go="/guide/when-to-go">${t(T.nav.guide)}</a></li>
@@ -54,11 +54,9 @@ export function footerHTML() {
   return `<div class="container">
     <div class="foot-grid">
       <div class="about">
-        <div class="brand" data-go="/">
-          <span class="brand-mark">探</span>
-          <span class="brand-text">${t(T.brand)}<small>${t(T.brandSub)}</small></span>
-        </div>
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop/dOq8NabjgqSl8B1r/exploringchinalogoimage-dBi0Mg8yRR3RdLud.png" alt="Exploring China" style="max-width:160px;margin-top:20px;opacity:.7;filter:brightness(0) invert(1);">
+        <a class="foot-brand" data-go="/">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop/dOq8NabjgqSl8B1r/exploringchinalogoimage-dBi0Mg8yRR3RdLud.png" alt="Exploring China" class="foot-logo">
+        </a>
         <p style="margin-top:24px;">${t({en:'A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice.', zh:'一份关于中国目的地、文化与静谧角落的深度指南——献给愿意驻足细看的旅人。'})}</p>
       </div>
       <div>
