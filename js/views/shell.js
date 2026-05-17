@@ -2,9 +2,9 @@
    shell — nav text, footer, language toggle wiring,
    cart badge, mobile burger
    ────────────────────────────────────────────────── */
-import { state } from '../state.js';
+import { state, cartCount } from '../state.js';
 import { T, t } from '../i18n.js';
-import { $, $$, cartCount } from '../ui.js';
+import { $, $$ } from '../ui.js';
 
 export function renderShell() {
   $('#brandText').innerHTML = `${t(T.brand)}<small>${t(T.brandSub)}</small>`;
