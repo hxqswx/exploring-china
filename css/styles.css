@@ -454,3 +454,62 @@ html[lang="zh"] .eyebrow,html[lang="zh"] .hero-eyebrow,html[lang="zh"] .btn{lett
 .product-wrap{position:relative;}
 .wishlist-btn{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(250,247,242,.9);border:0;cursor:pointer;display:grid;place-items:center;color:var(--muted);transition:all .2s;z-index:2;padding:0;}
 .wishlist-btn:hover,.wishlist-btn.active{color:var(--red);background:var(--ivory);}
+
+/* ── RICH TEXT EDITOR ───────────────────────────── */
+.rte-toolbar{display:flex;align-items:center;gap:4px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-bottom:0;padding:8px 12px;}
+.rte-btn{background:none;border:1px solid transparent;color:var(--ink-soft);width:30px;height:30px;display:grid;place-items:center;cursor:pointer;border-radius:2px;font-size:13px;font-family:var(--sans);transition:all .15s;padding:0;}
+.rte-btn:hover{background:var(--ivory);border-color:var(--line);}
+.rte-btn.active{background:var(--ink);color:var(--ivory);}
+.rte-sep{width:1px;height:20px;background:var(--line);margin:0 4px;}
+.rte-hint{font-size:11px;color:var(--muted);letter-spacing:.1em;margin-left:auto;}
+.rte-editor{min-height:220px;background:var(--ivory);border:1px solid var(--line);padding:16px 18px;font-family:var(--sans);font-size:15px;color:var(--ink);line-height:1.7;outline:none;transition:border-color .2s;}
+.rte-editor:focus,.rte-editor.focused{border-color:var(--ink);}
+.rte-editor:empty::before{content:attr(data-placeholder);color:var(--muted);pointer-events:none;}
+.rte-editor b,.rte-editor strong{font-weight:700;}
+.rte-editor i,.rte-editor em{font-style:italic;}
+.rte-editor blockquote{border-left:3px solid var(--red);margin:16px 0;padding:8px 0 8px 18px;color:var(--ink-soft);font-style:italic;}
+.rte-editor ul{padding-left:22px;margin:10px 0;}
+.rte-editor ol{padding-left:22px;margin:10px 0;}
+.rte-editor li{margin-bottom:4px;}
+.rte-editor a{color:var(--red);text-decoration:underline;}
+.rte-img{max-width:100%;height:auto;display:block;margin:14px 0;border-radius:2px;}
+
+/* Rich-text display in thread body */
+.body-text.rich-text{font-size:17px;line-height:1.75;white-space:normal;}
+.body-text.rich-text blockquote{border-left:3px solid var(--red);margin:20px 0;padding:10px 0 10px 22px;color:var(--ink-soft);font-style:italic;}
+.body-text.rich-text img{max-width:100%;height:auto;border-radius:2px;margin:16px 0;}
+.body-text.rich-text ul,.body-text.rich-text ol{padding-left:24px;margin:12px 0;}
+.body-text.rich-text a{color:var(--red);}
+
+/* ── READING COMMUNITY PAGE ─────────────────────── */
+.reading-book-card{background:var(--paper);padding:40px;margin-bottom:32px;border-radius:2px;}
+.reading-book-card:last-child{margin-bottom:0;}
+.reading-book-header{display:grid;grid-template-columns:160px 1fr;gap:36px;margin-bottom:28px;}
+@media(max-width:640px){.reading-book-header{grid-template-columns:1fr;}}
+.reading-book-cover{width:160px;height:220px;background-size:cover;background-position:center;background-color:var(--line);flex-shrink:0;border-radius:2px;box-shadow:var(--shadow);}
+@media(max-width:640px){.reading-book-cover{width:100%;height:200px;}}
+.reading-book-info h3{font-family:var(--serif);font-size:28px;font-weight:500;margin:0 0 4px;}
+.book-author-line{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:14px;}
+.reading-book-info p{font-size:15px;color:var(--ink-soft);margin:0 0 18px;line-height:1.6;}
+.reading-book-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.stars-display{display:flex;align-items:center;gap:6px;font-size:14px;}
+.star{color:var(--line);font-size:18px;transition:color .15s;user-select:none;}
+.star.lit{color:var(--gold);}
+.avg-num{font-family:var(--serif);font-size:16px;color:var(--ink);}
+.rev-count{font-size:12px;color:var(--muted);}
+.reviews-list{border-top:1px solid var(--line);padding-top:24px;margin-bottom:20px;}
+.book-review{padding:18px 0;border-bottom:1px solid var(--line);}
+.book-review:last-child{border:0;}
+.book-review-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:13px;color:var(--muted);}
+.book-review-head strong{color:var(--ink);font-weight:600;}
+.stars-row{display:flex;gap:1px;margin-top:2px;}
+.stars-row .star{font-size:13px;}
+.rev-time{margin-left:auto;font-size:11px;}
+.book-review-body{font-size:15px;color:var(--ink-soft);line-height:1.65;}
+.write-review-area{border-top:1px solid var(--line);padding-top:24px;}
+.write-review-header{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:18px;font-weight:500;margin-bottom:16px;color:var(--ink);}
+.stars-interactive{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:12px;}
+.stars-interactive .star{font-size:24px;}
+.review-textarea{width:100%;background:var(--ivory);border:1px solid var(--line);padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);outline:none;resize:vertical;min-height:100px;line-height:1.6;transition:border-color .2s;border-radius:0;}
+.review-textarea:focus{border-color:var(--ink);}
+.my-review-note{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--jade);padding:14px 0;border-top:1px solid var(--line);}

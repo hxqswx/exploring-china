@@ -14,6 +14,7 @@ import { viewAccount, wireAccount } from './views/account.js';
 import { viewForumIndex, wireForumIndex, viewThread, wireThread, viewNewThread, wireNewThread } from './views/forum.js';
 import { viewArticle } from './views/article.js';
 import { viewPlan, viewFireworks, view404 } from './views/misc.js';
+import { viewReading, wireReading } from './views/reading.js';
 
 function parseRoute() {
   const raw = location.hash.replace(/^#/, '') || '/';
@@ -74,6 +75,9 @@ export function render() {
     html = viewArticle(path.split('/')[2]);
   } else if (path === '/plan') {
     html = viewPlan();
+  } else if (path === '/reading') {
+    html = viewReading();
+    wire = wireReading;
   } else if (path === '/fireworks') {
     html = viewFireworks();
   } else {

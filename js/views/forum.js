@@ -80,7 +80,10 @@ export function viewForumIndex(qs) {
 
 function threadRowHTML(th) {
   const likes = (th.likedBy || []).length;
-  const snippet = th.body.split('\n').slice(0, 2).join(' ').slice(0, 240);
+  const rawBody = th.richText
+    ? (new DOMParser().parseFromString(th.body, 'text/html').body.textContent || '')
+    : th.body;
+  const snippet = rawBody.split('\n').slice(0, 2).join(' ').slice(0, 240);
   return `<div class="thread-row" data-go="/thread/${th.id}">
     <div class="body">
       <div class="cat">${esc(catLabel(th.category))}</div>
@@ -151,7 +154,7 @@ export function viewThread(id) {
       ${meEmail && meEmail === th.authorEmail ? `<button class="btn btn-outline btn-sm" id="deleteThreadBtn" style="margin-left:auto;">${t({en:'Delete', zh:'删除'})}</button>` : ''}
     </div>
 
-    <div class="body-text">${esc(th.body)}</div>
+    <div class="body-text${th.richText ? ' rich-text' : ''}">${th.richText ? th.body : esc(th.body)}</div>
 
     <div class="like-row">
       <button class="like-btn ${liked ? 'liked' : ''}" id="likeThreadBtn">
@@ -249,6 +252,53 @@ export function wireThread(id) {
 }
 
 /* ── NEW THREAD ───────────────────────────────────── */
+function rteToolbarHTML() {
+  return `<div class="rte-toolbar" id="rteToolbar">
+    <button type="button" class="rte-btn" data-cmd="bold"        title="Bold"><strong>B</strong></button>
+    <button type="button" class="rte-btn" data-cmd="italic"      title="Italic"><em>I</em></button>
+    <button type="button" class="rte-btn" data-cmd="underline"   title="Underline"><span style="text-decoration:underline">U</span></button>
+    <span class="rte-sep"></span>
+    <button type="button" class="rte-btn" data-cmd="insertUnorderedList" title="Bullet list">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="4" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
+    </button>
+    <button type="button" class="rte-btn" data-cmd="insertOrderedList" title="Numbered list">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><text x="2" y="8" fill="currentColor" stroke="none" font-size="7">1</text><text x="2" y="14" fill="currentColor" stroke="none" font-size="7">2</text><text x="2" y="20" fill="currentColor" stroke="none" font-size="7">3</text></svg>
+    </button>
+    <button type="button" class="rte-btn" data-cmd="blockquote"  title="Block quote">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+    </button>
+    <span class="rte-sep"></span>
+    <button type="button" class="rte-btn" id="rteLinkBtn" title="Add link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    </button>
+    <button type="button" class="rte-btn" id="rteImgBtn" title="Upload image">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    </button>
+    <input type="file" id="rteImgInput" accept="image/*" style="display:none">
+    <span class="rte-sep"></span>
+    <span class="rte-hint">${t({en:'Select text then click a style', zh:'选中文字后点击样式'})}</span>
+  </div>`;
+}
+
+// ── image compression ──────────────────────────────────────────────────────
+function compressImage(file, maxDim = 900, quality = 0.72) {
+  return new Promise(resolve => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      let { width: w, height: h } = img;
+      if (w > h) { if (w > maxDim) { h = Math.round(h / w * maxDim); w = maxDim; } }
+      else       { if (h > maxDim) { w = Math.round(w / h * maxDim); h = maxDim; } }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.src = url;
+  });
+}
+
 export function viewNewThread() {
   if (!state.user) { go('/signin?to=newthread'); return ''; }
   return `<div class="page-narrow">
@@ -268,8 +318,14 @@ export function viewNewThread() {
           </select>
         </div>
         <div class="field"><label>${t(T.forum.threadTitle)}</label><input id="ntTitle" required maxlength="160"></div>
-        <div class="field"><label>${t({en:'Body', zh:'正文'})}</label><textarea id="ntBody" required rows="10" placeholder="${t(T.forum.threadBody)}"></textarea></div>
-        <div style="display:flex;gap:12px;justify-content:flex-end;">
+        <div class="field">
+          <label>${t({en:'Body', zh:'正文'})}</label>
+          ${rteToolbarHTML()}
+          <div id="ntBody" class="rte-editor" contenteditable="true"
+               data-placeholder="${t(T.forum.threadBody)}"></div>
+        </div>
+        <div class="img-preview-area" id="imgPreviewArea"></div>
+        <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:8px;">
           <button type="button" class="btn btn-outline btn-sm" data-go="/community">${t(T.forum.cancel)}</button>
           <button type="submit" class="btn btn-primary btn-sm">${t(T.forum.publish)} <span class="arrow">→</span></button>
         </div>
@@ -281,16 +337,73 @@ export function viewNewThread() {
 export function wireNewThread() {
   const form = $('#newThreadForm');
   if (!form) return;
+
+  const editor = $('#ntBody');
+  const imgInput = $('#rteImgInput');
+
+  // ── toolbar commands ──
+  $$('.rte-btn[data-cmd]').forEach(btn => {
+    btn.addEventListener('mousedown', e => {
+      e.preventDefault(); // keep focus in editor
+      const cmd = btn.dataset.cmd;
+      if (cmd === 'blockquote') {
+        document.execCommand('formatBlock', false, 'blockquote');
+      } else {
+        document.execCommand(cmd, false, null);
+      }
+      editor.focus();
+    });
+  });
+
+  // ── link ──
+  $('#rteLinkBtn')?.addEventListener('mousedown', e => {
+    e.preventDefault();
+    const url = prompt(t({en:'Enter URL:', zh:'请输入链接地址：'}));
+    if (url) {
+      document.execCommand('createLink', false, url);
+      // open in new tab
+      editor.querySelectorAll('a:not([target])').forEach(a => a.target = '_blank');
+    }
+    editor.focus();
+  });
+
+  // ── image upload ──
+  $('#rteImgBtn')?.addEventListener('click', () => imgInput?.click());
+
+  imgInput?.addEventListener('change', async () => {
+    const file = imgInput.files[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      toast(t({en:'Image must be under 5 MB', zh:'图片需小于 5 MB'}));
+      return;
+    }
+    const dataUrl = await compressImage(file, 900, 0.72);
+    // insert at cursor in editor
+    editor.focus();
+    document.execCommand('insertHTML', false,
+      `<img src="${dataUrl}" class="rte-img" alt="image">`);
+    imgInput.value = '';
+  });
+
+  // placeholder behaviour
+  editor.addEventListener('focus',  () => editor.classList.add('focused'));
+  editor.addEventListener('blur',   () => editor.classList.remove('focused'));
+
+  // form submit
   form.addEventListener('submit', e => {
     e.preventDefault();
     const title = $('#ntTitle').value.trim();
-    const body  = $('#ntBody').value.trim();
+    const body  = editor.innerHTML.trim();
     const cat   = $('#ntCat').value;
-    if (!title || !body) return;
+    if (!title || !body || body === '<br>') {
+      toast(t({en:'Please fill in title and body.', zh:'请填写标题和正文。'}));
+      return;
+    }
     const thread = {
       id: 't_' + Date.now().toString(36),
       category: cat,
       title, body,
+      richText: true,
       author: state.user.name,
       authorEmail: state.user.email,
       createdAt: new Date().toISOString(),

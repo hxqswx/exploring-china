@@ -11,6 +11,7 @@ export function renderShell() {
   $('#navLinks').innerHTML = `
     <li><a data-route="/" data-go="/">${t(T.nav.destinations)}</a></li>
     <li><a data-route="/guide/when-to-go" data-go="/guide/when-to-go">${t(T.nav.guide)}</a></li>
+    <li><a data-route="/reading" data-go="/reading">${t({en:'Reading', zh:'书单'})}</a></li>
     <li><a data-route="/fireworks" data-go="/fireworks">${t(T.nav.fireworks)}</a></li>
     <li><a data-route="/plan" data-go="/plan">${t(T.nav.plan)}</a></li>
     <li><a data-route="/store" data-go="/store">${t(T.nav.store)}</a></li>
@@ -67,7 +68,7 @@ export function footerHTML() {
           <li><a data-go="/guide/when-to-go">${t(T.nav.guide)}</a></li>
           <li><a data-go="/fireworks">${t(T.nav.fireworks)}</a></li>
           <li><a data-go="/plan">${t(T.nav.plan)}</a></li>
-          <li><a data-go="/guide/reading">${t({en:'Reading List', zh:'旅途书单'})}</a></li>
+          <li><a data-go="/reading">${t({en:'Reading List', zh:'旅途书单'})}</a></li>
         </ul>
       </div>
       <div>

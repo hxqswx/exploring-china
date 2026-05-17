@@ -8,7 +8,7 @@ const KEYS = {
   LANG:'xc_lang', CART:'xc_cart', USER:'xc_user',
   USERS:'xc_users', ORDERS:'xc_orders', SUBS:'xc_subs',
   THREADS:'xc_threads', PENDING:'xc_pending_signup',
-  WISHLIST:'xc_wishlist'
+  WISHLIST:'xc_wishlist', BOOK_REVIEWS:'xc_book_reviews'
 };
 
 const load = (k, def) => {
@@ -25,7 +25,8 @@ export const state = {
   subs: load(KEYS.SUBS, []),
   threads: load(KEYS.THREADS, null) || seedForum(),
   pendingSignup: load(KEYS.PENDING, null),
-  wishlist: load(KEYS.WISHLIST, [])
+  wishlist: load(KEYS.WISHLIST, []),
+  bookReviews: load(KEYS.BOOK_REVIEWS, [])
 };
 
 function seedForum() {
@@ -45,6 +46,7 @@ export function persist() {
     localStorage.setItem(KEYS.THREADS, JSON.stringify(state.threads));
     localStorage.setItem(KEYS.PENDING, JSON.stringify(state.pendingSignup));
     localStorage.setItem(KEYS.WISHLIST, JSON.stringify(state.wishlist));
+    localStorage.setItem(KEYS.BOOK_REVIEWS, JSON.stringify(state.bookReviews));
   } catch(_) {}
 }
 
