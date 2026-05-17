@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Exploring China — A Comprehensive Guide to Destinations, Culture & Journeys</title>
+<meta name="description" content="Discover the beauty of China through curated destinations, travel guides, cultural stories, fireworks of celebration, and a community of fellow explorers." />
+<meta name="keywords" content="China travel, Great Wall, Forbidden City, Li River, Zhangjiajie, Yunnan, Xi'an, China tours, Chinese culture, fireworks" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --ivory:#FAF7F2;
+    --paper:#F3EFE7;
+    --ink:#1A1410;
+    --ink-soft:#3B302A;
+    --muted:#7A6E62;
+    --line:#E4DCCE;
+    --red:#9B2A28;
+    --red-deep:#6E1B1A;
+    --gold:#C9A961;
+    --jade:#5B8B7A;
+    --serif:'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+    --sans:'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-sm:0 1px 2px rgba(26,20,16,.06);
+    --shadow:0 12px 32px rgba(26,20,16,.10);
+    --shadow-lg:0 30px 60px rgba(26,20,16,.18);
+  }
+  html[lang="zh"]{--serif:'Noto Serif SC','Cormorant Garamond',Georgia,serif;}
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  .container{max-width:1240px;margin:0 auto;padding:0 32px;}
+  @media (max-width:640px){.container{padding:0 20px;}}
+
+  /* ── NAV ─────────────────────────────────────────── */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(250,247,242,.86);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s, background .3s;
+  }
+  .nav.scrolled{border-color:var(--line);background:rgba(250,247,242,.95);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:42px;height:42px;display:grid;place-items:center;
+    background:var(--red);color:var(--ivory);
+    font-family:var(--serif);font-size:22px;font-weight:600;
+    border-radius:2px;letter-spacing:.02em;
+  }
+  .brand-text{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.01em;}
+  .brand-text small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-top:-4px;font-weight:500;}
+
+  .nav-links{display:flex;align-items:center;gap:36px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+    color:var(--ink-soft);position:relative;padding:6px 0;transition:color .2s;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:var(--red);transform:scaleX(0);transform-origin:left;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .nav-links a:hover{color:var(--red);}
+  .nav-links a:hover::after{transform:scaleX(1);}
+
+  .lang-toggle{
+    display:inline-flex;align-items:center;border:1px solid var(--line);
+    border-radius:999px;padding:4px;background:var(--ivory);
+  }
+  .lang-toggle button{
+    appearance:none;border:0;background:transparent;cursor:pointer;
+    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;
+    padding:6px 14px;border-radius:999px;color:var(--muted);
+    transition:all .25s;
+  }
+  .lang-toggle button.active{background:var(--ink);color:var(--ivory);}
+  .nav-burger{display:none;background:none;border:0;cursor:pointer;padding:8px;}
+  .nav-burger span{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px 0;transition:.3s;}
+
+  @media (max-width:920px){
+    .nav-links{
+      position:fixed;top:78px;left:0;right:0;
+      background:var(--ivory);flex-direction:column;align-items:flex-start;
+      gap:0;padding:0;max-height:0;overflow:hidden;
+      border-bottom:1px solid transparent;transition:max-height .35s, border-color .35s;
+    }
+    .nav-links.open{max-height:520px;border-color:var(--line);}
+    .nav-links li{width:100%;border-top:1px solid var(--line);}
+    .nav-links li:first-child{border:0;}
+    .nav-links a{display:block;padding:18px 32px;}
+    .nav-burger{display:block;}
+    .nav-right{display:flex;align-items:center;gap:14px;}
+  }
+
+  /* ── HERO ────────────────────────────────────────── */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    color:var(--ivory);overflow:hidden;padding:140px 0 80px;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80');
+    background-size:cover;background-position:center;
+    transform:scale(1.05);
+    animation:slowZoom 24s ease-in-out infinite alternate;
+  }
+  @keyframes slowZoom{from{transform:scale(1.05);}to{transform:scale(1.15);}}
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(26,20,16,.35) 0%,rgba(26,20,16,.55) 60%,rgba(26,20,16,.75) 100%);
+    z-index:1;
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:14px;
+    font-size:12px;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:28px;
+  }
+  .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold);}
+  .hero h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(44px, 7vw, 96px);
+    line-height:1.02;letter-spacing:-.01em;margin:0 0 28px;
+    max-width:14ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
+  .hero p.lede{
+    font-size:clamp(16px,1.25vw,19px);max-width:54ch;
+    color:rgba(250,247,242,.85);margin:0 0 44px;font-weight:300;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 32px;font-size:13px;letter-spacing:.2em;
+    text-transform:uppercase;font-weight:600;border-radius:2px;
+    transition:all .3s;cursor:pointer;border:1px solid transparent;
+    font-family:var(--sans);
+  }
+  .btn-primary{background:var(--red);color:var(--ivory);}
+  .btn-primary:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+  .btn-ghost{border-color:rgba(250,247,242,.4);color:var(--ivory);}
+  .btn-ghost:hover{background:var(--ivory);color:var(--ink);}
+  .btn .arrow{transition:transform .3s;}
+  .btn:hover .arrow{transform:translateX(4px);}
+
+  .hero-scroll{
+    position:absolute;left:50%;bottom:36px;transform:translateX(-50%);
+    z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;
+    font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+    color:rgba(250,247,242,.6);
+  }
+  .hero-scroll::after{
+    content:'';width:1px;height:48px;background:rgba(250,247,242,.4);
+    animation:scrollHint 2s ease-in-out infinite;
+  }
+  @keyframes scrollHint{0%,100%{transform:scaleY(.3);transform-origin:top;}50%{transform:scaleY(1);}}
+
+  /* ── SECTION FRAME ───────────────────────────────── */
+  section{padding:120px 0;}
+  @media (max-width:768px){section{padding:80px 0;}}
+
+  .section-head{text-align:center;max-width:680px;margin:0 auto 72px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:14px;
+    font-size:11px;letter-spacing:.4em;text-transform:uppercase;
+    color:var(--red);font-weight:600;margin-bottom:20px;
+  }
+  .eyebrow::before,.eyebrow::after{content:'';width:28px;height:1px;background:var(--red);}
+  h2.title{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(36px,4.5vw,60px);line-height:1.08;
+    letter-spacing:-.01em;margin:0 0 22px;color:var(--ink);
+  }
+  h2.title em{font-style:italic;color:var(--red);}
+  .section-head p{font-size:17px;color:var(--muted);max-width:52ch;margin:0 auto;}
+
+  /* ── DESTINATIONS ───────────────────────────────── */
+  .destinations{background:var(--ivory);}
+  .dest-grid{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:28px;
+  }
+  .dest-card{
+    position:relative;overflow:hidden;border-radius:2px;
+    cursor:pointer;background:var(--ink);
+    aspect-ratio:4/5;
+  }
+  .dest-card .photo{
+    position:absolute;inset:0;background-size:cover;background-position:center;
+    transition:transform 1.2s cubic-bezier(.2,.8,.2,1), filter .6s;
+    filter:saturate(.9);
+  }
+  .dest-card:hover .photo{transform:scale(1.08);filter:saturate(1.05);}
+  .dest-card::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(26,20,16,0) 30%,rgba(26,20,16,.85) 100%);
+  }
+  .dest-card .meta{
+    position:absolute;left:0;right:0;bottom:0;padding:32px;color:var(--ivory);z-index:2;
+  }
+  .dest-card .num{
+    font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);
+    letter-spacing:.05em;margin-bottom:8px;
+  }
+  .dest-card h3{
+    font-family:var(--serif);font-weight:500;font-size:30px;
+    margin:0 0 8px;line-height:1.1;
+  }
+  .dest-card .region{
+    font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+    color:rgba(250,247,242,.7);
+  }
+  .dest-card.span-6{grid-column:span 6;}
+  .dest-card.span-4{grid-column:span 4;}
+  .dest-card.span-8{grid-column:span 8;}
+  .dest-card.tall{aspect-ratio:3/4;}
+  .dest-card.wide{aspect-ratio:16/10;}
+  @media (max-width:900px){
+    .dest-card.span-6,.dest-card.span-4,.dest-card.span-8{grid-column:span 12;}
+    .dest-card{aspect-ratio:4/3;}
+  }
+
+  /* ── EDITORIAL / ABOUT ──────────────────────────── */
+  .editorial{background:var(--paper);position:relative;overflow:hidden;}
+  .editorial::before{
+    content:'探';position:absolute;font-family:var(--serif);
+    font-size:520px;line-height:1;color:rgba(155,42,40,.04);
+    top:-100px;right:-60px;pointer-events:none;font-weight:300;
+  }
+  .editorial-grid{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:90px;align-items:center;
+  }
+  @media (max-width:900px){.editorial-grid{grid-template-columns:1fr;gap:50px;}.editorial::before{font-size:300px;}}
+  .editorial-img{
+    aspect-ratio:4/5;background-size:cover;background-position:center;
+    background-image:url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80');
+    box-shadow:var(--shadow-lg);position:relative;
+  }
+  .editorial-img::after{
+    content:'';position:absolute;inset:14px;border:1px solid rgba(250,247,242,.4);
+    pointer-events:none;
+  }
+  .editorial-body p{font-size:17px;color:var(--ink-soft);margin:0 0 20px;}
+  .editorial-body p.first::first-letter{
+    font-family:var(--serif);font-size:72px;line-height:.85;
+    float:left;padding:6px 14px 0 0;color:var(--red);font-weight:500;
+  }
+  .pull-quote{
+    font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;
+    color:var(--ink);border-left:2px solid var(--red);padding:8px 0 8px 24px;
+    margin:36px 0;
+  }
+  .signature{
+    margin-top:36px;display:flex;align-items:center;gap:16px;
+    font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  }
+  .signature::before{content:'';width:48px;height:1px;background:var(--ink);}
+
+  /* ── FIREWORKS ──────────────────────────────────── */
+  .fireworks{
+    background:var(--ink);color:var(--ivory);position:relative;overflow:hidden;
+  }
+  .fireworks::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 30% 50%, rgba(201,169,97,.15), transparent 60%),
+               radial-gradient(ellipse at 80% 30%, rgba(155,42,40,.18), transparent 60%);
+    pointer-events:none;
+  }
+  .fireworks .section-head h2 em{color:var(--gold);}
+  .fireworks .section-head p{color:rgba(250,247,242,.7);}
+  .fireworks .eyebrow{color:var(--gold);}
+  .fireworks .eyebrow::before,.fireworks .eyebrow::after{background:var(--gold);}
+  .video-frame{
+    position:relative;max-width:1040px;margin:0 auto;
+    aspect-ratio:16/9;border-radius:2px;overflow:hidden;
+    box-shadow:0 40px 80px rgba(0,0,0,.5);
+    border:1px solid rgba(201,169,97,.2);
+  }
+  .video-frame video{width:100%;height:100%;object-fit:cover;display:block;}
+  .fireworks-features{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
+    margin-top:80px;max-width:1040px;margin-left:auto;margin-right:auto;
+  }
+  @media (max-width:768px){.fireworks-features{grid-template-columns:1fr;gap:36px;}}
+  .ff-item{text-align:center;}
+  .ff-item .num{
+    font-family:var(--serif);font-size:54px;font-style:italic;color:var(--gold);
+    font-weight:300;line-height:1;margin-bottom:12px;
+  }
+  .ff-item h4{
+    font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 10px;
+  }
+  .ff-item p{font-size:15px;color:rgba(250,247,242,.65);margin:0;}
+
+  /* ── PLAN / TIPS ────────────────────────────────── */
+  .plan{background:var(--ivory);}
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+  @media (max-width:900px){.plan-grid{grid-template-columns:1fr;}}
+  .plan-card{
+    padding:48px 36px;background:var(--paper);border-radius:2px;
+    transition:transform .4s, box-shadow .4s;position:relative;overflow:hidden;
+  }
+  .plan-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .plan-card .icon{
+    width:56px;height:56px;display:grid;place-items:center;
+    background:var(--ivory);color:var(--red);border-radius:50%;
+    margin-bottom:24px;font-family:var(--serif);font-size:24px;font-style:italic;
+  }
+  .plan-card h4{
+    font-family:var(--serif);font-size:26px;font-weight:500;margin:0 0 14px;
+  }
+  .plan-card p{font-size:15px;color:var(--ink-soft);margin:0 0 20px;}
+  .plan-card .more{
+    font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+    color:var(--red);font-weight:600;display:inline-flex;align-items:center;gap:8px;
+  }
+
+  /* ── STORE ──────────────────────────────────────── */
+  .store{background:var(--paper);}
+  .store-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  @media (max-width:1000px){.store-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.store-grid{grid-template-columns:1fr;}}
+  .product{
+    background:var(--ivory);transition:transform .4s, box-shadow .4s;
+  }
+  .product:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .product-img{
+    aspect-ratio:1/1;background-size:cover;background-position:center;
+    background-color:var(--paper);
+  }
+  .product-body{padding:24px;}
+  .product .cat{
+    font-size:10px;letter-spacing:.25em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .product h4{font-family:var(--serif);font-size:20px;font-weight:500;margin:0 0 10px;}
+  .product .price{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:14px;
+  }
+  .product .price span{font-family:var(--serif);font-size:22px;color:var(--red);}
+  .product .price button{
+    background:none;border:1px solid var(--ink);color:var(--ink);
+    padding:8px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    cursor:pointer;font-family:var(--sans);font-weight:600;transition:all .25s;
+  }
+  .product .price button:hover{background:var(--ink);color:var(--ivory);}
+
+  /* ── COMMUNITY ──────────────────────────────────── */
+  .community{
+    background:var(--ivory);text-align:center;
+    background-image:
+      linear-gradient(rgba(250,247,242,.93),rgba(250,247,242,.93)),
+      url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=2000&q=80');
+    background-size:cover;background-position:center;background-attachment:fixed;
+  }
+  .community .inner{max-width:720px;margin:0 auto;}
+  .community .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:40px;margin-top:64px;padding-top:48px;
+    border-top:1px solid var(--line);
+  }
+  @media (max-width:640px){.community .stats{grid-template-columns:1fr;gap:32px;}}
+  .stat .num{
+    font-family:var(--serif);font-size:54px;font-weight:500;color:var(--red);
+    line-height:1;margin-bottom:8px;
+  }
+  .stat .label{
+    font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ── NEWSLETTER ─────────────────────────────────── */
+  .newsletter{background:var(--ink);color:var(--ivory);padding:90px 0;}
+  .nl-inner{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  }
+  @media (max-width:768px){.nl-inner{grid-template-columns:1fr;gap:32px;}}
+  .nl-inner h3{
+    font-family:var(--serif);font-size:clamp(28px,3vw,42px);
+    font-weight:400;line-height:1.15;margin:0 0 14px;
+  }
+  .nl-inner h3 em{color:var(--gold);font-style:italic;}
+  .nl-inner p{color:rgba(250,247,242,.65);margin:0;font-size:15px;}
+  .nl-form{display:flex;gap:0;border:1px solid rgba(250,247,242,.25);background:rgba(250,247,242,.05);}
+  .nl-form input{
+    flex:1;background:transparent;border:0;padding:18px 22px;
+    color:var(--ivory);font-family:var(--sans);font-size:15px;outline:none;
+  }
+  .nl-form input::placeholder{color:rgba(250,247,242,.4);}
+  .nl-form button{
+    background:var(--gold);color:var(--ink);border:0;padding:0 28px;
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+    cursor:pointer;transition:background .25s;font-family:var(--sans);
+  }
+  .nl-form button:hover{background:#dfc07a;}
+
+  /* ── FOOTER ─────────────────────────────────────── */
+  footer{background:#0F0B09;color:rgba(250,247,242,.7);padding:80px 0 32px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px;}
+  @media (max-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+  @media (max-width:480px){.foot-grid{grid-template-columns:1fr;}}
+  footer h5{
+    font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 24px;font-weight:600;
+  }
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer ul li{margin-bottom:12px;font-size:14px;}
+  footer ul li a{transition:color .2s;}
+  footer ul li a:hover{color:var(--gold);}
+  footer .about{font-size:14px;line-height:1.7;}
+  footer .about .brand-text{color:var(--ivory);font-size:24px;}
+  .foot-bottom{
+    padding-top:32px;border-top:1px solid rgba(250,247,242,.1);
+    display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,242,.4);
+    flex-wrap:wrap;gap:14px;
+  }
+  .socials{display:flex;gap:12px;}
+  .socials a{
+    width:36px;height:36px;border:1px solid rgba(250,247,242,.2);
+    display:grid;place-items:center;border-radius:50%;
+    transition:all .25s;
+  }
+  .socials a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+
+  /* ── REVEAL ANIMATIONS ─────────────────────────── */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* Chinese typography micro-adjust */
+  html[lang="zh"] body{line-height:1.8;}
+  html[lang="zh"] .nav-links a{letter-spacing:.12em;}
+  html[lang="zh"] .eyebrow,
+  html[lang="zh"] .hero-eyebrow,
+  html[lang="zh"] .btn{letter-spacing:.2em;}
+  html[lang="zh"] h2.title em{font-style:normal;}
+  html[lang="zh"] .hero h1 em{font-style:normal;}
+  html[lang="zh"] .pull-quote{font-style:normal;}
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">探</span>
+      <span class="brand-text">
+        <span data-en="Exploring China" data-zh="探索中国">Exploring China</span>
+        <small data-en="A Comprehensive Guide" data-zh="深度旅行指南">A Comprehensive Guide</small>
+      </span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#destinations" data-en="Destinations" data-zh="目的地">Destinations</a></li>
+        <li><a href="#guide" data-en="The Guide" data-zh="深度导览">The Guide</a></li>
+        <li><a href="#fireworks" data-en="Fireworks" data-zh="烟花盛景">Fireworks</a></li>
+        <li><a href="#plan" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</a></li>
+        <li><a href="#store" data-en="Store" data-zh="商店">Store</a></li>
+        <li><a href="#community" data-en="Community" data-zh="旅行社区">Community</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="zh">中文</button>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-eyebrow" data-en="A Journey Through the Middle Kingdom" data-zh="穿越中华大地的旅程">A Journey Through the Middle Kingdom</div>
+    <h1>
+      <span data-en="Discover the " data-zh="探寻">Discover the </span><em data-en="beauty " data-zh="千年之美">beauty </em><span data-en="of " data-zh="">of </span><span data-en="China." data-zh="">China.</span>
+    </h1>
+    <p class="lede" data-en="Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here." data-zh="精选目的地、用心规划的行程，以及让五千年文化、山川河流跃然眼前的故事。从这里，开启你的旅程。">
+      Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here.
+    </p>
+    <div class="hero-cta">
+      <a href="#destinations" class="btn btn-primary">
+        <span data-en="Explore Destinations" data-zh="探索目的地">Explore Destinations</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#plan" class="btn btn-ghost">
+        <span data-en="Plan Your Trip" data-zh="规划行程">Plan Your Trip</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll" data-en="Scroll" data-zh="向下浏览">Scroll</div>
+</header>
+
+<!-- ============================ DESTINATIONS ============================ -->
+<section class="destinations" id="destinations">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-en="Featured Destinations" data-zh="精选目的地">Featured Destinations</div>
+      <h2 class="title">
+        <span data-en="Where the " data-zh="">Where the </span><em data-en="ancient " data-zh="古老与">ancient </em><span data-en="meets " data-zh="">meets </span><em data-en="endless." data-zh="无垠相遇">endless.</em>
+      </h2>
+      <p data-en="Six landscapes — from imperial courtyards to karst rivers — chosen for their power to alter the traveler." data-zh="六处风景——从皇家庭院到喀斯特江河——每一处都足以改变旅人的心境。">
+        Six landscapes — from imperial courtyards to karst rivers — chosen for their power to alter the traveler.
+      </p>
+    </div>
+
+    <div class="dest-grid">
+      <a class="dest-card span-8 wide reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 01" data-zh="其一">No. 01</div>
+          <h3 data-en="The Great Wall" data-zh="万里长城">The Great Wall</h3>
+          <div class="region" data-en="Beijing · Hebei" data-zh="北京 · 河北">Beijing · Hebei</div>
+        </div>
+      </a>
+      <a class="dest-card span-4 tall reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 02" data-zh="其二">No. 02</div>
+          <h3 data-en="Forbidden City" data-zh="紫禁城">Forbidden City</h3>
+          <div class="region" data-en="Beijing" data-zh="北京">Beijing</div>
+        </div>
+      </a>
+      <a class="dest-card span-4 tall reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 03" data-zh="其三">No. 03</div>
+          <h3 data-en="Li River, Guilin" data-zh="桂林漓江">Li River, Guilin</h3>
+          <div class="region" data-en="Guangxi" data-zh="广西">Guangxi</div>
+        </div>
+      </a>
+      <a class="dest-card span-4 tall reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1513531926349-466f15ec8cc7?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 04" data-zh="其四">No. 04</div>
+          <h3 data-en="Zhangjiajie" data-zh="张家界">Zhangjiajie</h3>
+          <div class="region" data-en="Hunan" data-zh="湖南">Hunan</div>
+        </div>
+      </a>
+      <a class="dest-card span-4 tall reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1551806235-6692ad9da9d9?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 05" data-zh="其五">No. 05</div>
+          <h3 data-en="Lijiang &amp; Yunnan" data-zh="云南丽江">Lijiang &amp; Yunnan</h3>
+          <div class="region" data-en="Yunnan" data-zh="云南">Yunnan</div>
+        </div>
+      </a>
+      <a class="dest-card span-8 wide reveal" href="#">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1591777334841-1a911e3f12c4?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="meta">
+          <div class="num" data-en="No. 06" data-zh="其六">No. 06</div>
+          <h3 data-en="Xi'an &amp; the Terracotta Army" data-zh="西安与兵马俑">Xi'an &amp; the Terracotta Army</h3>
+          <div class="region" data-en="Shaanxi" data-zh="陕西">Shaanxi</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EDITORIAL / ABOUT ============================ -->
+<section class="editorial" id="guide">
+  <div class="container">
+    <div class="editorial-grid">
+      <div class="editorial-img reveal" role="img" aria-label="Forbidden City rooftops"></div>
+      <div class="editorial-body reveal">
+        <div class="eyebrow" data-en="The Guide" data-zh="深度导览">The Guide</div>
+        <h2 class="title">
+          <span data-en="Travel " data-zh="慢行细赏，">Travel </span><em data-en="slowly. " data-zh="">slowly. </em><span data-en="See " data-zh="目之所及，">See </span><em data-en="deeply." data-zh="心之所至。">deeply.</em>
+        </h2>
+        <p class="first" data-en="China is not a country one visits — it is a country one returns to. From the painted alleys of Pingyao to the quiet tea houses of Chengdu, every province carries its own dialect, kitchen, and rhythm of life. Our role, as your guide, is to help you arrive prepared and depart changed." data-zh="中国并非一次造访便能穷尽的国度——它是一个让人不断归来的地方。从平遥的彩绘小巷到成都的清茶馆，每一个省份都有自己的方言、菜肴与生活节奏。作为你的向导，我们希望让你启程时心中有数，归来时心有所变。">
+          China is not a country one visits — it is a country one returns to. From the painted alleys of Pingyao to the quiet tea houses of Chengdu, every province carries its own dialect, kitchen, and rhythm of life. Our role, as your guide, is to help you arrive prepared and depart changed.
+        </p>
+
+        <div class="pull-quote" data-en="“The best journeys move not across distance, but inward — toward a different way of seeing.”" data-zh="“最好的旅程不是越过远方，而是走向内心，去往一种不同的看见方式。”">
+          “The best journeys move not across distance, but inward — toward a different way of seeing.”
+        </div>
+
+        <p data-en="We write itineraries grounded in local knowledge: which season the cormorant fishermen still light their lanterns on the Li, which family in Lijiang still hammers copper teapots, which hutong in Beijing serves jianbing the way it was made in the eighties." data-zh="我们的行程根植于在地的知识：漓江上鸬鹚渔夫还在哪个季节点起灯火，丽江哪户人家仍在手工敲打铜壶，北京哪条胡同的煎饼还守着八十年代的做法。">
+          We write itineraries grounded in local knowledge: which season the cormorant fishermen still light their lanterns on the Li, which family in Lijiang still hammers copper teapots, which hutong in Beijing serves jianbing the way it was made in the eighties.
+        </p>
+
+        <div class="signature" data-en="Our Editorial Team · Since 2019" data-zh="编辑团队 · 自 2019 年">Our Editorial Team · Since 2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FIREWORKS ============================ -->
+<section class="fireworks" id="fireworks">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-en="Fireworks &amp; Celebration" data-zh="烟花盛景">Fireworks &amp; Celebration</div>
+      <h2 class="title">
+        <span data-en="The " data-zh="">The </span><em data-en="sky " data-zh="夜空为纸，">sky </em><span data-en="as " data-zh="">as </span><em data-en="canvas." data-zh="烟花为墨。">canvas.</em>
+      </h2>
+      <p data-en="Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched — and we are there to share the moment with you." data-zh="烟花诞生于一千多年前的中国。每逢春日，城市被点燃成画家也未曾调出的色彩——我们与你一同，置身其间。">
+        Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched — and we are there to share the moment with you.
+      </p>
+    </div>
+
+    <div class="video-frame reveal">
+      <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1546552768-9e3a94b38a59?auto=format&fit=crop&w=1600&q=80">
+        <source src="https://videos.pexels.com/video-files/34767741/14740035_640_360_30fps.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="fireworks-features">
+      <div class="ff-item reveal">
+        <div class="num">01</div>
+        <h4 data-en="A Thousand Years of Sparks" data-zh="千年火光">A Thousand Years of Sparks</h4>
+        <p data-en="Trace fireworks from Tang-dynasty bamboo crackers to today's symphonic displays in Liuyang." data-zh="从唐代的爆竹到今日浏阳的烟花交响乐，追溯千年火光的源流。">
+          Trace fireworks from Tang-dynasty bamboo crackers to today's symphonic displays in Liuyang.
+        </p>
+      </div>
+      <div class="ff-item reveal">
+        <div class="num">02</div>
+        <h4 data-en="Festival Calendar" data-zh="节庆日历">Festival Calendar</h4>
+        <p data-en="Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each in full." data-zh="春节、元宵、中秋——何时、何地，以及如何尽情体验每一场盛会。">
+          Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each in full.
+        </p>
+      </div>
+      <div class="ff-item reveal">
+        <div class="num">03</div>
+        <h4 data-en="The Makers" data-zh="匠人之手">The Makers</h4>
+        <p data-en="Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand." data-zh="走访浏阳与萍乡的匠人，每一颗烟花，至今仍是手工卷制。">
+          Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PLAN A TRIP ============================ -->
+<section class="plan" id="plan">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</div>
+      <h2 class="title">
+        <span data-en="From " data-zh="">From </span><em data-en="first thought, " data-zh="从灵感初现，">first thought, </em><span data-en="to " data-zh="">to </span><em data-en="first step." data-zh="到启程之时。">first step.</em>
+      </h2>
+      <p data-en="Three places to begin — whether you're choosing a season, mapping a route, or just learning your first words of Mandarin." data-zh="三个开始的方式——无论你是在挑选季节、规划路线，还是刚刚学会第一句中文。">
+        Three places to begin — whether you're choosing a season, mapping a route, or just learning your first words of Mandarin.
+      </p>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan-card reveal">
+        <div class="icon">時</div>
+        <h4 data-en="When to Go" data-zh="最佳时节">When to Go</h4>
+        <p data-en="A month-by-month guide to weather, festivals, and crowd levels across China's diverse regions — from misty Guilin springs to crisp Beijing autumns." data-zh="按月精选的旅行指南：天气、节庆、人流——从烟雨漓江的春到清爽宜人的北京秋。">
+          A month-by-month guide to weather, festivals, and crowd levels across China's diverse regions — from misty Guilin springs to crisp Beijing autumns.
+        </p>
+        <a href="#" class="more" data-en="Read the Guide →" data-zh="阅读指南 →">Read the Guide →</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="icon">路</div>
+        <h4 data-en="Sample Routes" data-zh="行程范例">Sample Routes</h4>
+        <p data-en="Six tested itineraries: the Classic Triangle (Beijing–Xi'an–Shanghai), the Silk Road, the Yangtze, the Karst South, the Tibetan Plateau, and the Coastal Loop." data-zh="六条经典路线：传统三角（北京-西安-上海）、丝绸之路、长江流域、喀斯特之南、青藏高原与沿海环线。">
+          Six tested itineraries: the Classic Triangle (Beijing–Xi'an–Shanghai), the Silk Road, the Yangtze, the Karst South, the Tibetan Plateau, and the Coastal Loop.
+        </p>
+        <a href="#" class="more" data-en="View Routes →" data-zh="查看路线 →">View Routes →</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="icon">語</div>
+        <h4 data-en="Essential Phrases" data-zh="实用短语">Essential Phrases</h4>
+        <p data-en="A traveler's vocabulary — greetings, ordering food, asking directions — with pinyin, tones, and audio so your first conversation feels possible." data-zh="旅人词汇——问候、点餐、问路——附拼音、声调与音频，让你的第一次对话不再遥远。">
+          A traveler's vocabulary — greetings, ordering food, asking directions — with pinyin, tones, and audio so your first conversation feels possible.
+        </p>
+        <a href="#" class="more" data-en="Start Learning →" data-zh="开始学习 →">Start Learning →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STORE ============================ -->
+<section class="store" id="store">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-en="The Store" data-zh="精选商店">The Store</div>
+      <h2 class="title">
+        <span data-en="A " data-zh="">A </span><em data-en="small collection, " data-zh="精选小品，">small collection, </em><span data-en="carefully " data-zh="">carefully </span><em data-en="chosen." data-zh="慢工细作。">chosen.</em>
+      </h2>
+      <p data-en="Objects we have found in our travels — tea, porcelain, prints, books — all sourced from artisans we know personally." data-zh="我们在旅途中遇见的器物：茶、瓷、版画、书籍——皆来自我们熟识的手艺人。">
+        Objects we have found in our travels — tea, porcelain, prints, books — all sourced from artisans we know personally.
+      </p>
+    </div>
+
+    <div class="store-grid">
+      <div class="product reveal">
+        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="product-body">
+          <div class="cat" data-en="Tea · Yunnan" data-zh="茶 · 云南">Tea · Yunnan</div>
+          <h4 data-en="Aged Pu-erh, 2015" data-zh="2015 年陈年普洱">Aged Pu-erh, 2015</h4>
+          <div class="price"><span>¥ 480</span><button data-en="Add" data-zh="加入">Add</button></div>
+        </div>
+      </div>
+      <div class="product reveal">
+        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="product-body">
+          <div class="cat" data-en="Porcelain · Jingdezhen" data-zh="瓷器 · 景德镇">Porcelain · Jingdezhen</div>
+          <h4 data-en="Blue & White Teacup" data-zh="青花茶杯">Blue & White Teacup</h4>
+          <div class="price"><span>¥ 280</span><button data-en="Add" data-zh="加入">Add</button></div>
+        </div>
+      </div>
+      <div class="product reveal">
+        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="product-body">
+          <div class="cat" data-en="Print · Limited" data-zh="版画 · 限量">Print · Limited</div>
+          <h4 data-en="Misty Li River, Folio" data-zh="烟雨漓江 · 折页装帧">Misty Li River, Folio</h4>
+          <div class="price"><span>¥ 620</span><button data-en="Add" data-zh="加入">Add</button></div>
+        </div>
+      </div>
+      <div class="product reveal">
+        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80');"></div>
+        <div class="product-body">
+          <div class="cat" data-en="Books" data-zh="书籍">Books</div>
+          <h4 data-en="A Field Guide to Old Beijing" data-zh="老北京漫步志">A Field Guide to Old Beijing</h4>
+          <div class="price"><span>¥ 198</span><button data-en="Add" data-zh="加入">Add</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMMUNITY ============================ -->
+<section class="community" id="community">
+  <div class="container">
+    <div class="inner reveal">
+      <div class="eyebrow" data-en="The Community" data-zh="旅行社区">The Community</div>
+      <h2 class="title">
+        <span data-en="Travel " data-zh="">Travel </span><em data-en="together, " data-zh="同行，">together, </em><span data-en="even when " data-zh="">even when </span><em data-en="apart." data-zh="纵使天涯。">apart.</em>
+      </h2>
+      <p data-en="Join thousands of fellow travelers sharing photos, route advice, and stories from across China — from quick weekend reports to year-long expeditions." data-zh="加入成千上万的同行者，分享照片、路线建议与旅行故事——从周末短途到一年远征，应有尽有。">
+        Join thousands of fellow travelers sharing photos, route advice, and stories from across China — from quick weekend reports to year-long expeditions.
+      </p>
+      <div style="margin-top:36px;">
+        <a href="#" class="btn btn-primary">
+          <span data-en="Join the Forum" data-zh="加入论坛">Join the Forum</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">12,400+</div>
+          <div class="label" data-en="Members" data-zh="社区成员">Members</div>
+        </div>
+        <div class="stat">
+          <div class="num">2,160</div>
+          <div class="label" data-en="Trip Reports" data-zh="游记数量">Trip Reports</div>
+        </div>
+        <div class="stat">
+          <div class="num">34</div>
+          <div class="label" data-en="Provinces Covered" data-zh="覆盖省份">Provinces Covered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NEWSLETTER ============================ -->
+<section class="newsletter">
+  <div class="container nl-inner reveal">
+    <div>
+      <h3 data-en="Letters from the road. <em>Once a month.</em>" data-zh="<em>每月一封</em>，来自旅途的书信。">Letters from the road. <em>Once a month.</em></h3>
+      <p data-en="A single email each month — one essay, one destination, one recipe. No more, no less." data-zh="每月仅一封邮件——一篇散文、一个目的地、一份食谱。不多不少。">
+        A single email each month — one essay, one destination, one recipe. No more, no less.
+      </p>
+    </div>
+    <form class="nl-form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent=document.documentElement.lang==='zh'?'已订阅':'Subscribed';">
+      <input type="email" placeholder="your@email.com" required />
+      <button type="submit" data-en="Subscribe" data-zh="订阅">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="about">
+        <div class="brand">
+          <span class="brand-mark">探</span>
+          <span class="brand-text">
+            <span data-en="Exploring China" data-zh="探索中国">Exploring China</span>
+            <small data-en="A Comprehensive Guide" data-zh="深度旅行指南">A Comprehensive Guide</small>
+          </span>
+        </div>
+        <p style="margin-top:24px;" data-en="A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice." data-zh="一份关于中国目的地、文化与静谧角落的深度指南——献给愿意驻足细看的旅人。">
+          A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice.
+        </p>
+      </div>
+      <div>
+        <h5 data-en="Explore" data-zh="探索">Explore</h5>
+        <ul>
+          <li><a href="#destinations" data-en="Destinations" data-zh="目的地">Destinations</a></li>
+          <li><a href="#guide" data-en="The Guide" data-zh="深度导览">The Guide</a></li>
+          <li><a href="#fireworks" data-en="Fireworks" data-zh="烟花盛景">Fireworks</a></li>
+          <li><a href="#plan" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Shop &amp; Read" data-zh="商店与阅读">Shop &amp; Read</h5>
+        <ul>
+          <li><a href="#store" data-en="Store" data-zh="商店">Store</a></li>
+          <li><a href="#" data-en="Journal" data-zh="旅行札记">Journal</a></li>
+          <li><a href="#" data-en="Videos" data-zh="视频">Videos</a></li>
+          <li><a href="#community" data-en="Community" data-zh="社区">Community</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Contact" data-zh="联系我们">Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@exploring-china.com">hello@exploring-china.com</a></li>
+          <li data-en="Mon – Fri, 9 – 18 CST" data-zh="周一至周五 9:00 – 18:00">Mon – Fri, 9 – 18 CST</li>
+          <li><a href="#" data-en="Press Inquiries" data-zh="媒体合作">Press Inquiries</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px;">
+          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="WeChat"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 4C4.9 4 2 6.4 2 9.4c0 1.7 1 3.2 2.5 4.2L4 16l2.5-1.4c.6.2 1.3.3 2 .3.1-2.7 2.9-4.9 6.4-4.9h.6C15 7.1 12 4 8.5 4zM6 9c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm5 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.5 2c-3 0-5.5 2-5.5 4.5s2.5 4.5 5.5 4.5c.6 0 1.2-.1 1.7-.2L19.5 21l-.4-1.8C20.7 18.3 21.5 17 21.5 15.5c0-2.5-2.5-4.5-5.5-4.5zm-2 4c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8zm4 0c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8z"/></svg></a>
+          <a href="#" aria-label="Weibo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="10" cy="14" rx="6.5" ry="4.5"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.6.1 6.9.2 6.9.2s4 0 6.8-.3c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.1-.2-3.1zM10 14V8l5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div data-en="© 2026 Exploring China. All rights reserved." data-zh="© 2026 探索中国 版权所有">© 2026 Exploring China. All rights reserved.</div>
+      <div>
+        <a href="#" style="margin-right:18px;" data-en="Privacy" data-zh="隐私政策">Privacy</a>
+        <a href="#" data-en="Terms" data-zh="使用条款">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Language toggle ─────────────────────────────────────────
+  const toggleButtons = document.querySelectorAll('.lang-toggle button');
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en],[data-zh]').forEach(el => {
+      const txt = el.getAttribute('data-' + lang);
+      if (txt !== null) {
+        // Allow inline <em> tags in translation strings
+        if (txt.includes('<em>') || txt.includes('</em>')) {
+          el.innerHTML = txt;
+        } else {
+          el.textContent = txt;
+        }
+      }
+    });
+    toggleButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('xc_lang', lang); } catch(_) {}
+    document.title = lang === 'zh'
+      ? '探索中国 — 深度旅行指南'
+      : 'Exploring China — A Comprehensive Guide to Destinations, Culture & Journeys';
+  };
+  toggleButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  try {
+    const saved = localStorage.getItem('xc_lang');
+    if (saved === 'zh') setLang('zh');
+  } catch(_) {}
+
+  // ── Nav scroll state ────────────────────────────────────────
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // ── Mobile burger ───────────────────────────────────────────
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ── Reveal on scroll ────────────────────────────────────────
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
