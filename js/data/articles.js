@@ -108,5 +108,23 @@ export const articles = {
       {p:{en:'A small film library: short documentary pieces on fireworks artisans, cormorant fishermen, and the woman who still hand-rolls oolong leaves outside Wuyi Mountain.', zh:'小型影像库：聚焦烟花匠人、鸬鹚渔人、武夷山下仍以手工揉茶的老茶匠。'}},
       {p:{en:'Visit our YouTube channel and Bilibili account — links are in the footer.', zh:'更多影像请前往 YouTube 或 B 站频道，链接见页脚。'}}
     ]
+  },
+  'reading':{
+    title:{en:'Books for the Journey', zh:'旅途书单'},
+    by:{en:'Editorial · 8 min read', zh:'编辑团队 · 阅读约 8 分钟'},
+    hero:'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'There is no better companion for a long overnight train across China than a book written by someone who has made the same journey. These are the titles our editorial team returns to again and again — books that illuminate the country rather than summarize it.', zh:'漫长的中国夜间火车，没有比一本由同行者写就的书更好的伴侣了。以下是编辑团队一再回味的书目——它们不是对这个国度的概括，而是对其本质的照亮。'}},
+      {h:{en:'River Town — Peter Hessler', zh:'《江城》—— 何伟'}},
+      {p:{en:'Hessler arrived in Fuling, a remote city on the Yangtze, as a Peace Corps volunteer in 1996. River Town is the record of his two years there: the students who called him He Wei, the flooding river, the market stalls. It remains the finest book written by a foreigner about small-town Chinese life.', zh:'1996 年，何伟以和平队志愿者身份来到长江边的涪陵。《江城》记录了他在那里两年的生活：称他"何伟"的学生们，涨水的大河，集市摊位。这依然是外国人书写中国小城生活最出色的著作。'}},
+      {h:{en:'Wild Swans — Jung Chang', zh:'《鸿》—— 张戎'}},
+      {p:{en:'A grandmother who was a warlord\'s concubine. A mother who joined the Communist Party with idealism. A daughter who survived the Cultural Revolution. Wild Swans is one of the best-selling memoirs in publishing history — and it earns every copy sold.', zh:'一个曾是军阀小妾的外祖母；一个怀抱理想加入共产党的母亲；一个熬过文化大革命的女儿。《鸿》是出版史上最畅销的回忆录之一——它当之无愧。'}},
+      {h:{en:'Oracle Bones — Peter Hessler', zh:'《甲骨文》—— 何伟'}},
+      {p:{en:'Set at the turn of the millennium, Oracle Bones braids together the ancient writing system discovered on oracle bones, the lives of migrant workers in Shenzhen, and one\'s own evolution as a China watcher. It\'s harder than River Town and better.', zh:'故事发生在世纪之交，将甲骨文字、深圳农民工的生命，以及自身的成长交织在一起。它比《江城》更难读，也更好。'}},
+      {h:{en:'The Silk Roads — Peter Frankopan', zh:'《丝绸之路》—— 彼得·弗兰科潘'}},
+      {p:{en:'Not a travel book but a history — a retelling of world history from the perspective of the roads that connected China to Central Asia, Persia, and eventually Europe. Essential reading before the Silk Road section of any China trip.', zh:'这不是游记，而是一部历史——用连接中国与中亚、波斯乃至欧洲的道路，重新讲述世界史。踏上任何丝绸之路旅程前的必读之作。'}},
+      {h:{en:'Riding the Iron Rooster — Paul Theroux', zh:'《铁公鸡游记》—— 保罗·索鲁'}},
+      {p:{en:'In 1986, Theroux took the train from London to Tokyo, traversing China from Urumqi to Guangzhou. The writing is sharp, often uncomfortable, and entirely honest. His discomfort with official narratives makes him a surprisingly useful guide to how China presents itself.', zh:'1986 年，索鲁乘火车从伦敦到东京，途经中国，从乌鲁木齐到广州。文字犀利，常令人不适，却绝对诚实。他对官方叙事的抵触反而让他成为洞察中国如何自我展示的意外好向导。'}}
+    ]
   }
 };

@@ -7,7 +7,8 @@ import { products } from './data/products.js';
 const KEYS = {
   LANG:'xc_lang', CART:'xc_cart', USER:'xc_user',
   USERS:'xc_users', ORDERS:'xc_orders', SUBS:'xc_subs',
-  THREADS:'xc_threads', PENDING:'xc_pending_signup'
+  THREADS:'xc_threads', PENDING:'xc_pending_signup',
+  WISHLIST:'xc_wishlist'
 };
 
 const load = (k, def) => {
@@ -23,7 +24,8 @@ export const state = {
   orders: load(KEYS.ORDERS, []),
   subs: load(KEYS.SUBS, []),
   threads: load(KEYS.THREADS, null) || seedForum(),
-  pendingSignup: load(KEYS.PENDING, null)
+  pendingSignup: load(KEYS.PENDING, null),
+  wishlist: load(KEYS.WISHLIST, [])
 };
 
 function seedForum() {
@@ -42,7 +44,15 @@ export function persist() {
     localStorage.setItem(KEYS.SUBS, JSON.stringify(state.subs));
     localStorage.setItem(KEYS.THREADS, JSON.stringify(state.threads));
     localStorage.setItem(KEYS.PENDING, JSON.stringify(state.pendingSignup));
+    localStorage.setItem(KEYS.WISHLIST, JSON.stringify(state.wishlist));
   } catch(_) {}
+}
+
+export function toggleWishlist(id) {
+  const idx = state.wishlist.indexOf(id);
+  if (idx >= 0) state.wishlist.splice(idx, 1);
+  else state.wishlist.push(id);
+  persist();
 }
 
 /* simple non-cryptographic hash for demo password storage */

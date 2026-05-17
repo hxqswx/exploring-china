@@ -18,6 +18,24 @@ export function renderShell() {
   `;
   $('#footer').innerHTML = footerHTML();
 
+  // user chip — insert after accountBtn if logged in
+  const accountBtn = $('#accountBtn');
+  let chip = document.getElementById('userChip');
+  if (state.user) {
+    const firstName = state.user.name.split(' ')[0];
+    if (!chip) {
+      chip = document.createElement('button');
+      chip.id = 'userChip';
+      chip.className = 'user-chip';
+      accountBtn.insertAdjacentElement('afterend', chip);
+    }
+    chip.textContent = firstName;
+    chip.dataset.go = '/account';
+    chip.style.display = '';
+  } else if (chip) {
+    chip.style.display = 'none';
+  }
+
   $$('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.lang === state.lang));
   document.documentElement.lang = state.lang;
   document.title = state.lang === 'zh' ? '探索中国 — 深度旅行指南' : 'Exploring China — A Comprehensive Guide';
@@ -39,6 +57,7 @@ export function footerHTML() {
           <span class="brand-mark">探</span>
           <span class="brand-text">${t(T.brand)}<small>${t(T.brandSub)}</small></span>
         </div>
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop/dOq8NabjgqSl8B1r/exploringchinalogoimage-dBi0Mg8yRR3RdLud.png" alt="Exploring China" style="max-width:160px;margin-top:20px;opacity:.7;filter:brightness(0) invert(1);">
         <p style="margin-top:24px;">${t({en:'A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice.', zh:'一份关于中国目的地、文化与静谧角落的深度指南——献给愿意驻足细看的旅人。'})}</p>
       </div>
       <div>
@@ -48,6 +67,7 @@ export function footerHTML() {
           <li><a data-go="/guide/when-to-go">${t(T.nav.guide)}</a></li>
           <li><a data-go="/fireworks">${t(T.nav.fireworks)}</a></li>
           <li><a data-go="/plan">${t(T.nav.plan)}</a></li>
+          <li><a data-go="/guide/reading">${t({en:'Reading List', zh:'旅途书单'})}</a></li>
         </ul>
       </div>
       <div>

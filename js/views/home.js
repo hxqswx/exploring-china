@@ -1,7 +1,7 @@
 /* ──────────────────────────────────────────────────
    home view
    ────────────────────────────────────────────────── */
-import { state, addToCart, persist } from '../state.js';
+import { state, addToCart, persist, toggleWishlist } from '../state.js';
 import { T, t } from '../i18n.js';
 import { esc, fmt, $, toast } from '../ui.js';
 import { destinations } from '../data/destinations.js';
@@ -23,15 +23,22 @@ export function destCardHTML(id, classes) {
 export function productCardHTML(id) {
   const p = products[id];
   const inCart = state.cart.some(c => c.id === id);
-  return `<div class="product reveal">
-    <div class="product-img" style="background-image:url('${p.img}')" data-go="/store"></div>
-    <div class="product-body">
-      <div class="cat">${esc(t(p.cat))}</div>
-      <h4>${esc(t(p.name))}</h4>
-      <p class="desc">${esc(t(p.desc))}</p>
-      <div class="price">
-        <span>${fmt(p.price)}</span>
-        <button class="${inCart ? 'added' : ''}" data-add="${id}">${inCart ? t({en:'Added ✓', zh:'已加入 ✓'}) : t({en:'Add', zh:'加入'})}</button>
+  const inWish = state.wishlist.includes(id);
+  return `<div class="product-wrap reveal">
+    <div class="product">
+      <div class="product-img" style="background-image:url('${p.img}')" data-go="/store">
+        <button class="wishlist-btn ${inWish ? 'active' : ''}" data-wish="${id}" title="${t({en:'Save', zh:'收藏'})}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="${inWish ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="product-body">
+        <div class="cat">${esc(t(p.cat))}</div>
+        <h4>${esc(t(p.name))}</h4>
+        <p class="desc">${esc(t(p.desc))}</p>
+        <div class="price">
+          <span>${fmt(p.price)}</span>
+          <button class="${inCart ? 'added' : ''}" data-add="${id}">${inCart ? t({en:'Added ✓', zh:'已加入 ✓'}) : t({en:'Add', zh:'加入'})}</button>
+        </div>
       </div>
     </div>
   </div>`;
@@ -42,6 +49,11 @@ export function viewHome() {
   <header class="hero" id="top">
     <div class="hero-bg"></div>
     <div class="container hero-inner">
+      ${state.user ? `<div class="hero-user">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        ${t({en:'Welcome back', zh:'欢迎回来'})}, <strong>${esc(state.user.name)}</strong>
+        &nbsp;·&nbsp;<span data-go="/account">${t({en:'My Account', zh:'我的账户'})} →</span>
+      </div>` : ''}
       <div class="hero-eyebrow">${t({en:'A Journey Through the Middle Kingdom', zh:'穿越中华大地的旅程'})}</div>
       <h1>${state.lang === 'en' ? 'Discover the <em>beauty</em> of China.' : '探寻<em>千年之美</em>。'}</h1>
       <p class="lede">${t({en:'Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here.', zh:'精选目的地、用心规划的行程，以及让五千年文化、山川河流跃然眼前的故事。从这里，开启你的旅程。'})}</p>
@@ -123,6 +135,44 @@ export function viewHome() {
     </div>
   </section>
 
+  <section class="reading-section" id="reading">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">${t({en:'Reading While You Travel', zh:'旅途书单'})}</div>
+        <h2 class="title">${state.lang === 'en' ? 'Books for the <em>journey</em>.' : '<em>旅途伴侣</em>，书以载道。'}</h2>
+        <p>${t({en:'The titles our editors return to — for the overnight train, the teahouse afternoon, the nights when you want China to explain itself to you.', zh:'编辑团队一再回味的书目——为了那些夜间火车、茶馆午后，以及你想让中国向你娓娓道来的夜晚。'})}</p>
+      </div>
+      <div class="reading-grid">
+        ${[
+          {id:'river-town', quote:{en:'The finest book on small-town Chinese life.', zh:'书写中国小城生活最出色的著作。'}},
+          {id:'wild-swans', quote:{en:'Earns every copy sold.', zh:'当之无愧的畅销佳作。'}},
+          {id:'beijing-field-guide', quote:{en:'A hutong lover\'s essential companion.', zh:'胡同爱好者必备指南。'}},
+          {id:'li-river-folio', quote:{en:'Photographs that hold the light.', zh:'定格光影的摄影作品。'}}
+        ].map(rf => {
+          const p = products[rf.id];
+          if (!p) return '';
+          const inCart = state.cart.some(c => c.id === rf.id);
+          return `<div class="book-card reveal">
+            <div class="book-img" style="background-image:url('${p.img}')"></div>
+            <div class="book-body">
+              <div class="book-cat">${esc(t(p.cat))}</div>
+              <h4>${esc(t(p.name))}</h4>
+              <p>${esc(t(p.desc))}</p>
+              <div class="book-pull">"${esc(t(rf.quote))}"</div>
+              <div class="book-foot">
+                <span class="book-price">${fmt(p.price)}</span>
+                <button class="book-add ${inCart ? 'added' : ''}" data-add="${rf.id}">${inCart ? t({en:'Added ✓', zh:'已加入 ✓'}) : t({en:'Add to Cart', zh:'加入购物车'})}</button>
+              </div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="text-align:center;margin-top:56px;">
+        <button class="btn btn-outline" data-go="/guide/reading">${t({en:'Full reading list', zh:'查看完整书单'})} <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
   <section class="store-bg" id="store">
     <div class="container">
       <div class="section-head reveal">
@@ -182,6 +232,18 @@ export function wireHome() {
       toast(state.lang === 'zh' ? '已加入购物车' : 'Added to cart');
       btn.classList.add('added');
       btn.textContent = state.lang === 'zh' ? '已加入 ✓' : 'Added ✓';
+    });
+  });
+
+  // Wishlist buttons
+  document.querySelectorAll('[data-wish]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      toggleWishlist(btn.dataset.wish);
+      btn.classList.toggle('active');
+      const svg = btn.querySelector('svg');
+      if (svg) svg.setAttribute('fill', btn.classList.contains('active') ? 'currentColor' : 'none');
+      toast(state.lang === 'zh' ? (btn.classList.contains('active') ? '已收藏' : '已取消收藏') : (btn.classList.contains('active') ? 'Saved' : 'Removed from saved'));
     });
   });
 
