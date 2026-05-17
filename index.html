@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Exploring China — A Comprehensive Guide to Destinations, Culture & Journeys</title>
-<meta name="description" content="Discover the beauty of China through curated destinations, travel guides, cultural stories, fireworks of celebration, and a community of fellow explorers." />
-<meta name="keywords" content="China travel, Great Wall, Forbidden City, Li River, Zhangjiajie, Yunnan, Xi'an, China tours, Chinese culture, fireworks" />
+<title>Exploring China — A Comprehensive Guide</title>
+<meta name="description" content="A comprehensive travel guide to China — destinations, culture, store, and journeys planned with care." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,888 +12,1666 @@
 
 <style>
   :root{
-    --ivory:#FAF7F2;
-    --paper:#F3EFE7;
-    --ink:#1A1410;
-    --ink-soft:#3B302A;
-    --muted:#7A6E62;
-    --line:#E4DCCE;
-    --red:#9B2A28;
-    --red-deep:#6E1B1A;
-    --gold:#C9A961;
-    --jade:#5B8B7A;
-    --serif:'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
-    --sans:'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ivory:#FAF7F2;--paper:#F3EFE7;--ink:#1A1410;--ink-soft:#3B302A;
+    --muted:#7A6E62;--line:#E4DCCE;--red:#9B2A28;--red-deep:#6E1B1A;
+    --gold:#C9A961;--jade:#5B8B7A;
+    --serif:'Cormorant Garamond','Noto Serif SC',Georgia,serif;
+    --sans:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;
     --shadow-sm:0 1px 2px rgba(26,20,16,.06);
     --shadow:0 12px 32px rgba(26,20,16,.10);
     --shadow-lg:0 30px 60px rgba(26,20,16,.18);
   }
   html[lang="zh"]{--serif:'Noto Serif SC','Cormorant Garamond',Georgia,serif;}
-
   *,*::before,*::after{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:var(--sans);
-    color:var(--ink);
-    background:var(--ivory);
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-
+  button{font-family:inherit;}
   .container{max-width:1240px;margin:0 auto;padding:0 32px;}
-  @media (max-width:640px){.container{padding:0 20px;}}
+  .container-narrow{max-width:880px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.container,.container-narrow{padding:0 20px;}}
 
-  /* ── NAV ─────────────────────────────────────────── */
-  .nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(250,247,242,.86);
-    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s, background .3s;
-  }
+  /* ── NAV ────────────────────────────────────────── */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,242,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
   .nav.scrolled{border-color:var(--line);background:rgba(250,247,242,.95);}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px;}
-  .brand{display:flex;align-items:center;gap:12px;}
-  .brand-mark{
-    width:42px;height:42px;display:grid;place-items:center;
-    background:var(--red);color:var(--ivory);
-    font-family:var(--serif);font-size:22px;font-weight:600;
-    border-radius:2px;letter-spacing:.02em;
-  }
-  .brand-text{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.01em;}
-  .brand-text small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-top:-4px;font-weight:500;}
-
-  .nav-links{display:flex;align-items:center;gap:36px;list-style:none;margin:0;padding:0;}
-  .nav-links a{
-    font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
-    color:var(--ink-soft);position:relative;padding:6px 0;transition:color .2s;
-  }
-  .nav-links a::after{
-    content:'';position:absolute;left:0;right:0;bottom:0;height:1px;
-    background:var(--red);transform:scaleX(0);transform-origin:left;
-    transition:transform .35s cubic-bezier(.2,.8,.2,1);
-  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;cursor:pointer;}
+  .brand-mark{width:42px;height:42px;display:grid;place-items:center;background:var(--red);color:var(--ivory);font-family:var(--serif);font-size:22px;font-weight:600;border-radius:2px;letter-spacing:.02em;}
+  .brand-text{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.01em;line-height:1.1;}
+  .brand-text small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-top:2px;font-weight:500;}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--ink-soft);position:relative;padding:6px 0;transition:color .2s;cursor:pointer;}
+  .nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1);}
   .nav-links a:hover{color:var(--red);}
-  .nav-links a:hover::after{transform:scaleX(1);}
-
-  .lang-toggle{
-    display:inline-flex;align-items:center;border:1px solid var(--line);
-    border-radius:999px;padding:4px;background:var(--ivory);
-  }
-  .lang-toggle button{
-    appearance:none;border:0;background:transparent;cursor:pointer;
-    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;
-    padding:6px 14px;border-radius:999px;color:var(--muted);
-    transition:all .25s;
-  }
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .lang-toggle{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:4px;background:var(--ivory);}
+  .lang-toggle button{appearance:none;border:0;background:transparent;cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;padding:6px 14px;border-radius:999px;color:var(--muted);transition:all .25s;}
   .lang-toggle button.active{background:var(--ink);color:var(--ivory);}
+  .icon-btn{position:relative;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;cursor:pointer;color:var(--ink-soft);background:transparent;border:1px solid transparent;transition:all .2s;}
+  .icon-btn:hover{background:var(--paper);}
+  .icon-btn .badge{position:absolute;top:-2px;right:-2px;min-width:18px;height:18px;padding:0 5px;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:999px;display:grid;place-items:center;border:2px solid var(--ivory);}
   .nav-burger{display:none;background:none;border:0;cursor:pointer;padding:8px;}
-  .nav-burger span{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px 0;transition:.3s;}
-
-  @media (max-width:920px){
-    .nav-links{
-      position:fixed;top:78px;left:0;right:0;
-      background:var(--ivory);flex-direction:column;align-items:flex-start;
-      gap:0;padding:0;max-height:0;overflow:hidden;
-      border-bottom:1px solid transparent;transition:max-height .35s, border-color .35s;
-    }
-    .nav-links.open{max-height:520px;border-color:var(--line);}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;transition:.3s;}
+  @media(max-width:1020px){
+    .nav-links{position:fixed;top:78px;left:0;right:0;background:var(--ivory);flex-direction:column;align-items:flex-start;gap:0;padding:0;max-height:0;overflow:hidden;border-bottom:1px solid transparent;transition:max-height .35s,border-color .35s;}
+    .nav-links.open{max-height:600px;border-color:var(--line);}
     .nav-links li{width:100%;border-top:1px solid var(--line);}
     .nav-links li:first-child{border:0;}
     .nav-links a{display:block;padding:18px 32px;}
     .nav-burger{display:block;}
-    .nav-right{display:flex;align-items:center;gap:14px;}
   }
 
-  /* ── HERO ────────────────────────────────────────── */
-  .hero{
-    position:relative;min-height:100vh;display:flex;align-items:center;
-    color:var(--ivory);overflow:hidden;padding:140px 0 80px;
-  }
-  .hero-bg{
-    position:absolute;inset:0;
-    background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80');
-    background-size:cover;background-position:center;
-    transform:scale(1.05);
-    animation:slowZoom 24s ease-in-out infinite alternate;
-  }
-  @keyframes slowZoom{from{transform:scale(1.05);}to{transform:scale(1.15);}}
-  .hero::before{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(26,20,16,.35) 0%,rgba(26,20,16,.55) 60%,rgba(26,20,16,.75) 100%);
-    z-index:1;
-  }
-  .hero-inner{position:relative;z-index:2;width:100%;}
-  .hero-eyebrow{
-    display:inline-flex;align-items:center;gap:14px;
-    font-size:12px;letter-spacing:.35em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:28px;
-  }
-  .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold);}
-  .hero h1{
-    font-family:var(--serif);font-weight:400;
-    font-size:clamp(44px, 7vw, 96px);
-    line-height:1.02;letter-spacing:-.01em;margin:0 0 28px;
-    max-width:14ch;
-  }
-  .hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
-  .hero p.lede{
-    font-size:clamp(16px,1.25vw,19px);max-width:54ch;
-    color:rgba(250,247,242,.85);margin:0 0 44px;font-weight:300;
-  }
-  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:16px 32px;font-size:13px;letter-spacing:.2em;
-    text-transform:uppercase;font-weight:600;border-radius:2px;
-    transition:all .3s;cursor:pointer;border:1px solid transparent;
-    font-family:var(--sans);
-  }
+  /* ── BUTTONS ────────────────────────────────────── */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border-radius:2px;transition:all .3s;cursor:pointer;border:1px solid transparent;font-family:var(--sans);}
   .btn-primary{background:var(--red);color:var(--ivory);}
   .btn-primary:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
-  .btn-ghost{border-color:rgba(250,247,242,.4);color:var(--ivory);}
+  .btn-ghost{border-color:rgba(250,247,242,.4);color:var(--ivory);background:transparent;}
   .btn-ghost:hover{background:var(--ivory);color:var(--ink);}
+  .btn-outline{border-color:var(--ink);color:var(--ink);background:transparent;}
+  .btn-outline:hover{background:var(--ink);color:var(--ivory);}
+  .btn-sm{padding:10px 20px;font-size:11px;}
+  .btn-block{display:flex;width:100%;}
+  .btn:disabled{opacity:.4;cursor:not-allowed;}
   .btn .arrow{transition:transform .3s;}
   .btn:hover .arrow{transform:translateX(4px);}
 
-  .hero-scroll{
-    position:absolute;left:50%;bottom:36px;transform:translateX(-50%);
-    z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;
-    font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-    color:rgba(250,247,242,.6);
-  }
-  .hero-scroll::after{
-    content:'';width:1px;height:48px;background:rgba(250,247,242,.4);
-    animation:scrollHint 2s ease-in-out infinite;
-  }
+  /* ── HERO ───────────────────────────────────────── */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:var(--ivory);overflow:hidden;padding:140px 0 80px;}
+  .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;transform:scale(1.05);animation:slowZoom 24s ease-in-out infinite alternate;}
+  @keyframes slowZoom{from{transform:scale(1.05);}to{transform:scale(1.15);}}
+  .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,20,16,.35) 0%,rgba(26,20,16,.55) 60%,rgba(26,20,16,.75) 100%);z-index:1;}
+  .hero-inner{position:relative;z-index:2;width:100%;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+  .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:36px;height:1px;background:var(--gold);}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,96px);line-height:1.02;letter-spacing:-.01em;margin:0 0 28px;max-width:14ch;}
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
+  html[lang="zh"] .hero h1 em{font-style:normal;}
+  .hero p.lede{font-size:clamp(16px,1.25vw,19px);max-width:54ch;color:rgba(250,247,242,.85);margin:0 0 44px;font-weight:300;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-scroll{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.6);}
+  .hero-scroll::after{content:'';width:1px;height:48px;background:rgba(250,247,242,.4);animation:scrollHint 2s ease-in-out infinite;}
   @keyframes scrollHint{0%,100%{transform:scaleY(.3);transform-origin:top;}50%{transform:scaleY(1);}}
 
-  /* ── SECTION FRAME ───────────────────────────────── */
+  /* ── SECTIONS ───────────────────────────────────── */
   section{padding:120px 0;}
-  @media (max-width:768px){section{padding:80px 0;}}
-
+  @media(max-width:768px){section{padding:80px 0;}}
   .section-head{text-align:center;max-width:680px;margin:0 auto 72px;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:14px;
-    font-size:11px;letter-spacing:.4em;text-transform:uppercase;
-    color:var(--red);font-weight:600;margin-bottom:20px;
-  }
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:20px;}
   .eyebrow::before,.eyebrow::after{content:'';width:28px;height:1px;background:var(--red);}
-  h2.title{
-    font-family:var(--serif);font-weight:400;
-    font-size:clamp(36px,4.5vw,60px);line-height:1.08;
-    letter-spacing:-.01em;margin:0 0 22px;color:var(--ink);
-  }
+  h2.title{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.5vw,60px);line-height:1.08;letter-spacing:-.01em;margin:0 0 22px;color:var(--ink);}
   h2.title em{font-style:italic;color:var(--red);}
+  html[lang="zh"] h2.title em{font-style:normal;}
   .section-head p{font-size:17px;color:var(--muted);max-width:52ch;margin:0 auto;}
 
-  /* ── DESTINATIONS ───────────────────────────────── */
-  .destinations{background:var(--ivory);}
-  .dest-grid{
-    display:grid;grid-template-columns:repeat(12,1fr);gap:28px;
-  }
-  .dest-card{
-    position:relative;overflow:hidden;border-radius:2px;
-    cursor:pointer;background:var(--ink);
-    aspect-ratio:4/5;
-  }
-  .dest-card .photo{
-    position:absolute;inset:0;background-size:cover;background-position:center;
-    transition:transform 1.2s cubic-bezier(.2,.8,.2,1), filter .6s;
-    filter:saturate(.9);
-  }
+  /* ── DESTINATIONS GRID ──────────────────────────── */
+  .dest-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px;}
+  .dest-card{position:relative;overflow:hidden;border-radius:2px;cursor:pointer;background:var(--ink);aspect-ratio:4/5;}
+  .dest-card .photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s;filter:saturate(.9);}
   .dest-card:hover .photo{transform:scale(1.08);filter:saturate(1.05);}
-  .dest-card::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(26,20,16,0) 30%,rgba(26,20,16,.85) 100%);
-  }
-  .dest-card .meta{
-    position:absolute;left:0;right:0;bottom:0;padding:32px;color:var(--ivory);z-index:2;
-  }
-  .dest-card .num{
-    font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);
-    letter-spacing:.05em;margin-bottom:8px;
-  }
-  .dest-card h3{
-    font-family:var(--serif);font-weight:500;font-size:30px;
-    margin:0 0 8px;line-height:1.1;
-  }
-  .dest-card .region{
-    font-size:11px;letter-spacing:.25em;text-transform:uppercase;
-    color:rgba(250,247,242,.7);
-  }
-  .dest-card.span-6{grid-column:span 6;}
-  .dest-card.span-4{grid-column:span 4;}
-  .dest-card.span-8{grid-column:span 8;}
-  .dest-card.tall{aspect-ratio:3/4;}
-  .dest-card.wide{aspect-ratio:16/10;}
-  @media (max-width:900px){
-    .dest-card.span-6,.dest-card.span-4,.dest-card.span-8{grid-column:span 12;}
-    .dest-card{aspect-ratio:4/3;}
-  }
+  .dest-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,20,16,0) 30%,rgba(26,20,16,.85) 100%);}
+  .dest-card .meta{position:absolute;left:0;right:0;bottom:0;padding:32px;color:var(--ivory);z-index:2;}
+  .dest-card .num{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);letter-spacing:.05em;margin-bottom:8px;}
+  .dest-card h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:0 0 8px;line-height:1.1;}
+  .dest-card .region{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(250,247,242,.7);}
+  .dest-card.span-6{grid-column:span 6;}.dest-card.span-4{grid-column:span 4;}.dest-card.span-8{grid-column:span 8;}
+  .dest-card.tall{aspect-ratio:3/4;}.dest-card.wide{aspect-ratio:16/10;}
+  @media(max-width:900px){.dest-card.span-6,.dest-card.span-4,.dest-card.span-8{grid-column:span 12;}.dest-card{aspect-ratio:4/3;}}
 
-  /* ── EDITORIAL / ABOUT ──────────────────────────── */
+  /* ── EDITORIAL ──────────────────────────────────── */
   .editorial{background:var(--paper);position:relative;overflow:hidden;}
-  .editorial::before{
-    content:'探';position:absolute;font-family:var(--serif);
-    font-size:520px;line-height:1;color:rgba(155,42,40,.04);
-    top:-100px;right:-60px;pointer-events:none;font-weight:300;
-  }
-  .editorial-grid{
-    display:grid;grid-template-columns:1.05fr 1fr;gap:90px;align-items:center;
-  }
-  @media (max-width:900px){.editorial-grid{grid-template-columns:1fr;gap:50px;}.editorial::before{font-size:300px;}}
-  .editorial-img{
-    aspect-ratio:4/5;background-size:cover;background-position:center;
-    background-image:url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80');
-    box-shadow:var(--shadow-lg);position:relative;
-  }
-  .editorial-img::after{
-    content:'';position:absolute;inset:14px;border:1px solid rgba(250,247,242,.4);
-    pointer-events:none;
-  }
+  .editorial::before{content:'探';position:absolute;font-family:var(--serif);font-size:520px;line-height:1;color:rgba(155,42,40,.04);top:-100px;right:-60px;pointer-events:none;font-weight:300;}
+  .editorial-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:90px;align-items:center;}
+  @media(max-width:900px){.editorial-grid{grid-template-columns:1fr;gap:50px;}.editorial::before{font-size:300px;}}
+  .editorial-img{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80');box-shadow:var(--shadow-lg);position:relative;}
+  .editorial-img::after{content:'';position:absolute;inset:14px;border:1px solid rgba(250,247,242,.4);pointer-events:none;}
   .editorial-body p{font-size:17px;color:var(--ink-soft);margin:0 0 20px;}
-  .editorial-body p.first::first-letter{
-    font-family:var(--serif);font-size:72px;line-height:.85;
-    float:left;padding:6px 14px 0 0;color:var(--red);font-weight:500;
-  }
-  .pull-quote{
-    font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;
-    color:var(--ink);border-left:2px solid var(--red);padding:8px 0 8px 24px;
-    margin:36px 0;
-  }
-  .signature{
-    margin-top:36px;display:flex;align-items:center;gap:16px;
-    font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
-  }
+  .editorial-body p.first::first-letter{font-family:var(--serif);font-size:72px;line-height:.85;float:left;padding:6px 14px 0 0;color:var(--red);font-weight:500;}
+  .pull-quote{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;color:var(--ink);border-left:2px solid var(--red);padding:8px 0 8px 24px;margin:36px 0;}
+  html[lang="zh"] .pull-quote{font-style:normal;}
+  .signature{margin-top:36px;display:flex;align-items:center;gap:16px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
   .signature::before{content:'';width:48px;height:1px;background:var(--ink);}
 
   /* ── FIREWORKS ──────────────────────────────────── */
-  .fireworks{
-    background:var(--ink);color:var(--ivory);position:relative;overflow:hidden;
-  }
-  .fireworks::before{
-    content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse at 30% 50%, rgba(201,169,97,.15), transparent 60%),
-               radial-gradient(ellipse at 80% 30%, rgba(155,42,40,.18), transparent 60%);
-    pointer-events:none;
-  }
+  .fireworks{background:var(--ink);color:var(--ivory);position:relative;overflow:hidden;}
+  .fireworks::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,169,97,.15),transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(155,42,40,.18),transparent 60%);pointer-events:none;}
   .fireworks .section-head h2 em{color:var(--gold);}
   .fireworks .section-head p{color:rgba(250,247,242,.7);}
   .fireworks .eyebrow{color:var(--gold);}
   .fireworks .eyebrow::before,.fireworks .eyebrow::after{background:var(--gold);}
-  .video-frame{
-    position:relative;max-width:1040px;margin:0 auto;
-    aspect-ratio:16/9;border-radius:2px;overflow:hidden;
-    box-shadow:0 40px 80px rgba(0,0,0,.5);
-    border:1px solid rgba(201,169,97,.2);
-  }
+  .video-frame{position:relative;max-width:1040px;margin:0 auto;aspect-ratio:16/9;border-radius:2px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);border:1px solid rgba(201,169,97,.2);}
   .video-frame video{width:100%;height:100%;object-fit:cover;display:block;}
-  .fireworks-features{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
-    margin-top:80px;max-width:1040px;margin-left:auto;margin-right:auto;
-  }
-  @media (max-width:768px){.fireworks-features{grid-template-columns:1fr;gap:36px;}}
+  .fireworks-features{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:80px;max-width:1040px;margin-left:auto;margin-right:auto;}
+  @media(max-width:768px){.fireworks-features{grid-template-columns:1fr;gap:36px;}}
   .ff-item{text-align:center;}
-  .ff-item .num{
-    font-family:var(--serif);font-size:54px;font-style:italic;color:var(--gold);
-    font-weight:300;line-height:1;margin-bottom:12px;
-  }
-  .ff-item h4{
-    font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 10px;
-  }
+  .ff-item .num{font-family:var(--serif);font-size:54px;font-style:italic;color:var(--gold);font-weight:300;line-height:1;margin-bottom:12px;}
+  .ff-item h4{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 10px;}
   .ff-item p{font-size:15px;color:rgba(250,247,242,.65);margin:0;}
 
-  /* ── PLAN / TIPS ────────────────────────────────── */
-  .plan{background:var(--ivory);}
+  /* ── PLAN ───────────────────────────────────────── */
   .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
-  @media (max-width:900px){.plan-grid{grid-template-columns:1fr;}}
-  .plan-card{
-    padding:48px 36px;background:var(--paper);border-radius:2px;
-    transition:transform .4s, box-shadow .4s;position:relative;overflow:hidden;
-  }
+  @media(max-width:900px){.plan-grid{grid-template-columns:1fr;}}
+  .plan-card{padding:48px 36px;background:var(--paper);border-radius:2px;transition:transform .4s,box-shadow .4s;position:relative;overflow:hidden;cursor:pointer;}
   .plan-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-  .plan-card .icon{
-    width:56px;height:56px;display:grid;place-items:center;
-    background:var(--ivory);color:var(--red);border-radius:50%;
-    margin-bottom:24px;font-family:var(--serif);font-size:24px;font-style:italic;
-  }
-  .plan-card h4{
-    font-family:var(--serif);font-size:26px;font-weight:500;margin:0 0 14px;
-  }
+  .plan-card .icon{width:56px;height:56px;display:grid;place-items:center;background:var(--ivory);color:var(--red);border-radius:50%;margin-bottom:24px;font-family:var(--serif);font-size:24px;font-style:italic;}
+  .plan-card h4{font-family:var(--serif);font-size:26px;font-weight:500;margin:0 0 14px;}
   .plan-card p{font-size:15px;color:var(--ink-soft);margin:0 0 20px;}
-  .plan-card .more{
-    font-size:11px;letter-spacing:.25em;text-transform:uppercase;
-    color:var(--red);font-weight:600;display:inline-flex;align-items:center;gap:8px;
-  }
+  .plan-card .more{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;display:inline-flex;align-items:center;gap:8px;}
 
   /* ── STORE ──────────────────────────────────────── */
-  .store{background:var(--paper);}
+  .store-bg{background:var(--paper);}
   .store-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-  @media (max-width:1000px){.store-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.store-grid{grid-template-columns:1fr;}}
-  .product{
-    background:var(--ivory);transition:transform .4s, box-shadow .4s;
-  }
+  @media(max-width:1000px){.store-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.store-grid{grid-template-columns:1fr;}}
+  .product{background:var(--ivory);transition:transform .4s,box-shadow .4s;display:flex;flex-direction:column;}
   .product:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
-  .product-img{
-    aspect-ratio:1/1;background-size:cover;background-position:center;
-    background-color:var(--paper);
-  }
-  .product-body{padding:24px;}
-  .product .cat{
-    font-size:10px;letter-spacing:.25em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:8px;
-  }
+  .product-img{aspect-ratio:1/1;background-size:cover;background-position:center;background-color:var(--paper);cursor:pointer;}
+  .product-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+  .product .cat{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
   .product h4{font-family:var(--serif);font-size:20px;font-weight:500;margin:0 0 10px;}
-  .product .price{
-    display:flex;justify-content:space-between;align-items:center;
-    margin-top:14px;
-  }
+  .product .desc{font-size:13px;color:var(--muted);margin:0 0 14px;flex:1;}
+  .product .price{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
   .product .price span{font-family:var(--serif);font-size:22px;color:var(--red);}
-  .product .price button{
-    background:none;border:1px solid var(--ink);color:var(--ink);
-    padding:8px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    cursor:pointer;font-family:var(--sans);font-weight:600;transition:all .25s;
-  }
+  .product .price button{background:none;border:1px solid var(--ink);color:var(--ink);padding:8px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-family:var(--sans);font-weight:600;transition:all .25s;}
   .product .price button:hover{background:var(--ink);color:var(--ivory);}
+  .product .price button.added{background:var(--jade);color:#fff;border-color:var(--jade);}
 
   /* ── COMMUNITY ──────────────────────────────────── */
-  .community{
-    background:var(--ivory);text-align:center;
-    background-image:
-      linear-gradient(rgba(250,247,242,.93),rgba(250,247,242,.93)),
-      url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=2000&q=80');
-    background-size:cover;background-position:center;background-attachment:fixed;
-  }
+  .community{background:var(--ivory);text-align:center;background-image:linear-gradient(rgba(250,247,242,.93),rgba(250,247,242,.93)),url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;background-attachment:fixed;}
   .community .inner{max-width:720px;margin:0 auto;}
-  .community .stats{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:40px;margin-top:64px;padding-top:48px;
-    border-top:1px solid var(--line);
-  }
-  @media (max-width:640px){.community .stats{grid-template-columns:1fr;gap:32px;}}
-  .stat .num{
-    font-family:var(--serif);font-size:54px;font-weight:500;color:var(--red);
-    line-height:1;margin-bottom:8px;
-  }
-  .stat .label{
-    font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);
-  }
+  .community .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px;padding-top:48px;border-top:1px solid var(--line);}
+  @media(max-width:640px){.community .stats{grid-template-columns:1fr;gap:32px;}}
+  .stat .num{font-family:var(--serif);font-size:54px;font-weight:500;color:var(--red);line-height:1;margin-bottom:8px;}
+  .stat .label{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);}
 
   /* ── NEWSLETTER ─────────────────────────────────── */
   .newsletter{background:var(--ink);color:var(--ivory);padding:90px 0;}
-  .nl-inner{
-    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-  }
-  @media (max-width:768px){.nl-inner{grid-template-columns:1fr;gap:32px;}}
-  .nl-inner h3{
-    font-family:var(--serif);font-size:clamp(28px,3vw,42px);
-    font-weight:400;line-height:1.15;margin:0 0 14px;
-  }
+  .nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  @media(max-width:768px){.nl-inner{grid-template-columns:1fr;gap:32px;}}
+  .nl-inner h3{font-family:var(--serif);font-size:clamp(28px,3vw,42px);font-weight:400;line-height:1.15;margin:0 0 14px;}
   .nl-inner h3 em{color:var(--gold);font-style:italic;}
+  html[lang="zh"] .nl-inner h3 em{font-style:normal;}
   .nl-inner p{color:rgba(250,247,242,.65);margin:0;font-size:15px;}
   .nl-form{display:flex;gap:0;border:1px solid rgba(250,247,242,.25);background:rgba(250,247,242,.05);}
-  .nl-form input{
-    flex:1;background:transparent;border:0;padding:18px 22px;
-    color:var(--ivory);font-family:var(--sans);font-size:15px;outline:none;
-  }
+  .nl-form input{flex:1;background:transparent;border:0;padding:18px 22px;color:var(--ivory);font-family:var(--sans);font-size:15px;outline:none;}
   .nl-form input::placeholder{color:rgba(250,247,242,.4);}
-  .nl-form button{
-    background:var(--gold);color:var(--ink);border:0;padding:0 28px;
-    font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
-    cursor:pointer;transition:background .25s;font-family:var(--sans);
-  }
+  .nl-form button{background:var(--gold);color:var(--ink);border:0;padding:0 28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:background .25s;font-family:var(--sans);}
   .nl-form button:hover{background:#dfc07a;}
 
   /* ── FOOTER ─────────────────────────────────────── */
   footer{background:#0F0B09;color:rgba(250,247,242,.7);padding:80px 0 32px;}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px;}
-  @media (max-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px;}}
-  @media (max-width:480px){.foot-grid{grid-template-columns:1fr;}}
-  footer h5{
-    font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
-    color:var(--gold);margin:0 0 24px;font-weight:600;
-  }
+  @media(max-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+  @media(max-width:480px){.foot-grid{grid-template-columns:1fr;}}
+  footer h5{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 24px;font-weight:600;}
   footer ul{list-style:none;padding:0;margin:0;}
   footer ul li{margin-bottom:12px;font-size:14px;}
-  footer ul li a{transition:color .2s;}
+  footer ul li a{transition:color .2s;cursor:pointer;}
   footer ul li a:hover{color:var(--gold);}
   footer .about{font-size:14px;line-height:1.7;}
   footer .about .brand-text{color:var(--ivory);font-size:24px;}
-  .foot-bottom{
-    padding-top:32px;border-top:1px solid rgba(250,247,242,.1);
-    display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,242,.4);
-    flex-wrap:wrap;gap:14px;
-  }
+  .foot-bottom{padding-top:32px;border-top:1px solid rgba(250,247,242,.1);display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,242,.4);flex-wrap:wrap;gap:14px;}
   .socials{display:flex;gap:12px;}
-  .socials a{
-    width:36px;height:36px;border:1px solid rgba(250,247,242,.2);
-    display:grid;place-items:center;border-radius:50%;
-    transition:all .25s;
-  }
+  .socials a{width:36px;height:36px;border:1px solid rgba(250,247,242,.2);display:grid;place-items:center;border-radius:50%;transition:all .25s;cursor:pointer;}
   .socials a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
 
-  /* ── REVEAL ANIMATIONS ─────────────────────────── */
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1);}
+  /* ── REVEAL ─────────────────────────────────────── */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);}
   .reveal.in{opacity:1;transform:none;}
 
-  /* Chinese typography micro-adjust */
+  /* ── PAGE LAYOUT (NON-HOME ROUTES) ──────────────── */
+  .page{padding:140px 0 100px;min-height:100vh;}
+  .page-narrow{max-width:880px;margin:0 auto;padding:140px 32px 100px;min-height:100vh;}
+  @media(max-width:640px){.page-narrow{padding:120px 20px 80px;}}
+  .crumbs{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;}
+  .crumbs a{color:var(--muted);cursor:pointer;transition:color .2s;}
+  .crumbs a:hover{color:var(--red);}
+  .crumbs span{margin:0 8px;}
+
+  /* ── DESTINATION DETAIL ─────────────────────────── */
+  .dest-hero{position:relative;height:60vh;min-height:480px;background-size:cover;background-position:center;display:flex;align-items:flex-end;color:var(--ivory);margin-top:78px;}
+  .dest-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,20,16,.2) 0%,rgba(26,20,16,.7) 100%);}
+  .dest-hero .container{position:relative;z-index:1;padding-bottom:60px;}
+  .dest-hero .num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:16px;letter-spacing:.05em;margin-bottom:8px;}
+  .dest-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:1.05;margin:0 0 12px;}
+  .dest-hero .region{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.8);}
+  .dest-body{display:grid;grid-template-columns:1fr 320px;gap:64px;padding:80px 0;}
+  @media(max-width:900px){.dest-body{grid-template-columns:1fr;gap:40px;}}
+  .dest-body h2{font-family:var(--serif);font-size:36px;font-weight:500;margin:0 0 18px;line-height:1.15;}
+  .dest-body h3{font-family:var(--serif);font-size:24px;font-weight:500;margin:40px 0 12px;}
+  .dest-body p{font-size:16px;color:var(--ink-soft);margin:0 0 18px;}
+  .sidecard{background:var(--paper);padding:32px;border-left:2px solid var(--red);position:sticky;top:100px;}
+  .sidecard h4{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+  .sidecard h5{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 14px;}
+  .sidecard dl{margin:0 0 24px;}
+  .sidecard dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:600;}
+  .sidecard dd{margin:0 0 16px;font-size:14px;color:var(--ink-soft);}
+  .musts{list-style:none;margin:0;padding:0;}
+  .musts li{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;}
+  .musts li:last-child{border:0;}
+  .musts .num{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--red);min-width:36px;}
+  html[lang="zh"] .musts .num{font-style:normal;}
+  .musts h4{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 6px;}
+  .musts p{font-size:14px;color:var(--muted);margin:0;}
+  .itin{margin:24px 0 0;}
+  .itin .day{padding:24px;background:var(--paper);margin-bottom:14px;border-radius:2px;border-left:2px solid var(--gold);}
+  .itin .day-title{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 14px;}
+  .itin .slot{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:8px 0;font-size:14px;}
+  .itin .slot strong{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:3px;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0;}
+  @media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr);}}
+  .gallery img{aspect-ratio:4/5;object-fit:cover;cursor:pointer;transition:transform .4s;}
+  .gallery img:hover{transform:scale(1.03);}
+  .related{padding:80px 0;background:var(--paper);}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+  @media(max-width:768px){.related-grid{grid-template-columns:1fr;}}
+
+  /* ── CART ───────────────────────────────────────── */
+  .cart-grid{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;}
+  @media(max-width:900px){.cart-grid{grid-template-columns:1fr;}}
+  .cart-list{background:var(--paper);}
+  .cart-item{display:grid;grid-template-columns:120px 1fr auto;gap:24px;padding:24px;border-bottom:1px solid var(--line);align-items:center;}
+  .cart-item:last-child{border:0;}
+  .cart-item img{width:120px;height:120px;object-fit:cover;}
+  .cart-item h4{font-family:var(--serif);font-size:20px;font-weight:500;margin:0 0 6px;}
+  .cart-item .cat{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .qty{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--ivory);}
+  .qty button{background:none;border:0;width:36px;height:36px;cursor:pointer;font-size:16px;color:var(--ink-soft);}
+  .qty button:hover{background:var(--paper);}
+  .qty span{min-width:36px;text-align:center;font-weight:600;}
+  .cart-item .remove{background:none;border:0;color:var(--muted);font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;margin-top:8px;padding:0;}
+  .cart-item .remove:hover{color:var(--red);}
+  .cart-item .price{font-family:var(--serif);font-size:22px;color:var(--red);}
+  .summary{background:var(--paper);padding:32px;}
+  .summary h4{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;}
+  .summary .line{display:flex;justify-content:space-between;padding:10px 0;font-size:14px;}
+  .summary .total{display:flex;justify-content:space-between;padding-top:16px;margin-top:8px;border-top:1px solid var(--line);font-family:var(--serif);font-size:24px;font-weight:500;}
+  .empty-state{text-align:center;padding:80px 32px;}
+  .empty-state h3{font-family:var(--serif);font-size:32px;font-weight:500;margin:0 0 12px;}
+  .empty-state p{color:var(--muted);margin:0 0 24px;}
+
+  /* ── FORMS ──────────────────────────────────────── */
+  .form-card{max-width:480px;margin:0 auto;background:var(--paper);padding:48px 40px;}
+  .form-card.wide{max-width:760px;}
+  .form-card h2{font-family:var(--serif);font-size:36px;font-weight:500;margin:0 0 8px;}
+  .form-card .sub{color:var(--muted);font-size:15px;margin:0 0 32px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;}
+  .field input,.field select,.field textarea{width:100%;background:var(--ivory);border:1px solid var(--line);padding:14px 16px;font-family:var(--sans);font-size:15px;color:var(--ink);outline:none;border-radius:0;transition:border-color .2s;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:520px){.field-row{grid-template-columns:1fr;}}
+  .form-msg{margin-top:14px;font-size:13px;padding:10px 14px;}
+  .form-msg.error{background:rgba(155,42,40,.08);color:var(--red);border-left:2px solid var(--red);}
+  .form-msg.success{background:rgba(91,139,122,.1);color:#2e5d4d;border-left:2px solid var(--jade);}
+  .form-foot{margin-top:24px;text-align:center;font-size:14px;color:var(--muted);}
+  .form-foot a{color:var(--red);font-weight:600;cursor:pointer;}
+
+  /* ── CHECKOUT ───────────────────────────────────── */
+  .checkout-grid{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;}
+  @media(max-width:900px){.checkout-grid{grid-template-columns:1fr;}}
+  .checkout-steps{display:flex;justify-content:center;gap:12px;margin-bottom:40px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+  .checkout-steps .step{display:flex;align-items:center;gap:10px;}
+  .checkout-steps .step .num{width:22px;height:22px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--muted);}
+  .checkout-steps .step.active .num{background:var(--red);color:#fff;}
+  .checkout-steps .sep{color:var(--line);}
+
+  /* ── ACCOUNT ────────────────────────────────────── */
+  .account-grid{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start;}
+  @media(max-width:768px){.account-grid{grid-template-columns:1fr;}}
+  .account-nav{display:flex;flex-direction:column;}
+  .account-nav button{appearance:none;border:0;background:none;padding:14px 18px;text-align:left;font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-left:2px solid transparent;font-weight:600;}
+  .account-nav button.active{color:var(--ink);border-color:var(--red);background:var(--paper);}
+  .account-nav button:hover{color:var(--ink);}
+  .order-row{padding:24px;background:var(--paper);margin-bottom:14px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;}
+  .order-row .meta{display:flex;flex-direction:column;gap:4px;}
+  .order-row .meta .id{font-family:var(--serif);font-size:22px;font-weight:500;}
+  .order-row .meta .date{font-size:12px;color:var(--muted);letter-spacing:.1em;}
+  .order-row .meta .items{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+  .order-row .right{text-align:right;}
+  .order-row .right .total{font-family:var(--serif);font-size:22px;color:var(--red);}
+  .order-row .right .status{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--jade);font-weight:700;}
+
+  /* ── TOAST ──────────────────────────────────────── */
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--ink);color:var(--ivory);padding:14px 24px;font-size:14px;border-radius:2px;box-shadow:var(--shadow-lg);z-index:200;opacity:0;transition:all .3s;pointer-events:none;}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+
+  /* ── ARTICLE ────────────────────────────────────── */
+  .article h1{font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:400;line-height:1.1;margin:0 0 14px;}
+  .article .by{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;}
+  .article-hero{aspect-ratio:21/9;background-size:cover;background-position:center;margin:24px 0 50px;}
+  .article p{font-size:17px;color:var(--ink-soft);margin:0 0 22px;}
+  .article p.first::first-letter{font-family:var(--serif);font-size:72px;line-height:.85;float:left;padding:6px 14px 0 0;color:var(--red);font-weight:500;}
+  .article h2{font-family:var(--serif);font-size:32px;font-weight:500;margin:50px 0 16px;}
+  .article ul{padding-left:20px;}
+  .article ul li{font-size:16px;color:var(--ink-soft);margin-bottom:10px;}
+
+  /* Chinese typography */
   html[lang="zh"] body{line-height:1.8;}
   html[lang="zh"] .nav-links a{letter-spacing:.12em;}
-  html[lang="zh"] .eyebrow,
-  html[lang="zh"] .hero-eyebrow,
-  html[lang="zh"] .btn{letter-spacing:.2em;}
-  html[lang="zh"] h2.title em{font-style:normal;}
-  html[lang="zh"] .hero h1 em{font-style:normal;}
-  html[lang="zh"] .pull-quote{font-style:normal;}
+  html[lang="zh"] .eyebrow,html[lang="zh"] .hero-eyebrow,html[lang="zh"] .btn{letter-spacing:.2em;}
 </style>
 </head>
 <body>
 
-<!-- ============================ NAV ============================ -->
+<!-- NAV -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#top" class="brand">
+    <div class="brand" onclick="go('/')">
       <span class="brand-mark">探</span>
-      <span class="brand-text">
-        <span data-en="Exploring China" data-zh="探索中国">Exploring China</span>
-        <small data-en="A Comprehensive Guide" data-zh="深度旅行指南">A Comprehensive Guide</small>
-      </span>
-    </a>
+      <span class="brand-text" id="brandText"></span>
+    </div>
+    <ul class="nav-links" id="navLinks"></ul>
     <div class="nav-right">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#destinations" data-en="Destinations" data-zh="目的地">Destinations</a></li>
-        <li><a href="#guide" data-en="The Guide" data-zh="深度导览">The Guide</a></li>
-        <li><a href="#fireworks" data-en="Fireworks" data-zh="烟花盛景">Fireworks</a></li>
-        <li><a href="#plan" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</a></li>
-        <li><a href="#store" data-en="Store" data-zh="商店">Store</a></li>
-        <li><a href="#community" data-en="Community" data-zh="旅行社区">Community</a></li>
-      </ul>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button data-lang="en" class="active">EN</button>
+      <div class="lang-toggle" role="group">
+        <button data-lang="en">EN</button>
         <button data-lang="zh">中文</button>
       </div>
+      <button class="icon-btn" onclick="go('/cart')" aria-label="Cart" title="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h2l2.4 11.2a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.5L20.5 9H6"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+        <span class="badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+      <button class="icon-btn" onclick="goAccount()" aria-label="Account" title="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </button>
       <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
-<!-- ============================ HERO ============================ -->
-<header class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="container hero-inner">
-    <div class="hero-eyebrow" data-en="A Journey Through the Middle Kingdom" data-zh="穿越中华大地的旅程">A Journey Through the Middle Kingdom</div>
-    <h1>
-      <span data-en="Discover the " data-zh="探寻">Discover the </span><em data-en="beauty " data-zh="千年之美">beauty </em><span data-en="of " data-zh="">of </span><span data-en="China." data-zh="">China.</span>
-    </h1>
-    <p class="lede" data-en="Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here." data-zh="精选目的地、用心规划的行程，以及让五千年文化、山川河流跃然眼前的故事。从这里，开启你的旅程。">
-      Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here.
-    </p>
-    <div class="hero-cta">
-      <a href="#destinations" class="btn btn-primary">
-        <span data-en="Explore Destinations" data-zh="探索目的地">Explore Destinations</span>
-        <span class="arrow">→</span>
-      </a>
-      <a href="#plan" class="btn btn-ghost">
-        <span data-en="Plan Your Trip" data-zh="规划行程">Plan Your Trip</span>
-      </a>
-    </div>
-  </div>
-  <div class="hero-scroll" data-en="Scroll" data-zh="向下浏览">Scroll</div>
-</header>
+<main id="app"></main>
 
-<!-- ============================ DESTINATIONS ============================ -->
-<section class="destinations" id="destinations">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow" data-en="Featured Destinations" data-zh="精选目的地">Featured Destinations</div>
-      <h2 class="title">
-        <span data-en="Where the " data-zh="">Where the </span><em data-en="ancient " data-zh="古老与">ancient </em><span data-en="meets " data-zh="">meets </span><em data-en="endless." data-zh="无垠相遇">endless.</em>
-      </h2>
-      <p data-en="Six landscapes — from imperial courtyards to karst rivers — chosen for their power to alter the traveler." data-zh="六处风景——从皇家庭院到喀斯特江河——每一处都足以改变旅人的心境。">
-        Six landscapes — from imperial courtyards to karst rivers — chosen for their power to alter the traveler.
-      </p>
-    </div>
+<footer id="footer"></footer>
 
-    <div class="dest-grid">
-      <a class="dest-card span-8 wide reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 01" data-zh="其一">No. 01</div>
-          <h3 data-en="The Great Wall" data-zh="万里长城">The Great Wall</h3>
-          <div class="region" data-en="Beijing · Hebei" data-zh="北京 · 河北">Beijing · Hebei</div>
-        </div>
-      </a>
-      <a class="dest-card span-4 tall reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 02" data-zh="其二">No. 02</div>
-          <h3 data-en="Forbidden City" data-zh="紫禁城">Forbidden City</h3>
-          <div class="region" data-en="Beijing" data-zh="北京">Beijing</div>
-        </div>
-      </a>
-      <a class="dest-card span-4 tall reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 03" data-zh="其三">No. 03</div>
-          <h3 data-en="Li River, Guilin" data-zh="桂林漓江">Li River, Guilin</h3>
-          <div class="region" data-en="Guangxi" data-zh="广西">Guangxi</div>
-        </div>
-      </a>
-      <a class="dest-card span-4 tall reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1513531926349-466f15ec8cc7?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 04" data-zh="其四">No. 04</div>
-          <h3 data-en="Zhangjiajie" data-zh="张家界">Zhangjiajie</h3>
-          <div class="region" data-en="Hunan" data-zh="湖南">Hunan</div>
-        </div>
-      </a>
-      <a class="dest-card span-4 tall reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1551806235-6692ad9da9d9?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 05" data-zh="其五">No. 05</div>
-          <h3 data-en="Lijiang &amp; Yunnan" data-zh="云南丽江">Lijiang &amp; Yunnan</h3>
-          <div class="region" data-en="Yunnan" data-zh="云南">Yunnan</div>
-        </div>
-      </a>
-      <a class="dest-card span-8 wide reveal" href="#">
-        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1591777334841-1a911e3f12c4?auto=format&fit=crop&w=1600&q=80');"></div>
-        <div class="meta">
-          <div class="num" data-en="No. 06" data-zh="其六">No. 06</div>
-          <h3 data-en="Xi'an &amp; the Terracotta Army" data-zh="西安与兵马俑">Xi'an &amp; the Terracotta Army</h3>
-          <div class="region" data-en="Shaanxi" data-zh="陕西">Shaanxi</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+<div class="toast" id="toast"></div>
 
-<!-- ============================ EDITORIAL / ABOUT ============================ -->
-<section class="editorial" id="guide">
-  <div class="container">
-    <div class="editorial-grid">
-      <div class="editorial-img reveal" role="img" aria-label="Forbidden City rooftops"></div>
-      <div class="editorial-body reveal">
-        <div class="eyebrow" data-en="The Guide" data-zh="深度导览">The Guide</div>
-        <h2 class="title">
-          <span data-en="Travel " data-zh="慢行细赏，">Travel </span><em data-en="slowly. " data-zh="">slowly. </em><span data-en="See " data-zh="目之所及，">See </span><em data-en="deeply." data-zh="心之所至。">deeply.</em>
-        </h2>
-        <p class="first" data-en="China is not a country one visits — it is a country one returns to. From the painted alleys of Pingyao to the quiet tea houses of Chengdu, every province carries its own dialect, kitchen, and rhythm of life. Our role, as your guide, is to help you arrive prepared and depart changed." data-zh="中国并非一次造访便能穷尽的国度——它是一个让人不断归来的地方。从平遥的彩绘小巷到成都的清茶馆，每一个省份都有自己的方言、菜肴与生活节奏。作为你的向导，我们希望让你启程时心中有数，归来时心有所变。">
-          China is not a country one visits — it is a country one returns to. From the painted alleys of Pingyao to the quiet tea houses of Chengdu, every province carries its own dialect, kitchen, and rhythm of life. Our role, as your guide, is to help you arrive prepared and depart changed.
-        </p>
+<script>
+/* ─────────────────────────────────────────────────────
+   STATE  +  PERSISTENCE
+   ──────────────────────────────────────────────────── */
+const STORE_KEYS = {
+  LANG:'xc_lang', CART:'xc_cart', USER:'xc_user',
+  USERS:'xc_users', ORDERS:'xc_orders', SUBS:'xc_subs'
+};
+const load = (k, def) => { try { const v=localStorage.getItem(k); return v?JSON.parse(v):def; } catch(_) { return def; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_) {} };
 
-        <div class="pull-quote" data-en="“The best journeys move not across distance, but inward — toward a different way of seeing.”" data-zh="“最好的旅程不是越过远方，而是走向内心，去往一种不同的看见方式。”">
-          “The best journeys move not across distance, but inward — toward a different way of seeing.”
-        </div>
+const state = {
+  lang: load(STORE_KEYS.LANG, 'en'),
+  cart: load(STORE_KEYS.CART, []),         // [{id, qty}]
+  user: load(STORE_KEYS.USER, null),       // {email, name} or null
+  users: load(STORE_KEYS.USERS, {}),       // {email: {name, passwordHash}}
+  orders: load(STORE_KEYS.ORDERS, []),     // [{id, email, items, total, ship, status, date}]
+  subs: load(STORE_KEYS.SUBS, [])
+};
 
-        <p data-en="We write itineraries grounded in local knowledge: which season the cormorant fishermen still light their lanterns on the Li, which family in Lijiang still hammers copper teapots, which hutong in Beijing serves jianbing the way it was made in the eighties." data-zh="我们的行程根植于在地的知识：漓江上鸬鹚渔夫还在哪个季节点起灯火，丽江哪户人家仍在手工敲打铜壶，北京哪条胡同的煎饼还守着八十年代的做法。">
-          We write itineraries grounded in local knowledge: which season the cormorant fishermen still light their lanterns on the Li, which family in Lijiang still hammers copper teapots, which hutong in Beijing serves jianbing the way it was made in the eighties.
-        </p>
+function persist(){
+  save(STORE_KEYS.LANG,state.lang); save(STORE_KEYS.CART,state.cart);
+  save(STORE_KEYS.USER,state.user); save(STORE_KEYS.USERS,state.users);
+  save(STORE_KEYS.ORDERS,state.orders); save(STORE_KEYS.SUBS,state.subs);
+}
 
-        <div class="signature" data-en="Our Editorial Team · Since 2019" data-zh="编辑团队 · 自 2019 年">Our Editorial Team · Since 2019</div>
-      </div>
-    </div>
-  </div>
-</section>
+/* i18n */
+const t = obj => (obj && typeof obj === 'object' && 'en' in obj) ? (obj[state.lang] || obj.en) : obj;
+const T = {
+  brand: {en:'Exploring China', zh:'探索中国'},
+  brandSub: {en:'A Comprehensive Guide', zh:'深度旅行指南'},
+  nav: {
+    destinations:{en:'Destinations', zh:'目的地'},
+    guide:{en:'The Guide', zh:'深度导览'},
+    fireworks:{en:'Fireworks', zh:'烟花盛景'},
+    plan:{en:'Plan a Trip', zh:'行程规划'},
+    store:{en:'Store', zh:'商店'},
+    community:{en:'Community', zh:'旅行社区'}
+  },
+  empty:{
+    cart:{en:'Your cart is empty.', zh:'购物车空空如也。'},
+    cartSub:{en:'Browse the store to add a few souvenirs from your journey.', zh:'前往商店，挑选几件旅途的纪念品。'},
+    orders:{en:'No orders yet.', zh:'尚无订单。'}
+  },
+  signin:{
+    title:{en:'Welcome back', zh:'欢迎回来'},
+    sub:{en:'Sign in to view your orders and saved journeys.', zh:'登录以查看订单与已保存的行程。'},
+    email:{en:'Email', zh:'邮箱'},
+    password:{en:'Password', zh:'密码'},
+    btn:{en:'Sign In', zh:'登录'},
+    new:{en:"New here?", zh:'还未注册？'},
+    create:{en:'Create an account', zh:'注册账户'},
+    wrong:{en:'Incorrect email or password.', zh:'邮箱或密码不正确。'}
+  },
+  signup:{
+    title:{en:'Create an account', zh:'注册账户'},
+    sub:{en:'It takes about a minute. Your data stays on this device.', zh:'仅需一分钟。数据仅保存在本设备。'},
+    name:{en:'Full name', zh:'姓名'},
+    email:{en:'Email', zh:'邮箱'},
+    password:{en:'Password (8+ chars)', zh:'密码（至少 8 位）'},
+    btn:{en:'Create account', zh:'创建账户'},
+    have:{en:'Already have one?', zh:'已有账户？'},
+    signin:{en:'Sign in', zh:'登录'},
+    exists:{en:'An account with that email already exists.', zh:'该邮箱已注册。'},
+    short:{en:'Password must be at least 8 characters.', zh:'密码至少需要 8 个字符。'}
+  },
+  cart:{
+    title:{en:'Your Cart', zh:'购物车'},
+    item:{en:'item', zh:'件'},
+    items:{en:'items', zh:'件'},
+    subtotal:{en:'Subtotal', zh:'小计'},
+    shipping:{en:'Shipping', zh:'运费'},
+    tax:{en:'Tax (estimated)', zh:'税费（预估）'},
+    total:{en:'Total', zh:'合计'},
+    checkout:{en:'Proceed to Checkout', zh:'前往结账'},
+    continue:{en:'Continue Shopping', zh:'继续购物'},
+    free:{en:'Free', zh:'免运费'}
+  },
+  checkout:{
+    title:{en:'Checkout', zh:'结账'},
+    note:{en:'Demo mode — no real payment will be processed.', zh:'演示模式——不会发生真实支付。'},
+    ship:{en:'Shipping', zh:'配送信息'},
+    pay:{en:'Payment', zh:'支付信息'},
+    confirm:{en:'Confirm', zh:'确认'},
+    address:{en:'Street address', zh:'详细地址'},
+    city:{en:'City', zh:'城市'},
+    zip:{en:'ZIP / Postal', zh:'邮编'},
+    country:{en:'Country', zh:'国家/地区'},
+    card:{en:'Card number (try 4242 4242 4242 4242)', zh:'卡号（演示卡 4242 4242 4242 4242）'},
+    expiry:{en:'Expiry MM/YY', zh:'有效期 月/年'},
+    cvc:{en:'CVC', zh:'安全码'},
+    place:{en:'Place Order', zh:'提交订单'},
+    placing:{en:'Placing order…', zh:'订单提交中…'}
+  },
+  order:{
+    thank:{en:'Thank you for your order.', zh:'感谢您的订单。'},
+    sub:{en:'A confirmation has been recorded in your account.', zh:'确认信息已记录在您的账户中。'},
+    num:{en:'Order number', zh:'订单编号'},
+    cont:{en:'Continue exploring', zh:'继续探索'}
+  },
+  account:{
+    title:{en:'Account', zh:'我的账户'},
+    profile:{en:'Profile', zh:'个人资料'},
+    orders:{en:'Orders', zh:'订单'},
+    logout:{en:'Sign out', zh:'退出登录'},
+    welcome:{en:'Welcome', zh:'欢迎'}
+  }
+};
 
-<!-- ============================ FIREWORKS ============================ -->
-<section class="fireworks" id="fireworks">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow" data-en="Fireworks &amp; Celebration" data-zh="烟花盛景">Fireworks &amp; Celebration</div>
-      <h2 class="title">
-        <span data-en="The " data-zh="">The </span><em data-en="sky " data-zh="夜空为纸，">sky </em><span data-en="as " data-zh="">as </span><em data-en="canvas." data-zh="烟花为墨。">canvas.</em>
-      </h2>
-      <p data-en="Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched — and we are there to share the moment with you." data-zh="烟花诞生于一千多年前的中国。每逢春日，城市被点燃成画家也未曾调出的色彩——我们与你一同，置身其间。">
-        Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched — and we are there to share the moment with you.
-      </p>
-    </div>
+/* ─────────────────────────────────────────────────────
+   DATA  —  destinations, products, articles
+   ──────────────────────────────────────────────────── */
+const destinations = {
+  'great-wall': {
+    num:'No. 01',
+    name:{en:'The Great Wall', zh:'万里长城'},
+    region:{en:'Beijing · Hebei', zh:'北京 · 河北'},
+    hero:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1525870605453-b25099e9bb24?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1583425423320-4ba79f2cb5b3?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'Built over two millennia by successive dynasties, the Great Wall is less a single structure than a thread of fortifications stretching more than 21,000 km across northern China. The most photographed sections — Mutianyu, Jinshanling, and Jiankou — sit within easy reach of Beijing and offer dramatically different experiences, from restored stone steps to wild, crumbling ramparts.', zh:'万里长城并非单一建筑，而是历经两千年、由历朝历代修筑而成的防御之链，绵延逾两万一千公里横贯中国北部。游人最常前往的慕田峪、金山岭与箭扣，皆在北京近郊，从修复完整的青石阶到荒野中残破的烽燧，各有截然不同的体验。'},
+    bestTime:{en:'September–October for clear skies and autumn color; April–May for green hills.', zh:'九至十月天高云阔，秋色正浓；四至五月山色青翠。'},
+    duration:{en:'Half day to 2 days', zh:'半日至两日'},
+    difficulty:{en:'Moderate — many stairs', zh:'中等——多石阶'},
+    musts:[
+      {title:{en:'Mutianyu at sunrise', zh:'慕田峪日出'}, body:{en:'Take the cable car up, walk down at first light; the watchtowers glow gold.', zh:'乘缆车上山，破晓时分徒步下行；烽燧在晨光中泛着金色。'}},
+      {title:{en:'Jinshanling crumble', zh:'金山岭古韵'}, body:{en:'The least restored of the popular sections — broken steps, wild grass, real history.', zh:'热门段中最为原貌——残阶、野草、真实的历史气息。'}},
+      {title:{en:'Jiankou for photographers', zh:'箭扣摄影之地'}, body:{en:'Unrestored, dangerous, breathtaking. Hire a local guide. Wear grippy shoes.', zh:'未经修复，险峻而壮美。建议聘请向导，并穿防滑登山鞋。'}},
+      {title:{en:'A night atop the wall', zh:'长城夜宿'}, body:{en:'Several outfitters arrange permitted tower-top camping at Gubeikou — rare and unforgettable.', zh:'数家服务商可于古北口安排经许可的烽燧露营——稀有而难忘。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — Mutianyu', zh:'第一日 · 慕田峪'},
+        morning:{en:'Early start from Beijing (1.5 hr drive). Cable car up to Tower 14.', zh:'清晨自北京出发（车程约一小时半），乘缆车至 14 号敌楼。'},
+        afternoon:{en:'Walk west to Tower 6, then descend via slide.', zh:'西行至 6 号敌楼，乘滑道下山。'},
+        evening:{en:'Dinner at a courtyard restaurant in Huairou; overnight nearby.', zh:'怀柔区四合院餐厅晚餐，附近过夜。'}},
+      {day:{en:'Day 2 — Jinshanling', zh:'第二日 · 金山岭'},
+        morning:{en:'Drive 2 hrs to Jinshanling. East trail to Simatai West.', zh:'车程约两小时至金山岭，东行至司马台西段。'},
+        afternoon:{en:'Hike 5 km along restored and wild sections.', zh:'徒步五公里，穿行修复段与野长城。'},
+        evening:{en:'Return to Beijing by 8 pm.', zh:'晚八点前返回北京。'}}
+    ],
+    tips:{en:'Buy water in the parking area — it triples in price at the top. The east-bound walk from Tower 14 at Mutianyu is far less crowded than west.', zh:'山下停车场购水，山顶售价三倍。慕田峪由 14 号敌楼向东走，远较向西清静。'},
+    related:['forbidden-city','xian','lijiang']
+  },
+  'forbidden-city': {
+    num:'No. 02',
+    name:{en:'Forbidden City', zh:'紫禁城'},
+    region:{en:'Beijing', zh:'北京'},
+    hero:'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1584646098378-0874589d76b1?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1591001388569-ff09ef9f9c19?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'Home to 24 emperors of the Ming and Qing dynasties, the Forbidden City — Gùgōng — is the largest preserved palace complex in the world. Nearly a kilometer long, it houses more than nine thousand rooms behind vermillion walls. The official tour skims the main axis; the side courtyards are where the city quiets and you can feel five centuries of imperial life.', zh:'明清两朝二十四位皇帝的宫廷所在——故宫，是世界上保存最大的宫殿群。朱墙之内逾九千间房舍，绵延近一公里。官方导览仅走主轴线，唯有步入两侧庭院，方能在宁静中感受五百年皇室气息。'},
+    bestTime:{en:'October–November or March; avoid Chinese New Year week.', zh:'十至十一月或三月最佳；春节期间宜避开。'},
+    duration:{en:'Half day minimum, full day ideal', zh:'至少半日，整日为佳'},
+    difficulty:{en:'Easy — flat, large grounds', zh:'轻松——园区平坦，但面积较大'},
+    musts:[
+      {title:{en:'Hall of Supreme Harmony', zh:'太和殿'}, body:{en:'The largest wooden structure in China; site of imperial coronations.', zh:'中国现存最大的木构建筑，皇帝登基大典之所。'}},
+      {title:{en:'Treasure Gallery', zh:'珍宝馆'}, body:{en:'Extra ticket, light crowds, room after room of jade and gold.', zh:'另购门票，人流稀少，玉器金器陈列不绝。'}},
+      {title:{en:'Imperial Garden', zh:'御花园'}, body:{en:'A quiet north exit through twisted cypresses and pavilions.', zh:'北门内静谧出口，曲柏与亭台环绕。'}},
+      {title:{en:'View from Jingshan Hill', zh:'景山远眺'}, body:{en:'Cross the moat and climb 200 m for the full panorama of golden roofs.', zh:'跨护城河，登景山二百米，俯瞰金顶全貌。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — The Palace', zh:'第一日 · 紫禁城'},
+        morning:{en:'Enter at Meridian Gate (south) by 9 AM. Walk the central axis.', zh:'九时前由午门入园，沿中轴线游览。'},
+        afternoon:{en:'Branch east into the Treasure Gallery and Clock Hall.', zh:'东行至珍宝馆与钟表馆。'},
+        evening:{en:'Exit north, climb Jingshan for sunset.', zh:'由北门出，登景山观日落。'}}
+    ],
+    tips:{en:'Book tickets online 7 days ahead — passport ID required. Audio guide in 40 languages near the entrance.', zh:'提前七日线上购票，需护照实名。入口附近可租用 40 种语言的语音导览器。'},
+    related:['great-wall','xian','lijiang']
+  },
+  'li-river': {
+    num:'No. 03',
+    name:{en:'Li River, Guilin', zh:'桂林漓江'},
+    region:{en:'Guangxi', zh:'广西'},
+    hero:'https://images.unsplash.com/photo-1537531383496-f4749b8032cf?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1513415564515-763d91423bdc?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1583338917451-faafcc9f8f56?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1601276861758-2d9c5ca69a17?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'The Li River winds 83 km between Guilin and Yangshuo through a landscape that has been the subject of Chinese ink painting for fifteen centuries: limestone karst peaks rising from rice paddies, water buffalo on the banks, and cormorant fishermen who still work the river at dusk. The slow boat south is the gentlest one-day journey in China.', zh:'漓江在桂林与阳朔之间蜿蜒八十三公里，沿岸喀斯特石峰自稻田中拔起，水牛悠游岸边，鸬鹚渔人于黄昏点起渔火——千五百年来，这片山水一直是中国水墨画的题材。漫舟南下，是中国最为悠然的一日之旅。'},
+    bestTime:{en:'April–May for misty mornings; October for dry, golden light.', zh:'四五月烟雨蒙蒙；十月秋光金灿。'},
+    duration:{en:'1–3 days', zh:'一至三日'},
+    difficulty:{en:'Easy — boat journey + light cycling', zh:'轻松——乘船加轻量骑行'},
+    musts:[
+      {title:{en:'Guilin–Yangshuo cruise', zh:'桂林至阳朔游船'}, body:{en:'4-hour slow boat, 83 km of karst scenery. Sit on the upper deck.', zh:'四小时漫舟，八十三公里喀斯特风光。建议坐于船顶层。'}},
+      {title:{en:'Yangshuo by bicycle', zh:'阳朔骑行'}, body:{en:'Rent a bike, follow the Yulong River through villages and rice fields.', zh:'租一辆自行车，沿遇龙河穿行村庄与稻田。'}},
+      {title:{en:'Cormorant fishing at dusk', zh:'黄昏鸬鹚捕鱼'}, body:{en:'A handful of old men still practice it — book through a Yangshuo guesthouse.', zh:'仅存几位老渔人在传承——可由阳朔民宿代订。'}},
+      {title:{en:'Sunrise at Xianggong Hill', zh:'相公山日出'}, body:{en:'The river bends below — the postcard view, before the tour buses arrive.', zh:'江流弯下山脚——明信片般的画面，趁旅行团抵达之前抓住它。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — Cruise', zh:'第一日 · 漓江游船'},
+        morning:{en:'Embark at Zhujiang dock, 9 AM.', zh:'上午九时朱江码头登船。'},
+        afternoon:{en:'Arrive Yangshuo by 1 PM. Check into a riverside guesthouse.', zh:'下午一时抵阳朔，入住江边民宿。'},
+        evening:{en:'West Street stroll; outdoor noodles.', zh:'漫步西街，露天米粉。'}},
+      {day:{en:'Day 2 — Yangshuo', zh:'第二日 · 阳朔'},
+        morning:{en:'Cycle the Yulong River, 15 km.', zh:'沿遇龙河骑行十五公里。'},
+        afternoon:{en:'Tea & local market in Xingping.', zh:'兴坪古镇喝茶逛集市。'},
+        evening:{en:'Cormorant fishing on a bamboo raft.', zh:'乘竹筏观鸬鹚捕鱼。'}}
+    ],
+    tips:{en:'The mainstream cruise is touristy but unbeatable scenery. If you want quieter, ask for a bamboo raft from Yangdi to Xingping.', zh:'主流游船游客虽多但风光无可替代。如喜清静，可从杨堤至兴坪改乘竹筏。'},
+    related:['zhangjiajie','lijiang','xian']
+  },
+  'zhangjiajie': {
+    num:'No. 04',
+    name:{en:'Zhangjiajie', zh:'张家界'},
+    region:{en:'Hunan', zh:'湖南'},
+    hero:'https://images.unsplash.com/photo-1513531926349-466f15ec8cc7?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1523592121529-f6dde35f079e?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1551582045-6ec9c11d8697?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1559682468-a6a29e7d9517?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'Three thousand sandstone pillars rise from a sea of green in Zhangjiajie National Forest Park — the landscape that James Cameron took as the model for Pandora in Avatar. Glass walkways, suspended skybridges, and the world\'s tallest outdoor elevator weave between peaks. It is the most theatrical landscape in China.', zh:'张家界国家森林公园中，三千座砂岩石柱自绿海中拔起——卡梅隆即以此地为《阿凡达》潘多拉星灵感来源。玻璃栈道、悬空天桥与世界最高的户外观光电梯于群峰间穿行，是中国最具戏剧性的风景。'},
+    bestTime:{en:'May or October for clear views; July adds dramatic clouds.', zh:'五月或十月视野清朗；七月则云雾缥缈。'},
+    duration:{en:'2–3 days', zh:'二至三日'},
+    difficulty:{en:'Moderate — steep stairs, long days', zh:'中等——梯陡路长'},
+    musts:[
+      {title:{en:'Bailong Elevator', zh:'百龙天梯'}, body:{en:'A 326-meter glass elevator bolted to a cliff. Skip the queue with a 7 AM start.', zh:'高三百二十六米、贴崖而建的玻璃电梯。建议七时前抵达以避开人流。'}},
+      {title:{en:'Tianzi Mountain', zh:'天子山'}, body:{en:'The classic pillar view — pillars like a stone forest, fog like a sea.', zh:'经典峰林——石柱如林、云雾如海。'}},
+      {title:{en:'Tianmen Glass Skywalk', zh:'天门山玻璃栈道'}, body:{en:'Not for the queasy. The 99-bend mountain road below is reason alone.', zh:'恐高者慎入。山下九十九弯盘山公路已是奇观。'}},
+      {title:{en:'Golden Whip Stream', zh:'金鞭溪'}, body:{en:'A 7.5 km river walk at the foot of the pillars — easy and stunning.', zh:'七公里半的溪畔步道，于石柱脚下漫行——轻松而壮丽。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — Wulingyuan', zh:'第一日 · 武陵源'},
+        morning:{en:'Bailong Elevator up to Yuanjiajie; "Hallelujah Mountain".', zh:'乘百龙天梯至袁家界，登"哈利路亚山"。'},
+        afternoon:{en:'Tianzi Mountain via cable car; sunset over the pillars.', zh:'缆车至天子山，赏石林日落。'},
+        evening:{en:'Dinner at Wulingyuan village.', zh:'武陵源镇晚餐。'}},
+      {day:{en:'Day 2 — Tianmen', zh:'第二日 · 天门山'},
+        morning:{en:'Cable car up Tianmen Mountain — the world\'s longest.', zh:'登天门山——乘世界最长缆车上山。'},
+        afternoon:{en:'Glass skywalk + Heaven\'s Gate cave.', zh:'玻璃栈道与天门洞。'},
+        evening:{en:'Return to Zhangjiajie city.', zh:'返回张家界市区。'}}
+    ],
+    tips:{en:'The park is enormous and signs are inconsistent — download an offline map. Stay inside the park to skip the 50-minute morning bus.', zh:'园区辽阔且标识有限，建议下载离线地图。园内住宿可省去清晨五十分钟班车。'},
+    related:['li-river','lijiang','great-wall']
+  },
+  'lijiang': {
+    num:'No. 05',
+    name:{en:'Lijiang & Yunnan', zh:'云南丽江'},
+    region:{en:'Yunnan', zh:'云南'},
+    hero:'https://images.unsplash.com/photo-1551806235-6692ad9da9d9?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1545158539-3e8c9e9c2e6e?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1503842471779-f2bee45ae8a8?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'Yunnan is China\'s most ethnically diverse province and quite possibly its most beautiful. Lijiang\'s 800-year-old Naxi old town, the snow peaks of Yulong, the impossibly photogenic Lugu Lake, and the spice-fragrant alleys of Dali all sit within a long day of each other. Travel slow — the people, food, and air all reward it.', zh:'云南是中国民族最多元的省份，也或许是最美的。丽江八百年纳西古城、玉龙雪山、宛若画卷的泸沽湖、与香料弥漫的大理街巷，皆于咫尺之间。慢游云南，山水风物、人情饮食都将以更丰盛之姿回馈你。'},
+    bestTime:{en:'February–April for camellia blooms; September–November for clear skies.', zh:'二至四月山茶花开；九至十一月晴空澄澈。'},
+    duration:{en:'5–10 days', zh:'五至十日'},
+    difficulty:{en:'Easy to moderate — high altitude', zh:'轻松至中等——海拔较高'},
+    musts:[
+      {title:{en:'Lijiang Old Town', zh:'丽江古城'}, body:{en:'Wake at 6 AM before the tour groups, and you will have the cobbled lanes to yourself.', zh:'晨六时起身，趁旅行团未至，整座石板小巷便仅为你一人独享。'}},
+      {title:{en:'Yulong Snow Mountain', zh:'玉龙雪山'}, body:{en:'5,596 m glacier visible from Lijiang. Cable car to 4,506 m — go early.', zh:'海拔 5596 米的雪山，丽江市内即可远望。缆车直达 4506 米，宜早行。'}},
+      {title:{en:'Shuhe Ancient Town', zh:'束河古镇'}, body:{en:'Quieter than Lijiang proper, with the same Naxi architecture.', zh:'较之丽江主城更为清静，建筑同为纳西风格。'}},
+      {title:{en:'Lugu Lake', zh:'泸沽湖'}, body:{en:'Six hours north — home of the matrilineal Mosuo people. Stay two nights.', zh:'北行六小时，是摩梭母系社会的家园。宜停留两夜。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — Lijiang', zh:'第一日 · 丽江'},
+        morning:{en:'Arrive Lijiang Airport, taxi 35 min to Old Town.', zh:'抵达丽江机场，约三十五分钟车程至古城。'},
+        afternoon:{en:'Wander Sifang Square; tea at Mu Family Mansion.', zh:'漫步四方街，木府品茶。'},
+        evening:{en:'Naxi banquet — try qíguō jī chicken.', zh:'纳西风味晚宴——必尝汽锅鸡。'}},
+      {day:{en:'Day 2 — Yulong', zh:'第二日 · 玉龙雪山'},
+        morning:{en:'7 AM departure for the mountain; cable car up.', zh:'七时启程上山，乘缆车至顶。'},
+        afternoon:{en:'Blue Moon Valley walk.', zh:'蓝月谷漫步。'},
+        evening:{en:'Sunset at Wenchang Palace.', zh:'文昌宫落日。'}},
+      {day:{en:'Day 3 — Shuhe', zh:'第三日 · 束河'},
+        morning:{en:'Bike to Shuhe Ancient Town.', zh:'骑行至束河古镇。'},
+        afternoon:{en:'Lazy lunch by the canal.', zh:'河畔慢午餐。'},
+        evening:{en:'Return to Lijiang for dinner.', zh:'返回丽江晚餐。'}}
+    ],
+    tips:{en:'Altitude is real — drink water, take it slow on day 1. Cash and small bills are still preferred in old-town tea houses.', zh:'高原反应不可轻视——多饮水，首日缓步。古城茶馆仍偏好现金小钞。'},
+    related:['li-river','zhangjiajie','xian']
+  },
+  'xian': {
+    num:'No. 06',
+    name:{en:"Xi'an & the Terracotta Army", zh:'西安与兵马俑'},
+    region:{en:'Shaanxi', zh:'陕西'},
+    hero:'https://images.unsplash.com/photo-1591777334841-1a911e3f12c4?auto=format&fit=crop&w=2000&q=80',
+    gallery:['https://images.unsplash.com/photo-1597306864929-5cdd4ddccfdc?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1591018653691-78dd72d2bd87?auto=format&fit=crop&w=800&q=80','https://images.unsplash.com/photo-1591018653691-78dd72d2bd87?auto=format&fit=crop&w=800&q=80'],
+    overview:{en:'Xi\'an was the eastern terminus of the Silk Road and the capital of thirteen dynasties. Behind 14 km of intact Ming-era city walls you will find the Terracotta Army of Emperor Qin (8,000 life-size warriors), the Muslim Quarter\'s lamb skewers, and the gentle Big Wild Goose Pagoda. It is the best place in China to feel the weight of dynastic history.', zh:'西安是丝绸之路东端起点，亦是十三朝古都。十四公里完整保存的明代城墙之内，沉睡着八千件秦始皇兵马俑、回民街上飘香的羊肉串、与温润的大雁塔。在这里，最能感受中国王朝史的厚重。'},
+    bestTime:{en:'April or October; avoid mid-summer heat.', zh:'四月或十月最佳；夏中酷暑宜避。'},
+    duration:{en:'2 days', zh:'两日'},
+    difficulty:{en:'Easy', zh:'轻松'},
+    musts:[
+      {title:{en:'Terracotta Army, Pit 1', zh:'兵马俑一号坑'}, body:{en:'A football-field of warriors, no two faces alike. Hire a guide at the gate.', zh:'足球场大小的将士阵列，面容无一雷同。建议入口处请向导。'}},
+      {title:{en:'City wall bike ride', zh:'城墙骑行'}, body:{en:'Rent a bike and ride the full 14 km loop at dusk.', zh:'黄昏时分租一辆单车，沿十四公里城墙环骑。'}},
+      {title:{en:'Muslim Quarter at night', zh:'夜游回民街'}, body:{en:'Lamb skewers, persimmon cakes, hand-pulled biang-biang noodles.', zh:'羊肉串、柿子饼、手工 biáng biáng 面。'}},
+      {title:{en:'Big Wild Goose Pagoda', zh:'大雁塔'}, body:{en:'A Tang-dynasty stupa; the surrounding fountain show is good for kids.', zh:'唐代佛塔，周边音乐喷泉适合带小孩同游。'}}
+    ],
+    itinerary:[
+      {day:{en:'Day 1 — Terracotta Army', zh:'第一日 · 兵马俑'},
+        morning:{en:'Drive 1 hr east. Pit 1 first, then 3 and 2.', zh:'东行一小时。先看一号坑，再至三号、二号。'},
+        afternoon:{en:'Lunch at the village; return to city wall.', zh:'兵马俑村午餐，返城内游城墙。'},
+        evening:{en:'Muslim Quarter for dinner.', zh:'回民街晚餐。'}},
+      {day:{en:'Day 2 — Old City', zh:'第二日 · 古城'},
+        morning:{en:'Big Wild Goose Pagoda; Shaanxi History Museum.', zh:'大雁塔与陕西历史博物馆。'},
+        afternoon:{en:'Bell & Drum Towers.', zh:'钟楼与鼓楼。'},
+        evening:{en:'Tang Dynasty dinner show (optional).', zh:'可选《长恨歌》或唐宫宴。'}}
+    ],
+    tips:{en:'Reserve the Shaanxi History Museum free ticket the day before — by 9 AM it\'s gone. Pit 1 is unmissable; Pit 2 is more atmospheric.', zh:'陕西历史博物馆免费票需提前一日预约，九时即抢完。一号坑必看，二号坑氛围更佳。'},
+    related:['great-wall','forbidden-city','lijiang']
+  }
+};
 
-    <div class="video-frame reveal">
-      <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1546552768-9e3a94b38a59?auto=format&fit=crop&w=1600&q=80">
-        <source src="https://videos.pexels.com/video-files/34767741/14740035_640_360_30fps.mp4" type="video/mp4" />
-      </video>
-    </div>
+const products = {
+  'puerh-2015':{
+    name:{en:'Aged Pu-erh, 2015', zh:'2015 年陈年普洱'},
+    cat:{en:'Tea · Yunnan', zh:'茶 · 云南'},
+    desc:{en:'A 357 g cake of sun-dried Yunnan leaf, aged ten years in the dry climate of Kunming.', zh:'357 克饼茶，云南日晒毛料，于昆明干仓陈化十年。'},
+    price:480,
+    img:'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80'
+  },
+  'teacup-jingdezhen':{
+    name:{en:'Blue & White Teacup', zh:'青花茶杯'},
+    cat:{en:'Porcelain · Jingdezhen', zh:'瓷器 · 景德镇'},
+    desc:{en:'Hand-painted by a third-generation kiln in Jingdezhen. 80 ml — for one perfect pour.', zh:'景德镇三代窑口手绘。80 毫升，恰宜一注。'},
+    price:280,
+    img:'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=600&q=80'
+  },
+  'li-river-folio':{
+    name:{en:'Misty Li River, Folio', zh:'烟雨漓江 · 折页装帧'},
+    cat:{en:'Print · Limited', zh:'版画 · 限量'},
+    desc:{en:'A six-page accordion folio of original photographs by our editorial team. Edition of 200.', zh:'编辑团队原创摄影六页风琴折页。限量 200 册。'},
+    price:620,
+    img:'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80'
+  },
+  'beijing-field-guide':{
+    name:{en:'A Field Guide to Old Beijing', zh:'老北京漫步志'},
+    cat:{en:'Books', zh:'书籍'},
+    desc:{en:'200 pages of hutong walks, tea houses, and forgotten temples — bilingual.', zh:'两百页的胡同漫步、茶馆与被遗忘的寺庙——中英双语。'},
+    price:198,
+    img:'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80'
+  }
+};
 
-    <div class="fireworks-features">
-      <div class="ff-item reveal">
-        <div class="num">01</div>
-        <h4 data-en="A Thousand Years of Sparks" data-zh="千年火光">A Thousand Years of Sparks</h4>
-        <p data-en="Trace fireworks from Tang-dynasty bamboo crackers to today's symphonic displays in Liuyang." data-zh="从唐代的爆竹到今日浏阳的烟花交响乐，追溯千年火光的源流。">
-          Trace fireworks from Tang-dynasty bamboo crackers to today's symphonic displays in Liuyang.
-        </p>
-      </div>
-      <div class="ff-item reveal">
-        <div class="num">02</div>
-        <h4 data-en="Festival Calendar" data-zh="节庆日历">Festival Calendar</h4>
-        <p data-en="Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each in full." data-zh="春节、元宵、中秋——何时、何地，以及如何尽情体验每一场盛会。">
-          Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each in full.
-        </p>
-      </div>
-      <div class="ff-item reveal">
-        <div class="num">03</div>
-        <h4 data-en="The Makers" data-zh="匠人之手">The Makers</h4>
-        <p data-en="Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand." data-zh="走访浏阳与萍乡的匠人，每一颗烟花，至今仍是手工卷制。">
-          Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+const articles = {
+  'when-to-go':{
+    title:{en:'When to Go to China', zh:'何时来中国最好'},
+    by:{en:'Editorial · 12 min read', zh:'编辑团队 · 阅读约 12 分钟'},
+    hero:'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'There is no single best month to visit China — and that is, in itself, a useful answer. The country spans five climate zones, eight major cuisines, and 56 official ethnic groups; choosing when to go is mostly a question of which China you are after.', zh:'到访中国，并无单一最佳月份——而此本身便是有用之答。中国横跨五大气候区、八大菜系、五十六个民族，决定何时出行，其实是问你想见哪一个中国。'}},
+      {h:{en:'Spring (March–May)', zh:'春（三月至五月）'}},
+      {p:{en:'Cherry blossoms in Wuhan, peach blossoms in Tibet, tea picking in Hangzhou, mist on the Li River. Comfortable temperatures everywhere except the far north. This is the editor\'s pick.', zh:'武汉樱花、藏地桃花、杭州采茶、漓江烟雨。除极北外，气温皆宜。此为编辑首选。'}},
+      {h:{en:'Summer (June–August)', zh:'夏（六月至八月）'}},
+      {p:{en:'Hot and humid in the south, dramatic clouds in Zhangjiajie, cool retreats in Yunnan\'s highlands. Avoid Beijing\'s mid-July heat unless you must.', zh:'南方湿热，张家界云雾翻涌，云南高原清凉宜避暑。北京七月中旬酷热，宜避。'}},
+      {h:{en:'Autumn (September–November)', zh:'秋（九月至十一月）'}},
+      {p:{en:'The most photogenic season — golden leaves on the Great Wall, red persimmons in Pingyao, clear blue skies across the north. Book ahead; the Chinese know.', zh:'最上镜的季节——长城金叶、平遥红柿、北方天高云阔。需提前预订；中国旅人亦深知此理。'}},
+      {h:{en:'Winter (December–February)', zh:'冬（十二月至二月）'}},
+      {p:{en:'Harbin\'s ice festival, Yunnan\'s sun, Chinese New Year\'s lantern processions. Avoid the 7-day national holiday around Spring Festival — half the country travels at once.', zh:'哈尔滨冰雪节、云南暖阳、春节灯会。春节七天黄金周期间，半个中国都在路上，宜避开。'}}
+    ]
+  },
+  'sample-routes':{
+    title:{en:'Six Routes Through China', zh:'纵游中国 · 六条路线'},
+    by:{en:'Editorial · 18 min read', zh:'编辑团队 · 阅读约 18 分钟'},
+    hero:'https://images.unsplash.com/photo-1591777334841-1a911e3f12c4?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'After fifteen years of writing about Chinese travel, we have settled on six routes that, between them, cover the country\'s essential geographies, cuisines, and dynasties. None is short. None is rushed. Each is designed to leave you wanting to come back.', zh:'十五年来书写中国旅行，我们最终选定六条路线，涵盖这个国度核心的地理、菜系与王朝。每条皆非短途，亦非赶路，皆是只让你想再来一次的设计。'}},
+      {h:{en:'1. The Classic Triangle — 10 days', zh:'一、传统三角 · 十日'}},
+      {p:{en:'Beijing → Xi\'an → Shanghai. The imperial north, the dynastic heart, and the modern coast. The most efficient way to see "China" if you only have one trip.', zh:'北京 → 西安 → 上海。皇都之北，王朝之心，现代之海。若仅一次远行，这是看见"中国"的最有效路线。'}},
+      {h:{en:'2. The Karst South — 8 days', zh:'二、喀斯特之南 · 八日'}},
+      {p:{en:'Guilin → Yangshuo → Longji rice terraces → Guizhou\'s Miao villages. Hands down the most beautiful route. Slow, photogenic, and quiet.', zh:'桂林 → 阳朔 → 龙脊梯田 → 贵州苗寨。当之无愧最美的一条，悠然、上镜、宁静。'}},
+      {h:{en:'3. The Silk Road — 14 days', zh:'三、丝绸之路 · 十四日'}},
+      {p:{en:'Xi\'an → Lanzhou → Zhangye danxia → Jiayuguan → Dunhuang → Turpan → Kashgar. Desert, oasis, Buddhist caves. For travelers who like the romance of long distances.', zh:'西安 → 兰州 → 张掖丹霞 → 嘉峪关 → 敦煌 → 吐鲁番 → 喀什。荒漠、绿洲、石窟。献给热爱远途的旅人。'}},
+      {h:{en:'4. The Yangtze — 8 days', zh:'四、长江之行 · 八日'}},
+      {p:{en:'Chongqing → Three Gorges cruise → Yichang. Add Wuhan for the food. The country\'s greatest river, four days of slow water.', zh:'重庆 → 三峡游船 → 宜昌；可加武汉品味美食。最壮丽的母亲河，四日缓水。'}},
+      {h:{en:'5. The Tibetan Plateau — 12 days', zh:'五、青藏高原 · 十二日'}},
+      {p:{en:'Chengdu → Sichuan-Tibet highway → Lhasa → Everest base camp (optional). High altitude, high spirit. Permits required.', zh:'成都 → 川藏公路 → 拉萨 → 珠峰大本营（可选）。高海拔，高精神。需办许可证。'}},
+      {h:{en:'6. The Coastal Loop — 9 days', zh:'六、沿海环线 · 九日'}},
+      {p:{en:'Shanghai → Hangzhou → Suzhou → Nanjing → back. Tea, gardens, and lake cities. The cultivated, settled face of China.', zh:'上海 → 杭州 → 苏州 → 南京 → 上海。茶事、园林、湖城。中国最精致安顿的一面。'}}
+    ]
+  },
+  'essential-phrases':{
+    title:{en:'Essential Mandarin Phrases', zh:'实用中文短语'},
+    by:{en:'Editorial · 6 min read', zh:'编辑团队 · 阅读约 6 分钟'},
+    hero:'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'You do not need to be fluent in Mandarin to travel China — but two dozen phrases will transform every interaction from transactional to warm.', zh:'游中国无需精通普通话——但掌握二十余句，每一次交流都将由交易性走向温度感。'}},
+      {h:{en:'Greetings', zh:'问候语'}},
+      {p:{en:'Nǐ hǎo (你好) — Hello. Used any time of day. Xièxie (谢谢) — Thank you. Bù kèqi (不客气) — You\'re welcome.', zh:'你好 — Hello。一日皆可用。谢谢 — Thank you。不客气 — You\'re welcome。'}},
+      {h:{en:'Ordering food', zh:'点餐'}},
+      {p:{en:'Wǒ yào zhège (我要这个) — I\'ll have this one (point at the menu). Bú yào là (不要辣) — Not spicy, please. Mǎidān (买单) — The check.', zh:'我要这个 — 指着菜单说，方便快捷。不要辣 — Not spicy。买单 — The check。'}},
+      {h:{en:'Directions', zh:'问路'}},
+      {p:{en:'… zài nǎlǐ? (… 在哪里?) — Where is …? Dìtiě (地铁) — Subway. Cèsuǒ (厕所) — Toilet. Yīyuàn (医院) — Hospital.', zh:'…… 在哪里? — Where is …？地铁 — Subway。厕所 — Toilet。医院 — Hospital。'}},
+      {h:{en:'Numbers & prices', zh:'数字与价格'}},
+      {p:{en:'Duōshǎo qián? (多少钱?) — How much? Tài guì le (太贵了) — Too expensive. Piányi yīdiǎn (便宜一点) — A little cheaper, please.', zh:'多少钱? — How much？太贵了 — Too expensive。便宜一点 — A little cheaper。'}}
+    ]
+  },
+  'about':{
+    title:{en:'About Exploring China', zh:'关于我们'},
+    by:{en:'Editorial', zh:'编辑团队'},
+    hero:'https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'Exploring China is an independent travel guide founded in 2019 by a small editorial team based between Beijing, Chengdu, and London. We do not sell tours, take commissions, or accept paid placements. The income from our store and a small membership program supports the writing.', zh:'探索中国为独立旅行刊物，于 2019 年由一支小型编辑团队创立，团队成员往返北京、成都与伦敦。我们不售卖旅行团、不收取佣金、不接受任何付费推广。商店与小型会员计划的收益用于支持文章创作。'}},
+      {p:{en:'Every itinerary in our guides has been walked, every restaurant eaten at, every artisan met in person. We make mistakes; when we do, we correct them.', zh:'指南中每一份行程，我们都亲自走过；每一家餐馆，都亲自吃过；每一位匠人，都亲自见过。我们也会出错；出错时，我们会订正。'}}
+    ]
+  },
+  'contact':{
+    title:{en:'Contact', zh:'联系我们'},
+    by:{en:'', zh:''},
+    hero:'',
+    body:[
+      {p:{en:'For editorial inquiries, press, or corrections, write to hello@exploring-china.com — we reply within two working days.', zh:'编辑、媒体或勘误事宜，请致函 hello@exploring-china.com，两个工作日内回复。'}},
+      {p:{en:'For store and order questions, write to orders@exploring-china.com.', zh:'商店与订单事宜，请致函 orders@exploring-china.com。'}}
+    ]
+  },
+  'privacy':{
+    title:{en:'Privacy Policy', zh:'隐私政策'},
+    by:{en:'', zh:''},
+    hero:'',
+    body:[
+      {p:{en:'This site is a demo. All account data, cart contents, and order history are stored only in your own browser via localStorage. We do not transmit any personal information to a server.', zh:'本站为演示站点。所有账户数据、购物车与订单记录仅以 localStorage 形式存于您本机浏览器，不上传任何信息至服务器。'}},
+      {p:{en:'To erase all data, open your browser settings and clear site data for this domain.', zh:'如需清除全部数据，可在浏览器设置中清除本域名的站点数据。'}}
+    ]
+  },
+  'terms':{
+    title:{en:'Terms', zh:'使用条款'},
+    by:{en:'', zh:''},
+    hero:'',
+    body:[
+      {p:{en:'Exploring China is a travel reference site. We make no guarantees about pricing, availability, or accuracy of third-party information. Use at your own discretion.', zh:'探索中国为旅行参考站点。我们不就第三方信息的价格、可订性或准确性作出保证。请审慎使用。'}},
+      {p:{en:'Store transactions on this site are simulated for demonstration purposes only. No real payment is processed and no goods are shipped.', zh:'本站商店为演示用途，不会发生真实支付，亦无实际商品配送。'}}
+    ]
+  },
+  'journal':{
+    title:{en:'The Journal', zh:'旅行札记'},
+    by:{en:'', zh:''},
+    hero:'https://images.unsplash.com/photo-1503842471779-f2bee45ae8a8?auto=format&fit=crop&w=2000&q=80',
+    body:[
+      {p:{en:'The Journal collects long-form essays on China travel: deep dives on specific places, food origins, dialect notes, and the people we meet along the road. New pieces appear roughly monthly.', zh:'《旅行札记》收录关于中国旅行的长篇随笔：深入特定地点、食物源流、方言纪录与途中所遇之人。约一月一篇。'}},
+      {p:{en:'Recent essays:', zh:'近期文章：'}},
+      {p:{en:'• "Eating the Yangtze: A river in nine dishes" — read above in our Plan a Trip guide for the route. \n• "Why Shanghai\'s old Jews built a synagogue in Hongkou" \n• "Tibet permits: the actual process in 2026"', zh:'• 《长江九味：一条河的九道菜》——可在"行程规划"中查看相关路线。\n• 《沪上犹太人何以在虹口建堂》\n• 《2026 年进藏许可证流程实录》'}}
+    ]
+  },
+  'videos':{
+    title:{en:'Videos', zh:'视频'},
+    by:{en:'', zh:''},
+    hero:'',
+    body:[
+      {p:{en:'A small film library: short documentary pieces on fireworks artisans, cormorant fishermen, and the woman who still hand-rolls oolong leaves outside Wuyi Mountain.', zh:'小型影像库：聚焦烟花匠人、鸬鹚渔人、武夷山下仍以手工揉茶的老茶匠。'}},
+      {p:{en:'Visit our YouTube channel and Bilibili account — links are in the footer.', zh:'更多影像请前往 YouTube 或 B 站频道，链接见页脚。'}}
+    ]
+  }
+};
 
-<!-- ============================ PLAN A TRIP ============================ -->
-<section class="plan" id="plan">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</div>
-      <h2 class="title">
-        <span data-en="From " data-zh="">From </span><em data-en="first thought, " data-zh="从灵感初现，">first thought, </em><span data-en="to " data-zh="">to </span><em data-en="first step." data-zh="到启程之时。">first step.</em>
-      </h2>
-      <p data-en="Three places to begin — whether you're choosing a season, mapping a route, or just learning your first words of Mandarin." data-zh="三个开始的方式——无论你是在挑选季节、规划路线，还是刚刚学会第一句中文。">
-        Three places to begin — whether you're choosing a season, mapping a route, or just learning your first words of Mandarin.
-      </p>
-    </div>
+/* ─────────────────────────────────────────────────────
+   UTILITIES
+   ──────────────────────────────────────────────────── */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => '¥ ' + n.toLocaleString('en-US');
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
 
-    <div class="plan-grid">
-      <div class="plan-card reveal">
-        <div class="icon">時</div>
-        <h4 data-en="When to Go" data-zh="最佳时节">When to Go</h4>
-        <p data-en="A month-by-month guide to weather, festivals, and crowd levels across China's diverse regions — from misty Guilin springs to crisp Beijing autumns." data-zh="按月精选的旅行指南：天气、节庆、人流——从烟雨漓江的春到清爽宜人的北京秋。">
-          A month-by-month guide to weather, festivals, and crowd levels across China's diverse regions — from misty Guilin springs to crisp Beijing autumns.
-        </p>
-        <a href="#" class="more" data-en="Read the Guide →" data-zh="阅读指南 →">Read the Guide →</a>
-      </div>
-      <div class="plan-card reveal">
-        <div class="icon">路</div>
-        <h4 data-en="Sample Routes" data-zh="行程范例">Sample Routes</h4>
-        <p data-en="Six tested itineraries: the Classic Triangle (Beijing–Xi'an–Shanghai), the Silk Road, the Yangtze, the Karst South, the Tibetan Plateau, and the Coastal Loop." data-zh="六条经典路线：传统三角（北京-西安-上海）、丝绸之路、长江流域、喀斯特之南、青藏高原与沿海环线。">
-          Six tested itineraries: the Classic Triangle (Beijing–Xi'an–Shanghai), the Silk Road, the Yangtze, the Karst South, the Tibetan Plateau, and the Coastal Loop.
-        </p>
-        <a href="#" class="more" data-en="View Routes →" data-zh="查看路线 →">View Routes →</a>
-      </div>
-      <div class="plan-card reveal">
-        <div class="icon">語</div>
-        <h4 data-en="Essential Phrases" data-zh="实用短语">Essential Phrases</h4>
-        <p data-en="A traveler's vocabulary — greetings, ordering food, asking directions — with pinyin, tones, and audio so your first conversation feels possible." data-zh="旅人词汇——问候、点餐、问路——附拼音、声调与音频，让你的第一次对话不再遥远。">
-          A traveler's vocabulary — greetings, ordering food, asking directions — with pinyin, tones, and audio so your first conversation feels possible.
-        </p>
-        <a href="#" class="more" data-en="Start Learning →" data-zh="开始学习 →">Start Learning →</a>
-      </div>
-    </div>
-  </div>
-</section>
+function toast(msg, ms=2200){
+  const el = $('#toast'); el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(()=>el.classList.remove('show'), ms);
+}
 
-<!-- ============================ STORE ============================ -->
-<section class="store" id="store">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow" data-en="The Store" data-zh="精选商店">The Store</div>
-      <h2 class="title">
-        <span data-en="A " data-zh="">A </span><em data-en="small collection, " data-zh="精选小品，">small collection, </em><span data-en="carefully " data-zh="">carefully </span><em data-en="chosen." data-zh="慢工细作。">chosen.</em>
-      </h2>
-      <p data-en="Objects we have found in our travels — tea, porcelain, prints, books — all sourced from artisans we know personally." data-zh="我们在旅途中遇见的器物：茶、瓷、版画、书籍——皆来自我们熟识的手艺人。">
-        Objects we have found in our travels — tea, porcelain, prints, books — all sourced from artisans we know personally.
-      </p>
-    </div>
+function go(path){
+  if(path && path[0] !== '#') path = '#' + path;
+  if(location.hash === path) render();
+  else location.hash = path;
+}
 
-    <div class="store-grid">
-      <div class="product reveal">
-        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="product-body">
-          <div class="cat" data-en="Tea · Yunnan" data-zh="茶 · 云南">Tea · Yunnan</div>
-          <h4 data-en="Aged Pu-erh, 2015" data-zh="2015 年陈年普洱">Aged Pu-erh, 2015</h4>
-          <div class="price"><span>¥ 480</span><button data-en="Add" data-zh="加入">Add</button></div>
-        </div>
-      </div>
-      <div class="product reveal">
-        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="product-body">
-          <div class="cat" data-en="Porcelain · Jingdezhen" data-zh="瓷器 · 景德镇">Porcelain · Jingdezhen</div>
-          <h4 data-en="Blue & White Teacup" data-zh="青花茶杯">Blue & White Teacup</h4>
-          <div class="price"><span>¥ 280</span><button data-en="Add" data-zh="加入">Add</button></div>
-        </div>
-      </div>
-      <div class="product reveal">
-        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="product-body">
-          <div class="cat" data-en="Print · Limited" data-zh="版画 · 限量">Print · Limited</div>
-          <h4 data-en="Misty Li River, Folio" data-zh="烟雨漓江 · 折页装帧">Misty Li River, Folio</h4>
-          <div class="price"><span>¥ 620</span><button data-en="Add" data-zh="加入">Add</button></div>
-        </div>
-      </div>
-      <div class="product reveal">
-        <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80');"></div>
-        <div class="product-body">
-          <div class="cat" data-en="Books" data-zh="书籍">Books</div>
-          <h4 data-en="A Field Guide to Old Beijing" data-zh="老北京漫步志">A Field Guide to Old Beijing</h4>
-          <div class="price"><span>¥ 198</span><button data-en="Add" data-zh="加入">Add</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+function goAccount(){
+  go(state.user ? '/account' : '/signin');
+}
 
-<!-- ============================ COMMUNITY ============================ -->
-<section class="community" id="community">
-  <div class="container">
-    <div class="inner reveal">
-      <div class="eyebrow" data-en="The Community" data-zh="旅行社区">The Community</div>
-      <h2 class="title">
-        <span data-en="Travel " data-zh="">Travel </span><em data-en="together, " data-zh="同行，">together, </em><span data-en="even when " data-zh="">even when </span><em data-en="apart." data-zh="纵使天涯。">apart.</em>
-      </h2>
-      <p data-en="Join thousands of fellow travelers sharing photos, route advice, and stories from across China — from quick weekend reports to year-long expeditions." data-zh="加入成千上万的同行者，分享照片、路线建议与旅行故事——从周末短途到一年远征，应有尽有。">
-        Join thousands of fellow travelers sharing photos, route advice, and stories from across China — from quick weekend reports to year-long expeditions.
-      </p>
-      <div style="margin-top:36px;">
-        <a href="#" class="btn btn-primary">
-          <span data-en="Join the Forum" data-zh="加入论坛">Join the Forum</span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
+function cartCount(){ return state.cart.reduce((a,b)=>a+b.qty, 0); }
+function cartSubtotal(){ return state.cart.reduce((a,it)=> a + (products[it.id].price * it.qty), 0); }
 
-      <div class="stats">
-        <div class="stat">
-          <div class="num">12,400+</div>
-          <div class="label" data-en="Members" data-zh="社区成员">Members</div>
-        </div>
-        <div class="stat">
-          <div class="num">2,160</div>
-          <div class="label" data-en="Trip Reports" data-zh="游记数量">Trip Reports</div>
-        </div>
-        <div class="stat">
-          <div class="num">34</div>
-          <div class="label" data-en="Provinces Covered" data-zh="覆盖省份">Provinces Covered</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+function addToCart(id){
+  const found = state.cart.find(c=>c.id===id);
+  if(found) found.qty++; else state.cart.push({id, qty:1});
+  persist(); updateCartBadge();
+  toast(state.lang==='zh' ? '已加入购物车' : 'Added to cart');
+}
+function setQty(id, qty){
+  qty = Math.max(0, qty|0);
+  state.cart = qty===0 ? state.cart.filter(c=>c.id!==id) : state.cart.map(c=>c.id===id ? {...c, qty} : c);
+  persist(); updateCartBadge(); render();
+}
+function removeFromCart(id){ setQty(id, 0); }
 
-<!-- ============================ NEWSLETTER ============================ -->
-<section class="newsletter">
-  <div class="container nl-inner reveal">
-    <div>
-      <h3 data-en="Letters from the road. <em>Once a month.</em>" data-zh="<em>每月一封</em>，来自旅途的书信。">Letters from the road. <em>Once a month.</em></h3>
-      <p data-en="A single email each month — one essay, one destination, one recipe. No more, no less." data-zh="每月仅一封邮件——一篇散文、一个目的地、一份食谱。不多不少。">
-        A single email each month — one essay, one destination, one recipe. No more, no less.
-      </p>
-    </div>
-    <form class="nl-form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent=document.documentElement.lang==='zh'?'已订阅':'Subscribed';">
-      <input type="email" placeholder="your@email.com" required />
-      <button type="submit" data-en="Subscribe" data-zh="订阅">Subscribe</button>
-    </form>
-  </div>
-</section>
+function updateCartBadge(){
+  const b = $('#cartBadge'); const n = cartCount();
+  b.style.display = n>0 ? 'grid' : 'none';
+  b.textContent = n;
+}
 
-<!-- ============================ FOOTER ============================ -->
-<footer>
-  <div class="container">
+/* simple hash for "password" — NOT secure, demo only */
+function hash(s){ let h=0; for(const ch of s) h=((h<<5)-h+ch.charCodeAt(0))|0; return String(h); }
+
+/* ─────────────────────────────────────────────────────
+   RENDERING  —  layout, nav, footer, views
+   ──────────────────────────────────────────────────── */
+function renderShell(){
+  // Brand text
+  $('#brandText').innerHTML = `${t(T.brand)}<small>${t(T.brandSub)}</small>`;
+  // Nav links
+  $('#navLinks').innerHTML = `
+    <li><a data-route="/" onclick="go('/')">${t(T.nav.destinations)}</a></li>
+    <li><a data-route="/guide/when-to-go" onclick="go('/guide/when-to-go')">${t(T.nav.guide)}</a></li>
+    <li><a data-route="/fireworks" onclick="go('/fireworks')">${t(T.nav.fireworks)}</a></li>
+    <li><a data-route="/plan" onclick="go('/plan')">${t(T.nav.plan)}</a></li>
+    <li><a data-route="/store" onclick="go('/store')">${t(T.nav.store)}</a></li>
+    <li><a data-route="/community" onclick="go('/community')">${t(T.nav.community)}</a></li>
+  `;
+  // Footer
+  $('#footer').innerHTML = footerHTML();
+  // Lang buttons
+  $$('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.lang === state.lang));
+  document.documentElement.lang = state.lang;
+  document.title = state.lang==='zh' ? '探索中国 — 深度旅行指南' : 'Exploring China — A Comprehensive Guide';
+  updateCartBadge();
+}
+
+function footerHTML(){
+  return `<div class="container">
     <div class="foot-grid">
       <div class="about">
-        <div class="brand">
+        <div class="brand" onclick="go('/')">
           <span class="brand-mark">探</span>
-          <span class="brand-text">
-            <span data-en="Exploring China" data-zh="探索中国">Exploring China</span>
-            <small data-en="A Comprehensive Guide" data-zh="深度旅行指南">A Comprehensive Guide</small>
-          </span>
+          <span class="brand-text">${t(T.brand)}<small>${t(T.brandSub)}</small></span>
         </div>
-        <p style="margin-top:24px;" data-en="A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice." data-zh="一份关于中国目的地、文化与静谧角落的深度指南——献给愿意驻足细看的旅人。">
-          A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice.
-        </p>
+        <p style="margin-top:24px;">${t({en:'A comprehensive guide to the destinations, culture, and quiet corners of China — written for travelers who prefer to look twice.', zh:'一份关于中国目的地、文化与静谧角落的深度指南——献给愿意驻足细看的旅人。'})}</p>
       </div>
       <div>
-        <h5 data-en="Explore" data-zh="探索">Explore</h5>
+        <h5>${t({en:'Explore', zh:'探索'})}</h5>
         <ul>
-          <li><a href="#destinations" data-en="Destinations" data-zh="目的地">Destinations</a></li>
-          <li><a href="#guide" data-en="The Guide" data-zh="深度导览">The Guide</a></li>
-          <li><a href="#fireworks" data-en="Fireworks" data-zh="烟花盛景">Fireworks</a></li>
-          <li><a href="#plan" data-en="Plan a Trip" data-zh="行程规划">Plan a Trip</a></li>
+          <li><a onclick="go('/')">${t(T.nav.destinations)}</a></li>
+          <li><a onclick="go('/guide/when-to-go')">${t(T.nav.guide)}</a></li>
+          <li><a onclick="go('/fireworks')">${t(T.nav.fireworks)}</a></li>
+          <li><a onclick="go('/plan')">${t(T.nav.plan)}</a></li>
         </ul>
       </div>
       <div>
-        <h5 data-en="Shop &amp; Read" data-zh="商店与阅读">Shop &amp; Read</h5>
+        <h5>${t({en:'Shop & Read', zh:'商店与阅读'})}</h5>
         <ul>
-          <li><a href="#store" data-en="Store" data-zh="商店">Store</a></li>
-          <li><a href="#" data-en="Journal" data-zh="旅行札记">Journal</a></li>
-          <li><a href="#" data-en="Videos" data-zh="视频">Videos</a></li>
-          <li><a href="#community" data-en="Community" data-zh="社区">Community</a></li>
+          <li><a onclick="go('/store')">${t(T.nav.store)}</a></li>
+          <li><a onclick="go('/guide/journal')">${t({en:'Journal', zh:'旅行札记'})}</a></li>
+          <li><a onclick="go('/guide/videos')">${t({en:'Videos', zh:'视频'})}</a></li>
+          <li><a onclick="go('/community')">${t({en:'Community', zh:'社区'})}</a></li>
         </ul>
       </div>
       <div>
-        <h5 data-en="Contact" data-zh="联系我们">Contact</h5>
+        <h5>${t({en:'Contact', zh:'联系我们'})}</h5>
         <ul>
           <li><a href="mailto:hello@exploring-china.com">hello@exploring-china.com</a></li>
-          <li data-en="Mon – Fri, 9 – 18 CST" data-zh="周一至周五 9:00 – 18:00">Mon – Fri, 9 – 18 CST</li>
-          <li><a href="#" data-en="Press Inquiries" data-zh="媒体合作">Press Inquiries</a></li>
+          <li>${t({en:'Mon – Fri, 9 – 18 CST', zh:'周一至周五 9:00 – 18:00'})}</li>
+          <li><a onclick="go('/guide/contact')">${t({en:'Press Inquiries', zh:'媒体合作'})}</a></li>
         </ul>
         <div class="socials" style="margin-top:18px;">
-          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="WeChat"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 4C4.9 4 2 6.4 2 9.4c0 1.7 1 3.2 2.5 4.2L4 16l2.5-1.4c.6.2 1.3.3 2 .3.1-2.7 2.9-4.9 6.4-4.9h.6C15 7.1 12 4 8.5 4zM6 9c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm5 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.5 2c-3 0-5.5 2-5.5 4.5s2.5 4.5 5.5 4.5c.6 0 1.2-.1 1.7-.2L19.5 21l-.4-1.8C20.7 18.3 21.5 17 21.5 15.5c0-2.5-2.5-4.5-5.5-4.5zm-2 4c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8zm4 0c-.4 0-.8-.3-.8-.8s.3-.8.8-.8.8.3.8.8-.4.8-.8.8z"/></svg></a>
-          <a href="#" aria-label="Weibo"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="10" cy="14" rx="6.5" ry="4.5"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.6.1 6.9.2 6.9.2s4 0 6.8-.3c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.1-.2-3.1zM10 14V8l5 3-5 3z"/></svg></a>
+          <a aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a aria-label="WeChat"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 4C4.9 4 2 6.4 2 9.4c0 1.7 1 3.2 2.5 4.2L4 16l2.5-1.4c.6.2 1.3.3 2 .3.1-2.7 2.9-4.9 6.4-4.9h.6C15 7.1 12 4 8.5 4z"/></svg></a>
+          <a aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.4v1.2c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.6.1 6.9.2 6.9.2s4 0 6.8-.3c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.2c0-1.6-.2-3.1-.2-3.1zM10 14V8l5 3-5 3z"/></svg></a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <div data-en="© 2026 Exploring China. All rights reserved." data-zh="© 2026 探索中国 版权所有">© 2026 Exploring China. All rights reserved.</div>
+      <div>© 2026 ${t(T.brand)}. ${t({en:'All rights reserved.', zh:'版权所有。'})}</div>
       <div>
-        <a href="#" style="margin-right:18px;" data-en="Privacy" data-zh="隐私政策">Privacy</a>
-        <a href="#" data-en="Terms" data-zh="使用条款">Terms</a>
+        <a onclick="go('/guide/privacy')" style="margin-right:18px;">${t({en:'Privacy', zh:'隐私政策'})}</a>
+        <a onclick="go('/guide/terms')">${t({en:'Terms', zh:'使用条款'})}</a>
       </div>
     </div>
+  </div>`;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: HOME
+   ──────────────────────────────────────────────────── */
+function viewHome(){
+  return `
+  <header class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <div class="hero-eyebrow">${t({en:'A Journey Through the Middle Kingdom', zh:'穿越中华大地的旅程'})}</div>
+      <h1>${state.lang==='en' ? 'Discover the <em>beauty</em> of China.' : '探寻<em>千年之美</em>。'}</h1>
+      <p class="lede">${t({en:'Curated destinations, considered itineraries, and stories that bring five thousand years of culture, mountains, and rivers to life. Begin your journey here.', zh:'精选目的地、用心规划的行程，以及让五千年文化、山川河流跃然眼前的故事。从这里，开启你的旅程。'})}</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">${t({en:'Explore Destinations', zh:'探索目的地'})} <span class="arrow">→</span></button>
+        <button class="btn btn-ghost" onclick="go('/plan')">${t({en:'Plan Your Trip', zh:'规划行程'})}</button>
+      </div>
+    </div>
+    <div class="hero-scroll">${t({en:'Scroll', zh:'向下浏览'})}</div>
+  </header>
+
+  <section id="destinations">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">${t({en:'Featured Destinations', zh:'精选目的地'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'Where the <em>ancient</em> meets <em>endless</em>.' : '<em>古老与无垠</em>相遇之处。'}</h2>
+        <p>${t({en:'Six landscapes — from imperial courtyards to karst rivers — chosen for their power to alter the traveler.', zh:'六处风景——从皇家庭院到喀斯特江河——每一处都足以改变旅人的心境。'})}</p>
+      </div>
+      <div class="dest-grid">
+        ${destCardHTML('great-wall', 'span-8 wide')}
+        ${destCardHTML('forbidden-city', 'span-4 tall')}
+        ${destCardHTML('li-river', 'span-4 tall')}
+        ${destCardHTML('zhangjiajie', 'span-4 tall')}
+        ${destCardHTML('lijiang', 'span-4 tall')}
+        ${destCardHTML('xian', 'span-8 wide')}
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial" id="guide">
+    <div class="container">
+      <div class="editorial-grid">
+        <div class="editorial-img reveal"></div>
+        <div class="editorial-body reveal">
+          <div class="eyebrow">${t({en:'The Guide', zh:'深度导览'})}</div>
+          <h2 class="title">${state.lang==='en' ? 'Travel <em>slowly</em>. See <em>deeply</em>.' : '慢行细赏，<em>目之所及，心之所至</em>。'}</h2>
+          <p class="first">${t({en:'China is not a country one visits — it is a country one returns to. From the painted alleys of Pingyao to the quiet tea houses of Chengdu, every province carries its own dialect, kitchen, and rhythm of life. Our role, as your guide, is to help you arrive prepared and depart changed.', zh:'中国并非一次造访便能穷尽的国度——它是一个让人不断归来的地方。从平遥的彩绘小巷到成都的清茶馆，每一个省份都有自己的方言、菜肴与生活节奏。作为你的向导，我们希望让你启程时心中有数，归来时心有所变。'})}</p>
+          <div class="pull-quote">${t({en:'"The best journeys move not across distance, but inward — toward a different way of seeing."', zh:'"最好的旅程不是越过远方，而是走向内心，去往一种不同的看见方式。"'})}</div>
+          <p>${t({en:'We write itineraries grounded in local knowledge: which season the cormorant fishermen still light their lanterns, which family in Lijiang still hammers copper teapots, which hutong in Beijing serves jianbing the way it was made in the eighties.', zh:'我们的行程根植于在地的知识：漓江上鸬鹚渔夫还在哪个季节点起灯火，丽江哪户人家仍在手工敲打铜壶，北京哪条胡同的煎饼还守着八十年代的做法。'})}</p>
+          <button class="btn btn-outline btn-sm" onclick="go('/guide/about')">${t({en:'Read more about us', zh:'了解我们'})} <span class="arrow">→</span></button>
+          <div class="signature">${t({en:'Our Editorial Team · Since 2019', zh:'编辑团队 · 自 2019 年'})}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fireworks" id="fireworks">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">${t({en:'Fireworks & Celebration', zh:'烟花盛景'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'The <em>sky</em> as <em>canvas</em>.' : '<em>夜空为纸，烟花为墨</em>。'}</h2>
+        <p>${t({en:'Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched — and we are there to share the moment with you.', zh:'烟花诞生于一千多年前的中国。每逢春日，城市被点燃成画家也未曾调出的色彩——我们与你一同，置身其间。'})}</p>
+      </div>
+      <div class="video-frame reveal">
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1546552768-9e3a94b38a59?auto=format&fit=crop&w=1600&q=80">
+          <source src="https://videos.pexels.com/video-files/34767741/14740035_640_360_30fps.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="fireworks-features">
+        <div class="ff-item reveal"><div class="num">01</div><h4>${t({en:'A Thousand Years of Sparks', zh:'千年火光'})}</h4><p>${t({en:'Trace fireworks from Tang-dynasty bamboo crackers to today\'s symphonic displays in Liuyang.', zh:'从唐代爆竹到今日浏阳的烟花交响乐，追溯千年火光的源流。'})}</p></div>
+        <div class="ff-item reveal"><div class="num">02</div><h4>${t({en:'Festival Calendar', zh:'节庆日历'})}</h4><p>${t({en:'Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each in full.', zh:'春节、元宵、中秋——何时、何地，以及如何尽情体验每一场盛会。'})}</p></div>
+        <div class="ff-item reveal"><div class="num">03</div><h4>${t({en:'The Makers', zh:'匠人之手'})}</h4><p>${t({en:'Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand.', zh:'走访浏阳与萍乡的匠人，每一颗烟花，至今仍是手工卷制。'})}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">${t({en:'Plan a Trip', zh:'行程规划'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'From <em>first thought</em>, to <em>first step</em>.' : '<em>从灵感初现，到启程之时</em>。'}</h2>
+        <p>${t({en:'Three places to begin — whether you\'re choosing a season, mapping a route, or just learning your first words of Mandarin.', zh:'三个开始的方式——无论你是在挑选季节、规划路线，还是刚刚学会第一句中文。'})}</p>
+      </div>
+      <div class="plan-grid">
+        <div class="plan-card reveal" onclick="go('/guide/when-to-go')"><div class="icon">時</div><h4>${t({en:'When to Go', zh:'最佳时节'})}</h4><p>${t({en:'A month-by-month guide to weather, festivals, and crowd levels across China\'s diverse regions.', zh:'按月精选的旅行指南：天气、节庆、人流。'})}</p><span class="more">${t({en:'Read the Guide', zh:'阅读指南'})} →</span></div>
+        <div class="plan-card reveal" onclick="go('/guide/sample-routes')"><div class="icon">路</div><h4>${t({en:'Sample Routes', zh:'行程范例'})}</h4><p>${t({en:'Six tested itineraries: Classic Triangle, Silk Road, Yangtze, Karst South, Tibetan Plateau, Coastal Loop.', zh:'六条经典路线：传统三角、丝绸之路、长江流域、喀斯特之南、青藏高原、沿海环线。'})}</p><span class="more">${t({en:'View Routes', zh:'查看路线'})} →</span></div>
+        <div class="plan-card reveal" onclick="go('/guide/essential-phrases')"><div class="icon">語</div><h4>${t({en:'Essential Phrases', zh:'实用短语'})}</h4><p>${t({en:'A traveler\'s vocabulary — greetings, ordering food, asking directions — with pinyin and tones.', zh:'旅人词汇——问候、点餐、问路——附拼音与声调。'})}</p><span class="more">${t({en:'Start Learning', zh:'开始学习'})} →</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="store-bg" id="store">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">${t({en:'The Store', zh:'精选商店'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'A <em>small collection</em>, carefully <em>chosen</em>.' : '<em>精选小品，慢工细作</em>。'}</h2>
+        <p>${t({en:'Objects we have found in our travels — tea, porcelain, prints, books — all sourced from artisans we know personally.', zh:'我们在旅途中遇见的器物：茶、瓷、版画、书籍——皆来自我们熟识的手艺人。'})}</p>
+      </div>
+      <div class="store-grid">${Object.keys(products).map(id => productCardHTML(id)).join('')}</div>
+    </div>
+  </section>
+
+  <section class="community" id="community">
+    <div class="container">
+      <div class="inner reveal">
+        <div class="eyebrow">${t({en:'The Community', zh:'旅行社区'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'Travel <em>together</em>, even when <em>apart</em>.' : '<em>同行，纵使天涯</em>。'}</h2>
+        <p>${t({en:'Join thousands of fellow travelers sharing photos, route advice, and stories from across China — from quick weekend reports to year-long expeditions.', zh:'加入成千上万的同行者，分享照片、路线建议与旅行故事——从周末短途到一年远征，应有尽有。'})}</p>
+        <div style="margin-top:36px;"><button class="btn btn-primary" onclick="go('/community')">${t({en:'Join the Forum', zh:'加入论坛'})} <span class="arrow">→</span></button></div>
+        <div class="stats">
+          <div class="stat"><div class="num">12,400+</div><div class="label">${t({en:'Members', zh:'社区成员'})}</div></div>
+          <div class="stat"><div class="num">2,160</div><div class="label">${t({en:'Trip Reports', zh:'游记数量'})}</div></div>
+          <div class="stat"><div class="num">34</div><div class="label">${t({en:'Provinces Covered', zh:'覆盖省份'})}</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container nl-inner reveal">
+      <div>
+        <h3>${state.lang==='en' ? 'Letters from the road. <em>Once a month.</em>' : '<em>每月一封</em>，来自旅途的书信。'}</h3>
+        <p>${t({en:'A single email each month — one essay, one destination, one recipe. No more, no less.', zh:'每月仅一封邮件——一篇散文、一个目的地、一份食谱。不多不少。'})}</p>
+      </div>
+      <form class="nl-form" onsubmit="return subscribeNewsletter(event)">
+        <input type="email" id="nlInput" placeholder="${t({en:'your@email.com', zh:'your@email.com'})}" required />
+        <button type="submit">${t({en:'Subscribe', zh:'订阅'})}</button>
+      </form>
+    </div>
+  </section>`;
+}
+
+function destCardHTML(id, classes){
+  const d = destinations[id];
+  return `<a class="dest-card ${classes} reveal" onclick="go('/destination/${id}')">
+    <div class="photo" style="background-image:url('${d.hero}')"></div>
+    <div class="meta">
+      <div class="num">${d.num}</div>
+      <h3>${esc(t(d.name))}</h3>
+      <div class="region">${esc(t(d.region))}</div>
+    </div>
+  </a>`;
+}
+
+function productCardHTML(id){
+  const p = products[id];
+  const inCart = state.cart.some(c => c.id===id);
+  return `<div class="product reveal">
+    <div class="product-img" style="background-image:url('${p.img}')" onclick="go('/store')"></div>
+    <div class="product-body">
+      <div class="cat">${esc(t(p.cat))}</div>
+      <h4>${esc(t(p.name))}</h4>
+      <p class="desc">${esc(t(p.desc))}</p>
+      <div class="price">
+        <span>${fmt(p.price)}</span>
+        <button class="${inCart?'added':''}" onclick="addToCart('${id}');render()">${inCart ? t({en:'Added ✓', zh:'已加入 ✓'}) : t({en:'Add', zh:'加入'})}</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function subscribeNewsletter(e){
+  e.preventDefault();
+  const email = $('#nlInput').value.trim();
+  if(!email) return false;
+  if(!state.subs.includes(email)){ state.subs.push(email); persist(); }
+  toast(state.lang==='zh' ? '订阅成功，谢谢！' : 'Subscribed — thank you!');
+  $('#nlInput').value = '';
+  return false;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: DESTINATION DETAIL
+   ──────────────────────────────────────────────────── */
+function viewDestination(slug){
+  const d = destinations[slug];
+  if(!d) return view404();
+  const related = (d.related || []).map(rs => destCardHTML(rs, 'span-4 tall')).join('');
+
+  return `
+  <div class="dest-hero" style="background-image:url('${d.hero}')">
+    <div class="container">
+      <div class="crumbs"><a onclick="go('/')">${t(T.nav.destinations)}</a><span>›</span>${esc(t(d.name))}</div>
+      <div class="num">${d.num}</div>
+      <h1>${esc(t(d.name))}</h1>
+      <div class="region">${esc(t(d.region))}</div>
+    </div>
   </div>
-</footer>
+  <div class="container dest-body">
+    <div>
+      <h2>${t({en:'Overview', zh:'综述'})}</h2>
+      <p>${esc(t(d.overview))}</p>
 
-<script>
-  // ── Language toggle ─────────────────────────────────────────
-  const toggleButtons = document.querySelectorAll('.lang-toggle button');
-  const setLang = (lang) => {
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-en],[data-zh]').forEach(el => {
-      const txt = el.getAttribute('data-' + lang);
-      if (txt !== null) {
-        // Allow inline <em> tags in translation strings
-        if (txt.includes('<em>') || txt.includes('</em>')) {
-          el.innerHTML = txt;
-        } else {
-          el.textContent = txt;
-        }
-      }
-    });
-    toggleButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-    try { localStorage.setItem('xc_lang', lang); } catch(_) {}
-    document.title = lang === 'zh'
-      ? '探索中国 — 深度旅行指南'
-      : 'Exploring China — A Comprehensive Guide to Destinations, Culture & Journeys';
-  };
-  toggleButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-  try {
-    const saved = localStorage.getItem('xc_lang');
-    if (saved === 'zh') setLang('zh');
-  } catch(_) {}
+      <h3>${t({en:'Must-see', zh:'必看'})}</h3>
+      <ol class="musts">${d.musts.map((m,i)=>`<li><div class="num">${String(i+1).padStart(2,'0')}</div><div><h4>${esc(t(m.title))}</h4><p>${esc(t(m.body))}</p></div></li>`).join('')}</ol>
 
-  // ── Nav scroll state ────────────────────────────────────────
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
-  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+      <h3>${t({en:'Sample Itinerary', zh:'示范行程'})}</h3>
+      <div class="itin">${d.itinerary.map(day=>`
+        <div class="day">
+          <div class="day-title">${esc(t(day.day))}</div>
+          <div class="slot"><strong>${t({en:'Morning', zh:'上午'})}</strong><span>${esc(t(day.morning))}</span></div>
+          <div class="slot"><strong>${t({en:'Afternoon', zh:'下午'})}</strong><span>${esc(t(day.afternoon))}</span></div>
+          <div class="slot"><strong>${t({en:'Evening', zh:'夜晚'})}</strong><span>${esc(t(day.evening))}</span></div>
+        </div>`).join('')}</div>
 
-  // ── Mobile burger ───────────────────────────────────────────
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+      <h3>${t({en:'Gallery', zh:'图库'})}</h3>
+      <div class="gallery">${d.gallery.map(g=>`<img src="${g}" alt="" loading="lazy"/>`).join('')}</div>
 
-  // ── Reveal on scroll ────────────────────────────────────────
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+      <h3>${t({en:'A Practical Tip', zh:'实用建议'})}</h3>
+      <p>${esc(t(d.tips))}</p>
+    </div>
+    <aside>
+      <div class="sidecard">
+        <h4>${t({en:'At a glance', zh:'要点速览'})}</h4>
+        <h5>${esc(t(d.name))}</h5>
+        <dl>
+          <dt>${t({en:'Region', zh:'所在地区'})}</dt><dd>${esc(t(d.region))}</dd>
+          <dt>${t({en:'Best time', zh:'最佳时节'})}</dt><dd>${esc(t(d.bestTime))}</dd>
+          <dt>${t({en:'Trip length', zh:'建议时长'})}</dt><dd>${esc(t(d.duration))}</dd>
+          <dt>${t({en:'Difficulty', zh:'体力强度'})}</dt><dd>${esc(t(d.difficulty))}</dd>
+        </dl>
+        <button class="btn btn-primary btn-block btn-sm" onclick="go('/plan')">${t({en:'Plan This Trip', zh:'规划此行'})} <span class="arrow">→</span></button>
+        <button class="btn btn-outline btn-block btn-sm" style="margin-top:10px;" onclick="go('/store')">${t({en:'Shop Souvenirs', zh:'选购纪念品'})}</button>
+      </div>
+    </aside>
+  </div>
+  <section class="related">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:0;">
+        <div class="eyebrow">${t({en:'You may also like', zh:'相关推荐'})}</div>
+      </div>
+      <div class="dest-grid related-grid">${related}</div>
+    </div>
+  </section>`;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: STORE
+   ──────────────────────────────────────────────────── */
+function viewStore(){
+  return `<div class="page">
+    <div class="container">
+      <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span>${t(T.nav.store)}</div>
+      <div class="section-head" style="margin-bottom:50px;">
+        <h2 class="title">${state.lang==='en' ? 'The <em>Store</em>' : '<em>精选商店</em>'}</h2>
+        <p>${t({en:'Tea, porcelain, books, and prints — sourced from artisans we know personally.', zh:'茶、瓷、书籍、版画——皆来自我们熟识的手艺人。'})}</p>
+      </div>
+      <div class="store-grid">${Object.keys(products).map(id => productCardHTML(id)).join('')}</div>
+    </div>
+  </div>`;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: CART
+   ──────────────────────────────────────────────────── */
+function viewCart(){
+  if(state.cart.length===0){
+    return `<div class="page"><div class="container">
+      <div class="empty-state">
+        <h3>${t(T.empty.cart)}</h3>
+        <p>${t(T.empty.cartSub)}</p>
+        <button class="btn btn-primary" onclick="go('/store')">${t({en:'Browse the Store', zh:'前往商店'})} <span class="arrow">→</span></button>
+      </div>
+    </div></div>`;
+  }
+  const subtotal = cartSubtotal();
+  const shipping = subtotal > 800 ? 0 : 30;
+  const tax = Math.round(subtotal * 0.06);
+  const total = subtotal + shipping + tax;
+  return `<div class="page"><div class="container">
+    <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span>${t(T.cart.title)}</div>
+    <h2 class="title" style="margin-bottom:40px;">${t(T.cart.title)} <span style="font-size:.5em;color:var(--muted);font-style:normal;">${cartCount()} ${cartCount()===1?t(T.cart.item):t(T.cart.items)}</span></h2>
+    <div class="cart-grid">
+      <div class="cart-list">
+        ${state.cart.map(it => {
+          const p = products[it.id];
+          return `<div class="cart-item">
+            <img src="${p.img}" alt="">
+            <div>
+              <div class="cat">${esc(t(p.cat))}</div>
+              <h4>${esc(t(p.name))}</h4>
+              <div class="qty">
+                <button onclick="setQty('${it.id}', ${it.qty - 1})">−</button>
+                <span>${it.qty}</span>
+                <button onclick="setQty('${it.id}', ${it.qty + 1})">+</button>
+              </div>
+              <button class="remove" onclick="removeFromCart('${it.id}')">${t({en:'Remove', zh:'移除'})}</button>
+            </div>
+            <div class="price">${fmt(p.price * it.qty)}</div>
+          </div>`;
+        }).join('')}
+      </div>
+      <aside class="summary">
+        <h4>${t({en:'Order Summary', zh:'订单摘要'})}</h4>
+        <div class="line"><span>${t(T.cart.subtotal)}</span><span>${fmt(subtotal)}</span></div>
+        <div class="line"><span>${t(T.cart.shipping)}</span><span>${shipping===0?t(T.cart.free):fmt(shipping)}</span></div>
+        <div class="line"><span>${t(T.cart.tax)}</span><span>${fmt(tax)}</span></div>
+        <div class="total"><span>${t(T.cart.total)}</span><span>${fmt(total)}</span></div>
+        <button class="btn btn-primary btn-block" style="margin-top:24px;" onclick="goCheckout()">${t(T.cart.checkout)} <span class="arrow">→</span></button>
+        <button class="btn btn-outline btn-block btn-sm" style="margin-top:10px;" onclick="go('/store')">${t(T.cart.continue)}</button>
+      </aside>
+    </div>
+  </div></div>`;
+}
+
+function goCheckout(){
+  if(!state.user){ toast(state.lang==='zh' ? '请先登录' : 'Please sign in to continue'); go('/signin?to=checkout'); return; }
+  go('/checkout');
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: CHECKOUT
+   ──────────────────────────────────────────────────── */
+function viewCheckout(){
+  if(state.cart.length===0){ go('/cart'); return ''; }
+  const subtotal = cartSubtotal();
+  const shipping = subtotal > 800 ? 0 : 30;
+  const tax = Math.round(subtotal * 0.06);
+  const total = subtotal + shipping + tax;
+  return `<div class="page"><div class="container">
+    <div class="crumbs"><a onclick="go('/cart')">${t(T.cart.title)}</a><span>›</span>${t(T.checkout.title)}</div>
+    <h2 class="title" style="text-align:center;">${t(T.checkout.title)}</h2>
+    <p style="text-align:center;color:var(--muted);max-width:560px;margin:0 auto 36px;font-size:14px;">${t(T.checkout.note)}</p>
+    <div class="checkout-steps">
+      <div class="step active"><div class="num">1</div>${t(T.checkout.ship)}</div><span class="sep">·</span>
+      <div class="step active"><div class="num">2</div>${t(T.checkout.pay)}</div><span class="sep">·</span>
+      <div class="step"><div class="num">3</div>${t(T.checkout.confirm)}</div>
+    </div>
+    <div class="checkout-grid">
+      <form id="checkoutForm" onsubmit="return placeOrder(event)">
+        <div class="form-card wide">
+          <h2 style="font-size:24px;">${t(T.checkout.ship)}</h2>
+          <div class="field-row">
+            <div class="field"><label>${t({en:'Full name', zh:'姓名'})}</label><input required value="${esc(state.user?.name || '')}" name="name"/></div>
+            <div class="field"><label>${t({en:'Email', zh:'邮箱'})}</label><input required type="email" value="${esc(state.user?.email || '')}" name="email"/></div>
+          </div>
+          <div class="field"><label>${t(T.checkout.address)}</label><input required name="address"/></div>
+          <div class="field-row">
+            <div class="field"><label>${t(T.checkout.city)}</label><input required name="city"/></div>
+            <div class="field"><label>${t(T.checkout.zip)}</label><input required name="zip"/></div>
+          </div>
+          <div class="field"><label>${t(T.checkout.country)}</label>
+            <select name="country">
+              <option>${t({en:'China', zh:'中国'})}</option>
+              <option>${t({en:'Hong Kong SAR', zh:'中国香港'})}</option>
+              <option>${t({en:'Taiwan', zh:'中国台湾'})}</option>
+              <option>${t({en:'Singapore', zh:'新加坡'})}</option>
+              <option>${t({en:'United States', zh:'美国'})}</option>
+              <option>${t({en:'United Kingdom', zh:'英国'})}</option>
+              <option>${t({en:'Other', zh:'其他'})}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-card wide" style="margin-top:24px;">
+          <h2 style="font-size:24px;">${t(T.checkout.pay)}</h2>
+          <div class="field"><label>${t(T.checkout.card)}</label><input required pattern="[0-9 ]{13,19}" inputmode="numeric" placeholder="4242 4242 4242 4242" name="card"/></div>
+          <div class="field-row">
+            <div class="field"><label>${t(T.checkout.expiry)}</label><input required pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="12/28" name="expiry"/></div>
+            <div class="field"><label>${t(T.checkout.cvc)}</label><input required pattern="[0-9]{3,4}" inputmode="numeric" placeholder="123" name="cvc"/></div>
+          </div>
+          <div class="form-msg" id="checkoutMsg" style="display:none;"></div>
+          <button class="btn btn-primary btn-block" style="margin-top:20px;" type="submit" id="placeBtn">${t(T.checkout.place)} · ${fmt(total)}</button>
+        </div>
+      </form>
+      <aside class="summary">
+        <h4>${t({en:'Order Summary', zh:'订单摘要'})}</h4>
+        ${state.cart.map(it => {
+          const p = products[it.id];
+          return `<div class="line"><span>${esc(t(p.name))} × ${it.qty}</span><span>${fmt(p.price * it.qty)}</span></div>`;
+        }).join('')}
+        <div style="border-top:1px solid var(--line);margin:14px 0;"></div>
+        <div class="line"><span>${t(T.cart.subtotal)}</span><span>${fmt(subtotal)}</span></div>
+        <div class="line"><span>${t(T.cart.shipping)}</span><span>${shipping===0?t(T.cart.free):fmt(shipping)}</span></div>
+        <div class="line"><span>${t(T.cart.tax)}</span><span>${fmt(tax)}</span></div>
+        <div class="total"><span>${t(T.cart.total)}</span><span>${fmt(total)}</span></div>
+      </aside>
+    </div>
+  </div></div>`;
+}
+
+function placeOrder(e){
+  e.preventDefault();
+  const f = e.target;
+  const btn = $('#placeBtn');
+  btn.disabled = true; btn.textContent = t(T.checkout.placing);
+  setTimeout(()=>{
+    const subtotal = cartSubtotal();
+    const shipping = subtotal > 800 ? 0 : 30;
+    const tax = Math.round(subtotal * 0.06);
+    const total = subtotal + shipping + tax;
+    const id = 'XC-' + Date.now().toString(36).toUpperCase().slice(-6);
+    const order = {
+      id,
+      email: state.user.email,
+      items: state.cart.map(it=>({id:it.id, qty:it.qty, name:products[it.id].name, price:products[it.id].price})),
+      total,
+      ship: {name:f.name.value, address:f.address.value, city:f.city.value, zip:f.zip.value, country:f.country.value},
+      status:'confirmed',
+      date: new Date().toISOString()
+    };
+    state.orders.unshift(order);
+    state.cart = [];
+    persist(); updateCartBadge();
+    go('/order/' + id);
+  }, 900);
+  return false;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: ORDER CONFIRMATION
+   ──────────────────────────────────────────────────── */
+function viewOrder(id){
+  const o = state.orders.find(x=>x.id===id);
+  if(!o) return view404();
+  return `<div class="page-narrow">
+    <div style="text-align:center;">
+      <div style="width:72px;height:72px;margin:0 auto 24px;border-radius:50%;background:var(--jade);display:grid;place-items:center;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M5 12l5 5L20 7"/></svg>
+      </div>
+      <h2 class="title" style="margin-bottom:8px;">${t(T.order.thank)}</h2>
+      <p style="color:var(--muted);margin:0 0 36px;">${t(T.order.sub)}</p>
+    </div>
+    <div class="form-card wide">
+      <div class="line" style="display:flex;justify-content:space-between;margin-bottom:14px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);">
+        <span>${t(T.order.num)}</span><span style="font-family:var(--serif);font-size:22px;color:var(--ink);letter-spacing:0;text-transform:none;">${o.id}</span>
+      </div>
+      <div style="border-top:1px solid var(--line);padding-top:18px;">
+        ${o.items.map(it=>`<div class="line" style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px;"><span>${esc(t(it.name))} × ${it.qty}</span><span>${fmt(it.price*it.qty)}</span></div>`).join('')}
+        <div class="line" style="display:flex;justify-content:space-between;padding-top:14px;margin-top:8px;border-top:1px solid var(--line);font-family:var(--serif);font-size:22px;font-weight:500;"><span>${t(T.cart.total)}</span><span style="color:var(--red);">${fmt(o.total)}</span></div>
+      </div>
+      <div style="margin-top:24px;font-size:14px;color:var(--ink-soft);">
+        <strong style="font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">${t({en:'Ship to', zh:'收货地址'})}</strong><br>
+        ${esc(o.ship.name)}<br>${esc(o.ship.address)}<br>${esc(o.ship.city)}, ${esc(o.ship.zip)}<br>${esc(o.ship.country)}
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="go('/')">${t(T.order.cont)} <span class="arrow">→</span></button>
+      <button class="btn btn-outline" onclick="go('/account')">${t({en:'View All Orders', zh:'查看全部订单'})}</button>
+    </div>
+  </div>`;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: AUTH
+   ──────────────────────────────────────────────────── */
+function viewSignin(qs){
+  return `<div class="page-narrow">
+    <div class="form-card">
+      <h2>${t(T.signin.title)}</h2>
+      <p class="sub">${t(T.signin.sub)}</p>
+      <form onsubmit="return doSignin(event, '${esc(qs.to||'')}')">
+        <div class="field"><label>${t(T.signin.email)}</label><input type="email" id="siEmail" required></div>
+        <div class="field"><label>${t(T.signin.password)}</label><input type="password" id="siPass" required></div>
+        <div class="form-msg error" id="siMsg" style="display:none;"></div>
+        <button class="btn btn-primary btn-block" type="submit">${t(T.signin.btn)}</button>
+      </form>
+      <div class="form-foot">${t(T.signin.new)} <a onclick="go('/signup')">${t(T.signin.create)}</a></div>
+    </div>
+  </div>`;
+}
+function doSignin(e, to){
+  e.preventDefault();
+  const email = $('#siEmail').value.trim().toLowerCase();
+  const pass = $('#siPass').value;
+  const u = state.users[email];
+  const msg = $('#siMsg');
+  if(!u || u.passwordHash !== hash(pass)){
+    msg.style.display = 'block'; msg.textContent = t(T.signin.wrong);
+    return false;
+  }
+  state.user = {email, name:u.name}; persist();
+  toast(state.lang==='zh' ? '欢迎回来！' : 'Welcome back!');
+  go(to === 'checkout' ? '/checkout' : '/account');
+  return false;
+}
+
+function viewSignup(){
+  return `<div class="page-narrow">
+    <div class="form-card">
+      <h2>${t(T.signup.title)}</h2>
+      <p class="sub">${t(T.signup.sub)}</p>
+      <form onsubmit="return doSignup(event)">
+        <div class="field"><label>${t(T.signup.name)}</label><input id="suName" required></div>
+        <div class="field"><label>${t(T.signup.email)}</label><input id="suEmail" type="email" required></div>
+        <div class="field"><label>${t(T.signup.password)}</label><input id="suPass" type="password" minlength="8" required></div>
+        <div class="form-msg error" id="suMsg" style="display:none;"></div>
+        <button class="btn btn-primary btn-block" type="submit">${t(T.signup.btn)}</button>
+      </form>
+      <div class="form-foot">${t(T.signup.have)} <a onclick="go('/signin')">${t(T.signup.signin)}</a></div>
+    </div>
+  </div>`;
+}
+function doSignup(e){
+  e.preventDefault();
+  const name = $('#suName').value.trim();
+  const email = $('#suEmail').value.trim().toLowerCase();
+  const pass = $('#suPass').value;
+  const msg = $('#suMsg');
+  if(pass.length < 8){ msg.style.display='block'; msg.textContent=t(T.signup.short); return false; }
+  if(state.users[email]){ msg.style.display='block'; msg.textContent=t(T.signup.exists); return false; }
+  state.users[email] = {name, passwordHash:hash(pass)};
+  state.user = {email, name};
+  persist();
+  toast(state.lang==='zh' ? '注册成功' : 'Account created');
+  go('/account');
+  return false;
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: ACCOUNT
+   ──────────────────────────────────────────────────── */
+function viewAccount(){
+  if(!state.user){ go('/signin'); return ''; }
+  const tab = (location.hash.split('?')[1]||'').match(/tab=(\w+)/)?.[1] || 'orders';
+  const myOrders = state.orders.filter(o => o.email === state.user.email);
+  return `<div class="page"><div class="container">
+    <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span>${t(T.account.title)}</div>
+    <h2 class="title" style="margin-bottom:30px;">${t(T.account.welcome)}, <em>${esc(state.user.name)}</em></h2>
+    <div class="account-grid">
+      <nav class="account-nav">
+        <button class="${tab==='orders'?'active':''}" onclick="location.hash='/account?tab=orders'">${t(T.account.orders)}</button>
+        <button class="${tab==='profile'?'active':''}" onclick="location.hash='/account?tab=profile'">${t(T.account.profile)}</button>
+        <button onclick="signout()">${t(T.account.logout)}</button>
+      </nav>
+      <div>
+        ${tab==='orders' ? ordersTab(myOrders) : profileTab()}
+      </div>
+    </div>
+  </div></div>`;
+}
+function ordersTab(orders){
+  if(orders.length===0) return `<div class="empty-state" style="padding:40px 0;text-align:left;">
+    <h3 style="font-size:24px;">${t(T.empty.orders)}</h3>
+    <p>${t({en:'Once you place an order it will appear here.', zh:'下单后将显示于此处。'})}</p>
+    <button class="btn btn-primary" onclick="go('/store')">${t({en:'Browse the Store', zh:'前往商店'})}</button>
+  </div>`;
+  return orders.map(o=>`
+    <div class="order-row">
+      <div class="meta">
+        <div class="id">${o.id}</div>
+        <div class="date">${new Date(o.date).toLocaleDateString(state.lang==='zh'?'zh-CN':'en-GB',{year:'numeric',month:'short',day:'numeric'})}</div>
+        <div class="items">${o.items.map(it=>esc(t(it.name))+' × '+it.qty).join('  ·  ')}</div>
+      </div>
+      <div class="right">
+        <div class="total">${fmt(o.total)}</div>
+        <div class="status">${t({en:o.status, zh:'已确认'})}</div>
+      </div>
+    </div>`).join('');
+}
+function profileTab(){
+  return `<div class="form-card" style="max-width:none;margin:0;">
+    <h2 style="font-size:24px;">${t(T.account.profile)}</h2>
+    <div class="field"><label>${t({en:'Name', zh:'姓名'})}</label><input id="pfName" value="${esc(state.user.name)}"></div>
+    <div class="field"><label>${t({en:'Email', zh:'邮箱'})}</label><input value="${esc(state.user.email)}" disabled></div>
+    <button class="btn btn-primary btn-sm" onclick="saveProfile()">${t({en:'Save changes', zh:'保存更改'})}</button>
+  </div>`;
+}
+function saveProfile(){
+  const name = $('#pfName').value.trim();
+  if(!name) return;
+  state.user.name = name;
+  state.users[state.user.email].name = name;
+  persist();
+  toast(state.lang==='zh' ? '已保存' : 'Saved');
+}
+function signout(){
+  state.user = null; persist();
+  toast(state.lang==='zh' ? '已退出登录' : 'Signed out');
+  go('/');
+}
+
+/* ─────────────────────────────────────────────────────
+   VIEW: ARTICLES + STATIC
+   ──────────────────────────────────────────────────── */
+function viewArticle(slug){
+  const a = articles[slug];
+  if(!a) return view404();
+  return `<div class="page-narrow article">
+    <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span><a onclick="go('/plan')">${t(T.nav.plan)}</a><span>›</span>${esc(t(a.title))}</div>
+    <h1>${esc(t(a.title))}</h1>
+    ${a.by?.en ? `<div class="by">${esc(t(a.by))}</div>` : ''}
+    ${a.hero ? `<div class="article-hero" style="background-image:url('${a.hero}')"></div>` : ''}
+    ${a.body.map((b,i)=> b.h ? `<h2>${esc(t(b.h))}</h2>` : `<p${i===0&&!a.hero?'':' '} class="${i===0?'first':''}">${esc(t(b.p)).replace(/\\n/g,'<br>')}</p>`).join('')}
+    <div style="margin-top:60px;padding-top:30px;border-top:1px solid var(--line);">
+      <button class="btn btn-outline btn-sm" onclick="go('/plan')">${t({en:'More guides', zh:'更多指南'})} →</button>
+    </div>
+  </div>`;
+}
+
+function viewPlan(){
+  return `<div class="page"><div class="container">
+    <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span>${t(T.nav.plan)}</div>
+    <div class="section-head" style="margin-bottom:60px;">
+      <div class="eyebrow">${t({en:'Plan a Trip', zh:'行程规划'})}</div>
+      <h2 class="title">${state.lang==='en' ? 'From <em>first thought</em>, to <em>first step</em>.' : '<em>从灵感初现，到启程之时</em>。'}</h2>
+      <p>${t({en:'Three guides — pick what you need next. Each is written for travelers who like to know why, not just what.', zh:'三份指南，按需取用。皆献给追问缘由而非仅询事实的旅人。'})}</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan-card" onclick="go('/guide/when-to-go')"><div class="icon">時</div><h4>${t({en:'When to Go', zh:'最佳时节'})}</h4><p>${t({en:'A month-by-month guide to weather, festivals, and crowd levels.', zh:'按月精选的天气、节庆与人流指南。'})}</p><span class="more">${t({en:'Read', zh:'阅读'})} →</span></div>
+      <div class="plan-card" onclick="go('/guide/sample-routes')"><div class="icon">路</div><h4>${t({en:'Sample Routes', zh:'行程范例'})}</h4><p>${t({en:'Six tested itineraries covering most of the country.', zh:'六条久经打磨的路线，涵盖大半个中国。'})}</p><span class="more">${t({en:'Read', zh:'阅读'})} →</span></div>
+      <div class="plan-card" onclick="go('/guide/essential-phrases')"><div class="icon">語</div><h4>${t({en:'Essential Phrases', zh:'实用短语'})}</h4><p>${t({en:'Two dozen phrases that will transform every interaction.', zh:'二十余句，让每一次对话都因此不同。'})}</p><span class="more">${t({en:'Read', zh:'阅读'})} →</span></div>
+    </div>
+  </div></div>`;
+}
+
+function viewFireworks(){
+  return `<div class="page" style="padding-top:78px;"><section class="fireworks" style="padding:120px 0;">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">${t({en:'Fireworks & Celebration', zh:'烟花盛景'})}</div>
+        <h2 class="title">${state.lang==='en' ? 'The <em>sky</em> as <em>canvas</em>.' : '<em>夜空为纸，烟花为墨</em>。'}</h2>
+        <p>${t({en:'Fireworks were born in China more than a thousand years ago. Every spring, the cities light up in colors no painter has matched.', zh:'烟花诞生于一千多年前的中国。每逢春日，城市被点燃成画家也未曾调出的色彩。'})}</p>
+      </div>
+      <div class="video-frame">
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1546552768-9e3a94b38a59?auto=format&fit=crop&w=1600&q=80">
+          <source src="https://videos.pexels.com/video-files/34767741/14740035_640_360_30fps.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="fireworks-features">
+        <div class="ff-item"><div class="num">01</div><h4>${t({en:'A Thousand Years of Sparks', zh:'千年火光'})}</h4><p>${t({en:'Trace fireworks from Tang-dynasty bamboo crackers to today\'s symphonic displays in Liuyang.', zh:'从唐代爆竹到今日浏阳的烟花交响乐。'})}</p></div>
+        <div class="ff-item"><div class="num">02</div><h4>${t({en:'Festival Calendar', zh:'节庆日历'})}</h4><p>${t({en:'Spring Festival, Lantern Festival, Mid-Autumn — when, where, and how to witness each.', zh:'春节、元宵、中秋——何时、何地、如何亲临盛会。'})}</p></div>
+        <div class="ff-item"><div class="num">03</div><h4>${t({en:'The Makers', zh:'匠人之手'})}</h4><p>${t({en:'Meet the artisans of Liuyang and Pingxiang, where every shell is still rolled by hand.', zh:'走访浏阳与萍乡的匠人，烟花至今手工卷制。'})}</p></div>
+      </div>
+      <div style="text-align:center;margin-top:60px;">
+        <button class="btn btn-ghost" onclick="go('/guide/journal')">${t({en:'Read more on the makers', zh:'阅读更多匠人故事'})} <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section></div>`;
+}
+
+function viewCommunity(){
+  return `<div class="page"><div class="container">
+    <div class="crumbs"><a onclick="go('/')">${t(T.brand)}</a><span>›</span>${t(T.nav.community)}</div>
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <div class="eyebrow">${t({en:'The Community', zh:'旅行社区'})}</div>
+      <h2 class="title">${state.lang==='en' ? 'Travel <em>together</em>, even when <em>apart</em>.' : '<em>同行，纵使天涯</em>。'}</h2>
+      <p style="color:var(--muted);font-size:17px;margin:0 0 32px;">${t({en:'A full forum is coming in our next release — trip reports, route advice, photo threads, regional sub-forums. Subscribe below and you will be the first invited.', zh:'完整论坛将于下一版本上线——游记、路线建议、摄影专区与按地域分版。订阅以下邮件，您将在首批受邀之列。'})}</p>
+      <form class="nl-form" style="margin:0 auto;max-width:480px;border-color:var(--line);background:var(--paper);" onsubmit="return subscribeForum(event)">
+        <input type="email" id="forumEmail" placeholder="${t({en:'your@email.com', zh:'your@email.com'})}" required style="color:var(--ink);">
+        <button type="submit">${t({en:'Notify me', zh:'优先通知'})}</button>
+      </form>
+      <div class="stats" style="margin-top:80px;border-top:1px solid var(--line);padding-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
+        <div class="stat"><div class="num">12,400+</div><div class="label">${t({en:'Members on waitlist', zh:'等候名单'})}</div></div>
+        <div class="stat"><div class="num">2,160</div><div class="label">${t({en:'Trip reports drafted', zh:'游记草稿'})}</div></div>
+        <div class="stat"><div class="num">34</div><div class="label">${t({en:'Provinces covered', zh:'覆盖省份'})}</div></div>
+      </div>
+    </div>
+  </div></div>`;
+}
+function subscribeForum(e){
+  e.preventDefault();
+  const email = $('#forumEmail').value.trim();
+  if(!state.subs.includes(email)){ state.subs.push(email); persist(); }
+  toast(state.lang==='zh' ? '已加入等候名单' : 'Added to the waitlist');
+  return false;
+}
+
+function view404(){
+  return `<div class="page-narrow" style="text-align:center;">
+    <div class="eyebrow">404</div>
+    <h2 class="title">${t({en:'Page not found.', zh:'页面不存在。'})}</h2>
+    <p style="color:var(--muted);margin:0 0 30px;">${t({en:'The page you are looking for has wandered off the map.', zh:'您要找的页面似乎走失在地图之外。'})}</p>
+    <button class="btn btn-primary" onclick="go('/')">${t({en:'Back to home', zh:'返回首页'})} <span class="arrow">→</span></button>
+  </div>`;
+}
+
+/* ─────────────────────────────────────────────────────
+   ROUTER
+   ──────────────────────────────────────────────────── */
+function parseRoute(){
+  const raw = location.hash.replace(/^#/, '') || '/';
+  const [path, query] = raw.split('?');
+  const qs = {};
+  if(query) query.split('&').forEach(p=>{const [k,v]=p.split('='); qs[k]=decodeURIComponent(v||'');});
+  return {path, qs};
+}
+
+function render(){
+  renderShell();
+  const {path, qs} = parseRoute();
+  const app = $('#app');
+  let html = '';
+
+  if(path === '/' || path === '') html = viewHome();
+  else if(path.startsWith('/destination/')) html = viewDestination(path.split('/')[2]);
+  else if(path === '/store') html = viewStore();
+  else if(path === '/cart') html = viewCart();
+  else if(path === '/checkout') html = viewCheckout();
+  else if(path.startsWith('/order/')) html = viewOrder(path.split('/')[2]);
+  else if(path === '/signin') html = viewSignin(qs);
+  else if(path === '/signup') html = viewSignup();
+  else if(path === '/account') html = viewAccount();
+  else if(path.startsWith('/guide/')) html = viewArticle(path.split('/')[2]);
+  else if(path === '/plan') html = viewPlan();
+  else if(path === '/fireworks') html = viewFireworks();
+  else if(path === '/community') html = viewCommunity();
+  else html = view404();
+
+  app.innerHTML = html;
+  window.scrollTo({top:0, behavior:'instant'});
+
+  // re-attach reveal observer
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
   }, {threshold:.12, rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+  $$('.reveal').forEach(el => io.observe(el));
 
+  // mark active nav
+  const active = path==='/' ? '/' : '/'+path.split('/')[1];
+  $$('.nav-links a[data-route]').forEach(a => a.classList.toggle('active', a.dataset.route.split('/')[1] === active.split('/')[1] && active !== '/'));
+}
+
+/* ─────────────────────────────────────────────────────
+   INIT
+   ──────────────────────────────────────────────────── */
+function setLang(lang){
+  state.lang = lang; persist();
+  render();
+}
+
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', () => {
+  // wire lang toggle
+  $$('.lang-toggle button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  // burger
+  $('#burger').addEventListener('click', () => $('#navLinks').classList.toggle('open'));
+  $('#navLinks').addEventListener('click', e => { if(e.target.tagName==='A') $('#navLinks').classList.remove('open'); });
+  // nav scroll state
+  const updateNav = () => $('#nav').classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', updateNav, {passive:true}); updateNav();
+  render();
+});
+</script>
 </body>
 </html>
